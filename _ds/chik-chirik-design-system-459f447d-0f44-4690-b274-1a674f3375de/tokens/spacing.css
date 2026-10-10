@@ -1,0 +1,23 @@
+:root{
+  --space-1:2px;
+  --space-2:4px;
+  --space-3:8px;
+  --space-4:12px;
+  --space-5:16px;
+  --space-6:20px;
+  --space-7:24px;
+  --space-8:32px;
+  --space-9:40px;
+  --space-10:56px;
+  --space-11:72px;
+
+  --gutter-screen:16px;      /* app screen side padding */
+  --gap-card:12px;           /* gap between sibling cards */
+  --pad-card:16px;           /* card inner padding */
+  --pad-card-lg:20px;
+  --size-tap:44px;           /* minimum tap target */
+  --size-tabbar:64px;
+  --size-icon-sm:16px;
+  --size-icon:20px;
+  --size-icon-lg:24px;
+}

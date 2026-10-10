@@ -1,0 +1,10 @@
+/* Webfonts. SUBSTITUTIONS — no font binaries were supplied with the references.
+   Display (Latin wordmark, chunky soft serif): Cooper Black / Windsor look-alike -> "Bitter" 900.
+   Text (Cyrillic grotesk in app + posters): Helvetica/Suisse look-alike -> "Golos Text".
+   Both loaded from Google Fonts; swap for licensed files when available. */
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;0,900;1,700;1,900&family=Golos+Text:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap");
+:root{
+  --font-display:"Bitter",Cooper Black,Georgia,serif;
+  --font-text:"Golos Text","Helvetica Neue",Helvetica,system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;
+}

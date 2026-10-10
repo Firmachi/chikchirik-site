@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/chik-chirik-design-system-459f447d-0f44-4690-b274-1a674f3375de/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/chik-chirik-design-system-459f447d-0f44-4690-b274-1a674f3375de/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/chik-chirik-design-system-459f447d-0f44-4690-b274-1a674f3375de/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/chik-chirik-design-system-459f447d-0f44-4690-b274-1a674f3375de/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/chik-chirik-design-system-459f447d-0f44-4690-b274-1a674f3375de/tokens/radius.css">
+  <link rel="stylesheet" href="_ds/chik-chirik-design-system-459f447d-0f44-4690-b274-1a674f3375de/tokens/elevation.css">
+  <link rel="stylesheet" href="_ds/chik-chirik-design-system-459f447d-0f44-4690-b274-1a674f3375de/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/chik-chirik-design-system-459f447d-0f44-4690-b274-1a674f3375de/tokens/base.css">
+  <link rel="stylesheet" href="_ds/chik-chirik-design-system-459f447d-0f44-4690-b274-1a674f3375de/styles.css">
+  <script src="_ds/chik-chirik-design-system-459f447d-0f44-4690-b274-1a674f3375de/_ds_bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <style>
+    html,body{margin:0;background:#fff}
+    html.lenis,html.lenis body{height:auto}
+    .lenis.lenis-smooth{scroll-behavior:auto!important}
+    a{color:var(--blue-600);text-decoration:none}
+    a:hover{color:var(--blue-700)}
+  </style>
+</helmet>
+
+<div style="font-family:var(--font-text);color:var(--ink-1000);background:var(--white);min-height:100vh;">
+
+  <header style="position:sticky;top:0;z-index:20;padding:16px 16px 0;display:flex;justify-content:center;">
+    <nav style="width:100%;max-width:1200px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border:1px solid var(--ink-100);border-radius:999px;padding:8px 8px 8px 24px;box-shadow:var(--shadow-float);">
+      <a href="#top" onClick="{{ goHome }}" style="display:flex;align-items:center;gap:10px;color:var(--ink-1000);">
+        <img src="assets/logo-wordmark.png" alt="Chik Chirik" style="height:26px;display:block;">
+      </a>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><div style="display:flex;gap:2px;">
+        <a href="#how" onClick="{{ goHomeAnchor }}" style="padding:10px 12px;border-radius:999px;color:var(--ink-800);font-size:15px;white-space:nowrap;font-weight:500;" style-hover="background:var(--ink-50);color:var(--ink-1000);">Как это работает</a>
+        <a href="#clients" onClick="{{ goHomeAnchor }}" style="padding:10px 12px;border-radius:999px;color:var(--ink-800);font-size:15px;white-space:nowrap;font-weight:500;" style-hover="background:var(--ink-50);color:var(--ink-1000);">Заказчикам</a>
+        <a href="#creators" onClick="{{ goHomeAnchor }}" style="padding:10px 12px;border-radius:999px;color:var(--ink-800);font-size:15px;white-space:nowrap;font-weight:500;" style-hover="background:var(--ink-50);color:var(--ink-1000);">Исполнителям</a>
+        <a href="#faq" onClick="{{ goHomeAnchor }}" style="padding:10px 12px;border-radius:999px;color:var(--ink-800);font-size:15px;white-space:nowrap;font-weight:500;" style-hover="background:var(--ink-50);color:var(--ink-1000);">Вопросы</a>
+      </div></sc-if>
+      <a href="#download" onClick="{{ goHomeAnchor }}" style="display:flex;align-items:center;gap:8px;height:44px;padding:0 22px;border-radius:999px;background:var(--blue-500);color:var(--white);font-weight:600;font-size:15px;white-space:nowrap;" style-hover="background:var(--blue-600);color:var(--white);">Скачать</a>
+    </nav>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main id="top">
+
+    <section data-screen-label="Hero" style="padding:clamp(48px,8vw,96px) 16px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;">
+      <div data-intro="1" style="display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border-radius:999px;background:var(--blue-50);color:var(--blue-700);font-size:14px;font-weight:600;">
+        <img src="assets/logo-bird.png" alt="" style="width:24px;height:24px;object-fit:contain;">
+        Креативные специалисты Казахстана
+      </div>
+      <h1 aria-label="Находи своих через Chik Chirik" style="margin:0;max-width:980px;font-size:clamp(44px,7.4vw,104px);line-height:.98;letter-spacing:-0.045em;font-weight:800;text-wrap:balance;"><span aria-hidden="true" style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em;"><span data-w="1" style="display:inline-block;">Находи</span></span> <span aria-hidden="true" style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em;"><span data-w="1" style="display:inline-block;">своих</span></span> <span aria-hidden="true" style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em;"><span data-w="1" style="display:inline-block;">через</span></span> <span aria-hidden="true" style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em;"><span data-w="1" style="display:inline-block;font-family:var(--font-display);font-weight:900;color:var(--blue-500);letter-spacing:-0.02em;">Chik Chirik</span></span></h1>
+      <p data-intro="1" style="margin:0;max-width:600px;font-size:clamp(17px,1.6vw,20px);line-height:1.45;color:var(--ink-600);text-wrap:pretty;">Монтажёры, дизайнеры, моушн, фотографы, smm и ai-креаторы — в одном приложении. Опиши задачу, получи отклики, договорись в чате.</p>
+      <div data-intro="1" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a href="{{ appStoreUrl }}" target="_blank" style="display:flex;align-items:center;gap:12px;height:60px;padding:0 24px 0 20px;border-radius:999px;background:var(--ink-1000);color:var(--white);" style-hover="background:var(--ink-800);color:var(--white);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"></path></svg>
+          <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1;"><span style="font-size:11px;opacity:.75;">Загрузить в</span><span style="font-size:18px;font-weight:600;">App Store</span></span>
+        </a>
+        <a href="{{ googlePlayUrl }}" target="_blank" style="display:flex;align-items:center;gap:12px;height:60px;padding:0 24px 0 20px;border-radius:999px;background:var(--ink-1000);color:var(--white);" style-hover="background:var(--ink-800);color:var(--white);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"></path></svg>
+          <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1;"><span style="font-size:11px;opacity:.75;">Доступно в</span><span style="font-size:18px;font-weight:600;">Google Play</span></span>
+        </a>
+      </div>
+
+      <div data-hero-row="1" style="width:100%;max-width:1720px;margin-top:40px;display:flex;justify-content:center;align-items:flex-end;gap:clamp(8px,1vw,16px);">
+        <sc-if value="{{ heroOuter }}" hint-placeholder-val="{{ true }}">
+        <div data-hero-card="1" style="flex:1 1 0;min-width:0;max-width:220px;aspect-ratio:220/300;border-radius:28px;overflow:hidden;position:relative;background:var(--ink-50);">
+          <img src="assets/p-videographer.png" alt="Тимур, видеограф" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block;transform:scale(1.12);" data-par="1">
+          <div style="position:absolute;left:12px;bottom:12px;display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.55);backdrop-filter:blur(12px);color:var(--white);font-size:12px;font-weight:600;white-space:nowrap;max-width:calc(100% - 24px);box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:999px;background:var(--success);"></span><span data-chip-text="1" style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Тимур · видеограф</span></div>
+        </div>
+        </sc-if>
+        <sc-if value="{{ heroMid }}" hint-placeholder-val="{{ true }}">
+        <div data-hero-card="1" style="flex:1 1 0;min-width:0;max-width:220px;aspect-ratio:220/380;border-radius:28px;overflow:hidden;position:relative;background:var(--ink-50);">
+          <img src="assets/p-photographer.png" alt="Арман, фотограф" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;transform:scale(1.12);" data-par="1">
+          <div style="position:absolute;left:12px;bottom:12px;display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.55);backdrop-filter:blur(12px);color:var(--white);font-size:12px;font-weight:600;white-space:nowrap;max-width:calc(100% - 24px);box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:999px;background:var(--success);"></span><span data-chip-text="1" style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Арман · фотограф</span></div>
+        </div>
+        </sc-if>
+        <div data-hero-card="1" style="flex:1 1 0;min-width:0;max-width:220px;aspect-ratio:220/440;border-radius:28px;overflow:hidden;position:relative;background:var(--ink-50);">
+          <img src="assets/p-phone.png" alt="Айгерим, заказчик" style="width:100%;height:100%;object-fit:cover;object-position:45% 35%;display:block;transform:scale(1.12);" data-par="1">
+          <div style="position:absolute;left:12px;bottom:12px;display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.55);backdrop-filter:blur(12px);color:var(--white);font-size:12px;font-weight:600;white-space:nowrap;max-width:calc(100% - 24px);box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:999px;background:var(--success);"></span><span data-chip-text="1" style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Айгерим · заказчик</span></div>
+        </div>
+        <div data-hero-card="1" data-phone="1" style="flex:1.18 1 0;min-width:0;max-width:260px;aspect-ratio:1/2;border-width:clamp(5px,.5vw,8px) !important;border-radius:44px 44px 0 0;border:8px solid var(--ink-1000);border-bottom:0;overflow:hidden;background:var(--white);box-sizing:border-box;">
+          <img src="assets/screen-home-reference.png" alt="Главный экран приложения" style="width:100%;display:block;">
+        </div>
+        <div data-hero-card="1" style="flex:1 1 0;min-width:0;max-width:220px;aspect-ratio:220/440;border-radius:28px;overflow:hidden;position:relative;background:var(--ink-50);">
+          <img src="assets/p-designer.png" alt="Дана, дизайнер" style="width:100%;height:100%;object-fit:cover;object-position:45% 30%;display:block;transform:scale(1.12);" data-par="1">
+          <div style="position:absolute;left:12px;bottom:12px;display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.55);backdrop-filter:blur(12px);color:var(--white);font-size:12px;font-weight:600;white-space:nowrap;max-width:calc(100% - 24px);box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:999px;background:var(--success);"></span><span data-chip-text="1" style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Дана · дизайнер</span></div>
+        </div>
+        <sc-if value="{{ heroMid }}" hint-placeholder-val="{{ true }}">
+        <div data-hero-card="1" style="flex:1 1 0;min-width:0;max-width:220px;aspect-ratio:220/380;border-radius:28px;overflow:hidden;position:relative;background:var(--ink-50);">
+          <img src="assets/p-headphones.png" alt="Алихан, моушн" style="width:100%;height:100%;object-fit:cover;object-position:45% 30%;display:block;transform:scale(1.12);" data-par="1">
+          <div style="position:absolute;left:12px;bottom:12px;display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.55);backdrop-filter:blur(12px);color:var(--white);font-size:12px;font-weight:600;white-space:nowrap;max-width:calc(100% - 24px);box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:999px;background:var(--success);"></span><span data-chip-text="1" style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Алихан · моушн</span></div>
+        </div>
+        </sc-if>
+        <sc-if value="{{ heroOuter }}" hint-placeholder-val="{{ true }}">
+        <div data-hero-card="1" style="flex:1 1 0;min-width:0;max-width:220px;aspect-ratio:220/300;border-radius:28px;overflow:hidden;position:relative;background:var(--ink-50);">
+          <img src="assets/p-blogger.png" alt="Камила, smm" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block;transform:scale(1.12);" data-par="1">
+          <div style="position:absolute;left:12px;bottom:12px;display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.55);backdrop-filter:blur(12px);color:var(--white);font-size:12px;font-weight:600;white-space:nowrap;max-width:calc(100% - 24px);box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:999px;background:var(--success);"></span><span data-chip-text="1" style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Камила · smm</span></div>
+        </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <section data-screen-label="Stats" style="padding:clamp(56px,8vw,104px) 16px;">
+      <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:40px;">
+        <h2 style="margin:0;font-size:clamp(32px,4.4vw,56px);line-height:1.02;letter-spacing:-0.035em;font-weight:800;max-width:720px;text-wrap:balance;">Здесь уже работают</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));border-top:1px solid var(--ink-100);">
+          <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+            <div data-rv="1" style="padding:28px 24px 8px 0;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid var(--ink-100);">
+              <div style="display:flex;align-items:baseline;gap:2px;font-size:clamp(52px,6vw,84px);line-height:1;letter-spacing:-0.05em;font-weight:800;font-variant-numeric:tabular-nums;"><span data-count="{{ s.value }}">{{ s.display }}</span><span style="color:var(--blue-500);">{{ s.suffix }}</span></div>
+              <div style="font-size:16px;line-height:1.4;color:var(--ink-600);max-width:220px;padding-bottom:20px;">{{ s.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Categories" style="background:var(--ink-50);padding:clamp(56px,8vw,104px) 16px;">
+      <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:40px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;">
+          <h2 style="margin:0;font-size:clamp(32px,4.4vw,56px);line-height:1.02;letter-spacing:-0.035em;font-weight:800;max-width:640px;text-wrap:balance;">Все, кто нужен для проекта</h2>
+          <p style="margin:0;max-width:380px;font-size:17px;line-height:1.45;color:var(--ink-600);">дизайн, анимация, продакшн, видео, моушн, иллюстрации, съемка, фото, сценарий, smm-контент, таргетинг</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px;">
+          <sc-for list="{{ categories }}" as="c" hint-placeholder-count="4">
+            <div data-rv="1" style="position:relative;border-radius:20px;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--ink-200);">
+              <img src="{{ c.img }}" alt="{{ c.title }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.72) 100%);"></div>
+              <div style="position:relative;padding:20px;display:flex;flex-direction:column;gap:6px;color:var(--white);">
+                <div style="font-size:22px;font-weight:700;letter-spacing:-0.02em;">{{ c.title }}</div>
+                <div style="font-size:15px;color:var(--ink-200);line-height:1.4;">{{ c.sub }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" data-screen-label="How it works" style="padding:clamp(56px,8vw,104px) 16px;">
+      <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:40px;">
+        <h2 style="margin:0;font-size:clamp(32px,4.4vw,56px);line-height:1.02;letter-spacing:-0.035em;font-weight:800;text-wrap:balance;">Как это работает</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+          <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+            <div data-rv="1" style="background:var(--ink-50);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:48px;">
+              <div style="font-family:var(--font-display);font-weight:900;font-size:56px;line-height:1;color:var(--blue-500);">{{ s.n }}</div>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div style="font-size:24px;font-weight:700;letter-spacing:-0.02em;">{{ s.title }}</div>
+                <div style="font-size:16px;color:var(--ink-600);line-height:1.45;text-wrap:pretty;">{{ s.text }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Audiences" style="padding:0 16px clamp(56px,8vw,104px);">
+      <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:12px;">
+        <div id="clients" data-rv="1" style="border:1px solid var(--ink-100);border-radius:28px;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:24px;">
+          <img src="assets/p-phone.png" alt="" style="width:100%;height:260px;object-fit:cover;object-position:50% 30%;border-radius:20px;display:block;">
+          <div style="display:flex;"><span style="padding:6px 12px;border-radius:999px;background:var(--blue-100);color:var(--blue-700);font-size:13px;font-weight:600;">Заказчикам</span></div>
+          <h3 style="margin:0;font-size:clamp(28px,3vw,40px);line-height:1.05;letter-spacing:-0.03em;font-weight:800;">Собери команду под задачу за день</h3>
+          <div style="display:flex;flex-direction:column;">
+            <sc-for list="{{ forClients }}" as="t" hint-placeholder-count="4">
+              <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--ink-100);font-size:17px;line-height:1.4;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-500)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:2px;"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>{{ t }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div id="creators" data-rv="1" style="background:var(--ink-1000);color:var(--white);border-radius:28px;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:24px;">
+          <img src="assets/p-headphones.png" alt="" style="width:100%;height:260px;object-fit:cover;object-position:50% 30%;border-radius:20px;display:block;">
+          <div style="display:flex;"><span style="padding:6px 12px;border-radius:999px;background:var(--ink-800);color:var(--white);font-size:13px;font-weight:600;">Исполнителям</span></div>
+          <h3 style="margin:0;font-size:clamp(28px,3vw,40px);line-height:1.05;letter-spacing:-0.03em;font-weight:800;">Получай заказы, а не ищи их</h3>
+          <div style="display:flex;flex-direction:column;">
+            <sc-for list="{{ forCreators }}" as="t" hint-placeholder-count="4">
+              <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--ink-800);font-size:17px;line-height:1.4;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-300)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:2px;"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>{{ t }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" data-screen-label="Download" style="padding:0 16px clamp(56px,8vw,104px);">
+      <div data-rv="1" style="max-width:1200px;margin:0 auto;background:var(--blue-600);color:var(--white);border-radius:32px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));">
+        <div style="padding:clamp(32px,5vw,64px);display:flex;flex-direction:column;justify-content:center;gap:28px;">
+          <img src="assets/logo-wordmark-white.png" alt="Chik Chirik" style="height:clamp(40px,5vw,64px);width:auto;align-self:flex-start;">
+          <h2 style="margin:0;font-size:clamp(32px,4vw,52px);line-height:1.02;letter-spacing:-0.035em;font-weight:800;text-wrap:balance;">Скачай и найди своих уже сегодня</h2>
+          <p style="margin:0;font-size:18px;line-height:1.45;color:var(--blue-100);max-width:440px;">Бесплатно для заказчиков и исполнителей. Алматы, Астана и вся страна.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="{{ appStoreUrl }}" target="_blank" style="display:flex;align-items:center;gap:12px;height:60px;padding:0 24px 0 20px;border-radius:999px;background:var(--white);color:var(--ink-1000);" style-hover="background:var(--blue-50);color:var(--ink-1000);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"></path></svg>
+              <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1;"><span style="font-size:11px;opacity:.7;">Загрузить в</span><span style="font-size:18px;font-weight:600;">App Store</span></span>
+            </a>
+            <a href="{{ googlePlayUrl }}" target="_blank" style="display:flex;align-items:center;gap:12px;height:60px;padding:0 24px 0 20px;border-radius:999px;background:var(--white);color:var(--ink-1000);" style-hover="background:var(--blue-50);color:var(--ink-1000);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"></path></svg>
+              <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1;"><span style="font-size:11px;opacity:.7;">Доступно в</span><span style="font-size:18px;font-weight:600;">Google Play</span></span>
+            </a>
+          </div>
+        </div>
+        <div style="min-height:420px;background:var(--blue-600);">
+          <img src="assets/poster-crowd-blue.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;">
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" data-screen-label="FAQ" style="padding:0 16px clamp(56px,8vw,104px);">
+      <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:40px;">
+        <h2 style="margin:0;font-size:clamp(32px,4.4vw,56px);line-height:1.02;letter-spacing:-0.035em;font-weight:800;">Частые вопросы</h2>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <sc-for list="{{ faq }}" as="q" hint-placeholder-count="5">
+            <div data-rv="1" style="background:var(--ink-50);border-radius:16px;">
+              <button onClick="{{ q.toggle }}" style="all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 20px;font-size:18px;font-weight:600;letter-spacing:-0.01em;">
+                <span>{{ q.q }}</span>
+                <span style="flex:0 0 auto;width:32px;height:32px;border-radius:999px;background:var(--white);display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;">{{ q.sign }}</span>
+              </button>
+              <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}">
+                <div style="padding:0 20px 20px;font-size:16px;line-height:1.5;color:var(--ink-600);max-width:640px;">{{ q.a }}</div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="bot" data-screen-label="Telegram bot" style="padding:0 16px clamp(56px,8vw,104px);">
+      <div data-rv="1" style="max-width:1200px;margin:0 auto;border-radius:32px;background:var(--blue-600);color:var(--white);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px;align-items:center;padding:clamp(28px,5vw,64px);box-sizing:border-box;">
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:#E0E9FF;">
+            <img src="assets/logo-bird-white.png" alt="" style="width:24px;height:24px;object-fit:contain;">
+            @Chikchirik_bird_bot
+          </div>
+          <h2 style="margin:0;font-size:clamp(32px,4.4vw,56px);line-height:1.02;letter-spacing:-0.035em;font-weight:800;text-wrap:balance;">Начни без приложения — в телеграм-боте</h2>
+          <p style="margin:0;font-size:18px;line-height:1.45;max-width:480px;color:#E0E9FF;text-wrap:pretty;">{{ botHint }}</p>
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+            <a href="https://t.me/Chikchirik_bird_bot" target="_blank" rel="noopener" style="height:52px;padding:0 24px;display:flex;align-items:center;gap:8px;border-radius:999px;background:var(--white);color:var(--blue-600);font-weight:700;font-size:16px;" style-hover="background:#E0E9FF;color:var(--blue-700);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
+              Открыть бота
+            </a>
+            <a href="#bot" onClick="{{ shareSite }}" style="height:52px;padding:0 22px;display:flex;align-items:center;gap:8px;border-radius:999px;border:1px solid rgba(255,255,255,.35);color:var(--white);font-weight:600;font-size:16px;" style-hover="background:rgba(255,255,255,.1);color:var(--white);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><path d="m16 6-4-4-4 4"></path><path d="M12 2v13"></path></svg>
+              {{ shareLabel }}
+            </a>
+          </div>
+          <sc-if value="{{ showKeys }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;align-items:center;gap:6px;font-size:14px;color:#E0E9FF;">
+              <span style="height:26px;min-width:26px;padding:0 7px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;border-radius:6px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-bottom-width:2px;color:var(--white);font-weight:600;">{{ modKey }}</span>
+              <span>+</span>
+              <span style="height:26px;min-width:26px;padding:0 7px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;border-radius:6px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-bottom-width:2px;color:var(--white);font-weight:600;">D</span>
+              <span style="margin-left:4px;">сохрани сайт в закладки</span>
+            </div>
+          </sc-if>
+        </div>
+        <sc-if value="{{ showQr }}" hint-placeholder-val="{{ true }}">
+          <div style="justify-self:end;width:220px;padding:16px;border-radius:20px;background:var(--white);display:flex;flex-direction:column;align-items:center;gap:10px;">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=360x360&amp;margin=0&amp;color=0057FF&amp;data=https%3A%2F%2Ft.me%2FChikchirik_bird_bot" alt="QR-код телеграм-бота Chik Chirik" style="width:188px;height:188px;display:block;">
+            <span style="font-size:13px;font-weight:600;color:var(--ink-600);">t.me/Chikchirik_bird_bot</span>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isDocs }}" hint-placeholder-val="{{ false }}">
+  <main data-screen-label="Documents" style="padding:clamp(40px,6vw,72px) 16px clamp(56px,8vw,104px);">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:32px;">
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <a href="#top" onClick="{{ goHome }}" style="font-size:15px;font-weight:500;color:var(--ink-400);" style-hover="color:var(--ink-1000);">← На главную</a>
+        <h1 style="margin:0;font-size:clamp(40px,5.4vw,72px);line-height:1;letter-spacing:-0.04em;font-weight:800;">Документы</h1>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px;align-items:start;">
+        <div style="display:flex;flex-direction:column;gap:4px;background:var(--ink-50);border-radius:20px;padding:8px;position:sticky;top:96px;">
+          <sc-for list="{{ docTabs }}" as="d" hint-placeholder-count="4">
+            <button onClick="{{ d.open }}" style="all:unset;cursor:pointer;box-sizing:border-box;padding:14px 16px;border-radius:14px;font-size:16px;font-weight:600;background:{{ d.bg }};color:{{ d.color }};">{{ d.title }}</button>
+          </sc-for>
+        </div>
+        <article style="grid-column:span 2;min-width:0;max-width:760px;display:flex;flex-direction:column;gap:28px;">
+          <div style="display:flex;flex-direction:column;gap:10px;padding-bottom:24px;border-bottom:1px solid var(--ink-100);">
+            <h2 style="margin:0;font-size:clamp(28px,3vw,40px);line-height:1.08;letter-spacing:-0.03em;font-weight:800;text-wrap:balance;">{{ doc.title }}</h2>
+            <div style="font-size:14px;color:var(--ink-400);">Редакция от {{ docDate }}</div>
+          </div>
+          <sc-for list="{{ doc.sections }}" as="s" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <h3 style="margin:0;font-size:20px;font-weight:700;letter-spacing:-0.02em;">{{ s.h }}</h3>
+              <sc-for list="{{ s.ps }}" as="para" hint-placeholder-count="2"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--ink-800);text-wrap:pretty;">{{ para }}</p></sc-for>
+            </div>
+          </sc-for>
+          <div style="font-size:15px;color:var(--ink-600);line-height:1.5;padding:20px;border-radius:16px;background:var(--ink-50);">Вопросы по документу — пиши на <a href="mailto:hi@firmachi.kz">hi@firmachi.kz</a></div>
+        </article>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <footer data-screen-label="Footer" style="background:var(--ink-900);color:var(--white);padding:clamp(48px,6vw,80px) 16px 32px;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:56px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:32px;">
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <img src="assets/logo-wordmark-white.png" alt="Chik Chirik" style="height:30px;width:auto;align-self:flex-start;">
+          <p style="margin:0;font-size:15px;line-height:1.5;color:var(--ink-300);max-width:260px;">Приложение для поиска креативных специалистов в Казахстане.</p>
+          <div style="display:flex;gap:8px;">
+            <a href="{{ instagramUrl }}" target="_blank" aria-label="Instagram" style="width:44px;height:44px;border-radius:999px;background:var(--ink-800);color:var(--white);display:flex;align-items:center;justify-content:center;" style-hover="background:var(--blue-500);color:var(--white);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
+            </a>
+            <a href="{{ telegramUrl }}" target="_blank" aria-label="Telegram" style="width:44px;height:44px;border-radius:999px;background:var(--ink-800);color:var(--white);display:flex;align-items:center;justify-content:center;" style-hover="background:var(--blue-500);color:var(--white);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="font-size:13px;font-weight:600;color:var(--ink-400);">Приложение</div>
+          <a href="{{ appStoreUrl }}" target="_blank" style="color:var(--white);font-size:16px;" style-hover="color:var(--blue-300);">App Store</a>
+          <a href="{{ googlePlayUrl }}" target="_blank" style="color:var(--white);font-size:16px;" style-hover="color:var(--blue-300);">Google Play</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="font-size:13px;font-weight:600;color:var(--ink-400);">Соцсети</div>
+          <a href="{{ instagramUrl }}" target="_blank" style="color:var(--white);font-size:16px;" style-hover="color:var(--blue-300);">Instagram</a>
+          <a href="{{ telegramUrl }}" target="_blank" style="color:var(--white);font-size:16px;" style-hover="color:var(--blue-300);">Telegram</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <a href="#docs" onClick="{{ openDocsFirst }}" style="font-size:13px;font-weight:600;color:var(--ink-400);" style-hover="color:var(--white);">Документы</a>
+          <sc-for list="{{ docTabs }}" as="d" hint-placeholder-count="4">
+            <a href="#docs" onClick="{{ d.open }}" style="color:var(--white);font-size:16px;line-height:1.35;" style-hover="color:var(--blue-300);">{{ d.title }}</a>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--ink-800);font-size:14px;color:var(--ink-400);">
+        <span style="display:flex;gap:16px;flex-wrap:wrap;"><span>© 2026 Chik Chirik</span><span>Приложение создано в <a href="https://firmachi.kz/" target="_blank" rel="noopener" style="color:var(--white);font-weight:600;" style-hover="color:var(--blue-300);">Studio Firmachi</a></span></span>
+        <a href="mailto:hi@firmachi.kz" style="color:var(--ink-400);" style-hover="color:var(--white);">hi@firmachi.kz</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;instagramUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.instagram.com/chikchirik.io/&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ссылки&quot;},&quot;telegramUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;@chikchirik_support&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ссылки&quot;},&quot;appStoreUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://apps.apple.com/kz/app/chik-chirik/id6802269556&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ссылки&quot;},&quot;googlePlayUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://play.google.com/store/apps/details?id=com.chikchirik.chikchirikApp&amp;pcampaignid=web_share&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ссылки&quot;},&quot;docDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;1 октября 2026&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Документы&quot;}}">
+const DOCS = [
+  { id: 'terms', title: 'Пользовательское соглашение', sections: [ { "h": "1. Общие положения", "ps": [ "1.1. Настоящее Соглашение регулирует отношения между ТОО «Firmachi» (БИН 260540032365, юридический адрес: Республика Казахстан, г. Алматы, Алмалинский район, ул. Желтоксан, д. 87), далее «Администрация», и физическим или юридическим лицом, использующим мобильное приложение и сайт Chik Chirik, далее «Пользователь».", "1.2. Соглашение является договором присоединения в соответствии со ст. 389 Гражданского кодекса Республики Казахстан. Регистрация в Сервисе или начало его использования означает полное и безоговорочное принятие Соглашения.", "1.3. Если Пользователь не согласен с условиями Соглашения, он обязан прекратить использование Сервиса.", "1.4. Неотъемлемыми частями Соглашения являются Политика конфиденциальности, Согласие на обработку персональных данных и Публичная оферта на оказание платных услуг." ] }, { "h": "2. Термины", "ps": [ "2.1. Сервис — мобильное приложение и сайт Chik Chirik.", "2.2. Заказчик — Пользователь, который размещает заказ (бриф) на оказание услуг.", "2.3. Исполнитель — Пользователь, который предлагает свои услуги и откликается на заказы.", "2.4. Заказ — описание задачи, размещённое Заказчиком в Сервисе.", "2.5. Контент — тексты, изображения, видео, портфолио и иные материалы, которые Пользователь размещает в Сервисе.", "2.6. Открытие номера — платная услуга предоставления Исполнителю номера телефона Заказчика." ] }, { "h": "3. Роль Сервиса", "ps": [ "3.1. Сервис является информационной площадкой для размещения заказов, откликов и общения Пользователей.", "3.2. Администрация не является стороной договоров между Заказчиком и Исполнителем, не является их представителем, агентом или работодателем и не участвует в расчётах между ними.", "3.3. Администрация не гарантирует заключение сделки, а также качество, сроки, объём и законность услуг, которые оказывают Пользователи, и не отвечает за них.", "3.4. Условия сотрудничества, стоимость, сроки, порядок оплаты и передачи прав на результат работы Заказчик и Исполнитель определяют самостоятельно." ] }, { "h": "4. Регистрация и аккаунт", "ps": [ "4.1. Пользоваться Сервисом могут лица, достигшие 18 лет, либо лица от 16 лет с согласия законного представителя.", "4.2. Пользователь обязуется указывать достоверные данные и поддерживать их в актуальном состоянии.", "4.3. Одному лицу разрешается один аккаунт.", "4.4. Пользователь сам отвечает за сохранность данных для входа и за все действия, совершённые с его аккаунта." ] }, { "h": "5. Достоверность сведений и взаимодействие Пользователей", "ps": [ "5.1. Пользователь сам отвечает за достоверность и актуальность сведений, которые размещает в профиле, портфолио и Заказах.", "5.2. Рейтинги, отзывы, отметки и иные инструменты Сервиса (при их наличии) носят информационный характер и отражают мнение других Пользователей. Они не являются гарантией или рекомендацией Администрации.", "5.3. Решение о сотрудничестве Пользователи принимают самостоятельно и сами несут связанные с ним риски.", "5.4. Администрация рекомендует фиксировать договорённости письменно, не вносить полную предоплату до начала работ и знакомиться с портфолио и отзывами." ] }, { "h": "6. Номер телефона Заказчика", "ps": [ "6.1. Размещая Заказ, Заказчик соглашается, что его номер телефона может быть предоставлен Исполнителям, которые оплатили услугу «Открытие номера».", "6.2. Исполнитель вправе использовать полученный номер только для связи с Заказчиком по конкретному Заказу.", "6.3. Запрещается использовать полученные номера для рекламных рассылок и спама, передавать их третьим лицам, продавать, публиковать или собирать в базы.", "6.4. За нарушение п. 6.3 аккаунт блокируется без возврата оплаченных средств. Исполнитель также несёт ответственность в соответствии с законодательством Республики Казахстан о персональных данных." ] }, { "h": "7. Платные услуги", "ps": [ "7.1. Стоимость услуги «Открытие номера» указывается в Сервисе до оплаты.", "7.2. Оплата проходит через платёжный сервис FreedomPay. Администрация не хранит данные банковских карт Пользователей.", "7.3. Услуга считается оказанной в полном объёме в момент, когда номер Заказчика отображается Исполнителю.", "7.4. Оплата не возвращается, если Заказчик не ответил, отказался от сотрудничества, уже выбрал другого Исполнителя или Заказ стал неактуален.", "7.5. Возврат возможен только при технической ошибке, из-за которой номер не был отображён. Для этого Пользователь пишет на hi@firmachi.kz в течение 7 календарных дней с момента оплаты. Средства возвращаются на карту, с которой была оплата, в сроки, установленные FreedomPay и банком.", "7.6. Подробные условия изложены в Публичной оферте." ] }, { "h": "8. Контент и интеллектуальная собственность", "ps": [ "8.1. Пользователь гарантирует, что имеет все необходимые права на размещаемый Контент и что Контент не нарушает права третьих лиц.", "8.2. Размещая Контент, Пользователь безвозмездно предоставляет Администрации неисключительную лицензию на территории всего мира и на весь срок действия прав. Лицензия разрешает воспроизводить, показывать, адаптировать (в том числе кадрировать и изменять размер) и доводить Контент до всеобщего сведения:", "— в Сервисе;", "— в рекламных и маркетинговых материалах Chik Chirik: соцсети, сайт, баннеры, презентации — с указанием имени или ника Пользователя, если это технически возможно.", "8.3. Пользователь может отозвать согласие на использование Контента в рекламе, написав на hi@firmachi.kz. Ранее выпущенные материалы при этом изымать не требуется.", "8.4. Права на результаты работ, выполненных по Заказу, переходят от Исполнителя к Заказчику только по их собственной договорённости. Администрация в этом не участвует.", "8.5. Название, логотип, дизайн и программный код Сервиса принадлежат Администрации. Использовать их без письменного согласия Администрации запрещено." ] }, { "h": "9. Запрещённые действия", "ps": [ "Пользователю запрещается:", "— размещать ложные сведения, чужое портфолио или Контент, на который у него нет прав;", "— создавать фейковые аккаунты и выдавать себя за другое лицо;", "— заниматься мошенничеством, требовать оплату за несуществующие услуги;", "— размещать незаконный, оскорбительный, порнографический или экстремистский контент, а также рекламу без согласия Администрации;", "— рассылать спам, собирать данные других Пользователей автоматизированными средствами;", "— вмешиваться в работу Сервиса, обходить технические ограничения, в том числе платную услугу «Открытие номера»." ] }, { "h": "10. Модерация и блокировка", "ps": [ "10.1. Администрация вправе без предварительного уведомления удалять Контент и Заказы, ограничивать или блокировать аккаунт, если Пользователь нарушил Соглашение или законодательство.", "10.2. При блокировке за нарушение оплаченные услуги не возвращаются.", "10.3. Пользователь может удалить аккаунт в любой момент." ] }, { "h": "11. Ограничение ответственности", "ps": [ "11.1. Сервис предоставляется «как есть». Администрация не гарантирует его бесперебойную и безошибочную работу.", "11.2. Администрация не отвечает:", "— за действия и бездействие Пользователей, исполнение или неисполнение договорённостей между ними;", "— за содержание Контента и Заказов;", "— за достоверность сведений, размещённых Пользователями, в том числе в профилях, портфолио и отзывах;", "— за убытки, упущенную выгоду и потерю данных, возникшие из-за использования Сервиса;", "— за сбои по вине операторов связи, платёжных систем и иных третьих лиц.", "11.3. Если ответственность Администрации всё же наступает, она ограничена суммой, которую Пользователь заплатил Администрации за последние 3 месяца.", "11.4. Пользователь обязуется возместить Администрации убытки, вызванные претензиями третьих лиц из-за нарушения Пользователем Соглашения или прав третьих лиц." ] }, { "h": "12. Споры", "ps": [ "12.1. Споры между Заказчиком и Исполнителем они решают самостоятельно. Администрация может содействовать, но не обязана.", "12.2. Споры с Администрацией решаются в претензионном порядке. Претензия направляется на hi@firmachi.kz, срок ответа — 30 календарных дней.", "12.3. Если спор не урегулирован, он рассматривается в суде по месту нахождения Администрации (г. Алматы) по праву Республики Казахстан." ] }, { "h": "13. Изменение Соглашения", "ps": [ "13.1. Администрация вправе изменять Соглашение. Новая редакция вступает в силу с момента публикации в Сервисе.", "13.2. Если Пользователь продолжает пользоваться Сервисом после публикации, это означает согласие с новой редакцией." ] }, { "h": "14. Реквизиты", "ps": [ "ТОО «Firmachi»", "БИН 260540032365", "Республика Казахстан, г. Алматы, Алмалинский район, ул. Желтоксан, д. 87", "Почта: hi@firmachi.kz" ] } ] },
+  { id: 'privacy', title: 'Политика конфиденциальности', sections: [ { "h": "1. Общие положения", "ps": [ "1.1. Политика определяет, какие персональные данные Пользователей мобильного приложения и сайта Chik Chirik (далее — Сервис) собирает и обрабатывает ТОО «Firmachi» (БИН 260540032365, Республика Казахстан, г. Алматы, Алмалинский район, ул. Желтоксан, д. 87), далее «Администрация», для чего и как они защищаются.", "1.2. Политика разработана в соответствии с Законом Республики Казахстан «О персональных данных и их защите» от 21 мая 2013 года № 94-V и является частью Пользовательского соглашения.", "1.3. Используя Сервис, Пользователь подтверждает, что ознакомился с Политикой и принимает её." ] }, { "h": "2. Какие данные собираются", "ps": [ "2.1. Данные, которые Пользователь указывает сам: имя или ник, номер телефона, адрес электронной почты, город, фото профиля, описание навыков, портфолио, тексты заказов, откликов и сообщений в чате.", "2.2. Данные об оплате: факт, сумма и дата оплаты услуги «Открытие номера», идентификатор транзакции. Данные банковских карт обрабатывает платёжный сервис FreedomPay, Администрация их не получает и не хранит.", "2.3. Технические данные: модель устройства, версия операционной системы и приложения, IP-адрес, идентификатор устройства, сведения о действиях в Сервисе и сбоях." ] }, { "h": "3. Цели обработки", "ps": [ "3.1. Регистрация, вход и работа аккаунта.", "3.2. Размещение заказов, откликов, профилей и портфолио, работа чата.", "3.3. Оказание платной услуги «Открытие номера», в том числе показ номера телефона Заказчика Исполнителю, который её оплатил.", "3.4. Связь с Пользователем: уведомления о заказах, откликах и сообщениях, ответы на обращения.", "3.5. Предотвращение мошенничества, спама и нарушений Пользовательского соглашения.", "3.6. Анализ работы Сервиса и его улучшение.", "3.7. Использование портфолио в рекламе Chik Chirik в пределах, указанных в Пользовательском соглашении.", "3.8. Исполнение требований законодательства Республики Казахстан." ] }, { "h": "4. Кому передаются данные", "ps": [ "4.1. Другим Пользователям — в объёме, необходимом для работы Сервиса: профиль, портфолио, заказы и отклики видны другим Пользователям. Номер телефона Заказчика показывается только Исполнителям, которые оплатили услугу «Открытие номера».", "4.2. Платёжному сервису FreedomPay — для проведения оплаты.", "4.3. Государственным органам — в случаях, предусмотренных законодательством Республики Казахстан.", "4.4. Иным третьим лицам данные не передаются. Администрация не продаёт персональные данные Пользователей." ] }, { "h": "5. Хранение и защита", "ps": [ "5.1. Персональные данные хранятся в базе данных, расположенной на территории Республики Казахстан.", "5.2. Данные хранятся, пока действует аккаунт, и не дольше, чем требуют цели обработки и законодательство. После удаления аккаунта данные удаляются или обезличиваются, кроме сведений, которые Администрация обязана хранить по закону.", "5.3. Администрация принимает правовые, организационные и технические меры для защиты данных от неправомерного доступа, изменения, распространения и уничтожения." ] }, { "h": "6. Права Пользователя", "ps": [ "Пользователь вправе:", "— знать, есть ли у Администрации его персональные данные, и получить их;", "— требовать исправления, блокирования или уничтожения данных, если они неполные, устарели, недостоверны или обрабатываются незаконно;", "— отозвать согласие на обработку персональных данных;", "— удалить аккаунт в приложении;", "— обжаловать действия Администрации в уполномоченном органе или в суде.", "Запросы направляются на hi@firmachi.kz. Срок ответа — в пределах сроков, установленных законодательством Республики Казахстан." ] }, { "h": "7. Cookie", "ps": [ "7.1. Сайт и приложение могут использовать технические cookie и аналогичные технологии, необходимые для работы Сервиса. Сторонние сервисы аналитики и рекламы не используются.", "7.2. Пользователь может отключить cookie в настройках браузера, но часть функций Сервиса может работать некорректно." ] }, { "h": "8. Изменение Политики", "ps": [ "8.1. Администрация вправе изменять Политику. Новая редакция вступает в силу с момента публикации в Сервисе." ] }, { "h": "Реквизиты", "ps": [ "ТОО «Firmachi»", "БИН 260540032365", "Республика Казахстан, г. Алматы, Алмалинский район, ул. Желтоксан, д. 87", "Почта: hi@firmachi.kz" ] } ] },
+  { id: 'consent', title: 'Согласие на обработку персональных данных', sections: [ { "h": "1. Кто даёт согласие", "ps": [ "1.1. Я, Пользователь мобильного приложения и сайта Chik Chirik (далее — Сервис), в соответствии с Законом Республики Казахстан «О персональных данных и их защите» от 21 мая 2013 года № 94-V свободно, своей волей и в своём интересе даю согласие ТОО «Firmachi» (БИН 260540032365, Республика Казахстан, г. Алматы, Алмалинский район, ул. Желтоксан, д. 87), далее «Оператор», на сбор и обработку моих персональных данных на условиях ниже.", "1.2. Согласие даётся в электронной форме при регистрации в Сервисе путём проставления отметки или нажатия кнопки продолжения регистрации." ] }, { "h": "2. Перечень персональных данных", "ps": [ "— имя или ник, фото профиля;", "— номер телефона, адрес электронной почты, город;", "— сведения о навыках, опыте и портфолио;", "— содержание заказов, откликов и сообщений в чате;", "— сведения об оплатах услуг Сервиса (без данных банковской карты);", "— технические данные устройства и сведения о действиях в Сервисе." ] }, { "h": "3. Цели обработки", "ps": [ "— регистрация и работа аккаунта;", "— размещение заказов, откликов, профиля и портфолио, работа чата;", "— оказание платной услуги «Открытие номера»;", "— направление уведомлений и ответы на обращения;", "— предотвращение мошенничества и нарушений;", "— анализ и улучшение Сервиса;", "— использование портфолио в рекламе Chik Chirik;", "— исполнение требований законодательства Республики Казахстан." ] }, { "h": "4. Действия с данными", "ps": [ "4.1. Сбор, запись, систематизация, накопление, хранение, уточнение, использование, распространение в пределах Сервиса, передача, обезличивание, блокирование и уничтожение, с использованием средств автоматизации и без них." ] }, { "h": "5. Номер телефона Заказчика", "ps": [ "5.1. Если я размещаю заказ как Заказчик, я отдельно соглашаюсь, что мой номер телефона будет показан Исполнителям, которые оплатили услугу «Открытие номера», для связи со мной по этому заказу." ] }, { "h": "6. Передача третьим лицам", "ps": [ "6.1. Я соглашаюсь на передачу моих данных другим Пользователям в объёме, необходимом для работы Сервиса, платёжному сервису FreedomPay, а также государственным органам в случаях, предусмотренных законом.", "6.2. Мои данные хранятся на территории Республики Казахстан и не передаются за её пределы." ] }, { "h": "7. Срок действия и отзыв", "ps": [ "7.1. Согласие действует до удаления аккаунта или до его отзыва.", "7.2. Я могу отозвать согласие, направив заявление на hi@firmachi.kz. Отзыв согласия означает, что я больше не смогу пользоваться Сервисом, и аккаунт будет удалён.", "7.3. Отзыв не допускается, если это противоречит законам Республики Казахстан или если остаются неисполненные обязательства." ] }, { "h": "Реквизиты", "ps": [ "ТОО «Firmachi»", "БИН 260540032365", "Республика Казахстан, г. Алматы, Алмалинский район, ул. Желтоксан, д. 87", "Почта: hi@firmachi.kz" ] } ] },
+  { id: 'offer', title: 'Публичная оферта', sections: [ { "h": "1. Общие положения", "ps": [ "1.1. Настоящий документ является публичной офертой ТОО «Firmachi» (БИН 260540032365, Республика Казахстан, г. Алматы, Алмалинский район, ул. Желтоксан, д. 87), далее «Исполнитель оферты», в соответствии со ст. 395 Гражданского кодекса Республики Казахстан.", "1.2. Оферта адресована Пользователям мобильного приложения Chik Chirik (далее — Сервис), далее «Покупатель», и определяет условия оказания платной услуги «Открытие номера».", "1.3. Акцептом оферты (ст. 396 ГК РК) является оплата услуги в Сервисе. С момента оплаты договор считается заключённым.", "1.4. Оферта действует вместе с Пользовательским соглашением. Термины используются в значении, указанном в Пользовательском соглашении." ] }, { "h": "2. Предмет", "ps": [ "2.1. Исполнитель оферты предоставляет Покупателю доступ к номеру телефона Заказчика по выбранному Заказу, а Покупатель оплачивает эту услугу.", "2.2. Услуга даёт только возможность связаться с Заказчиком. Исполнитель оферты не гарантирует, что Заказчик ответит, согласится на сотрудничество или что Заказ будет заключён." ] }, { "h": "3. Стоимость и оплата", "ps": [ "3.1. Стоимость услуги указывается в Сервисе до оплаты, в тенге, и является окончательной на момент оплаты.", "3.2. Оплата производится банковской картой через платёжный сервис FreedomPay. Данные карты вводятся на стороне FreedomPay, Исполнитель оферты их не получает и не хранит.", "3.3. Обязательство Покупателя по оплате считается исполненным с момента подтверждения платежа FreedomPay.", "3.4. Исполнитель оферты вправе изменять стоимость услуги. Новая стоимость не применяется к уже оплаченным услугам." ] }, { "h": "4. Порядок оказания", "ps": [ "4.1. Номер телефона Заказчика отображается Покупателю сразу после подтверждения оплаты.", "4.2. Услуга считается оказанной в полном объёме и принятой Покупателем в момент отображения номера. Подписание акта не требуется.", "4.3. Покупатель вправе использовать номер только для связи с Заказчиком по конкретному Заказу. Ограничения указаны в разделе 6 Пользовательского соглашения." ] }, { "h": "5. Возврат средств", "ps": [ "5.1. Поскольку услуга оказывается в момент отображения номера, после этого оплата не возвращается, в том числе если Заказчик не ответил, отказался от сотрудничества, выбрал другого исполнителя или Заказ стал неактуален.", "5.2. Если из-за технической ошибки номер не отобразился, Покупатель направляет заявление на hi@firmachi.kz в течение 7 календарных дней с момента оплаты, указав дату, сумму и Заказ.", "5.3. Исполнитель оферты рассматривает заявление в течение 7 календарных дней. При подтверждении ошибки он либо предоставляет доступ к номеру, либо возвращает средства на карту, с которой была оплата. Сроки зачисления зависят от FreedomPay и банка Покупателя.", "5.4. При блокировке аккаунта за нарушение Пользовательского соглашения оплаченные услуги не возвращаются." ] }, { "h": "6. Ответственность", "ps": [ "6.1. Исполнитель оферты не отвечает за действия Заказчика, достоверность его номера и сведений в Заказе, а также за результат переговоров.", "6.2. Ответственность Исполнителя оферты ограничена стоимостью оплаченной услуги.", "6.3. Стороны освобождаются от ответственности при обстоятельствах непреодолимой силы." ] }, { "h": "7. Споры", "ps": [ "7.1. Претензии направляются на hi@firmachi.kz, срок ответа — 30 календарных дней.", "7.2. Если спор не урегулирован, он рассматривается в суде г. Алматы по праву Республики Казахстан." ] }, { "h": "8. Изменение оферты", "ps": [ "8.1. Исполнитель оферты вправе изменять оферту. Новая редакция действует с момента публикации в Сервисе и применяется к услугам, оплаченным после публикации." ] }, { "h": "Реквизиты", "ps": [ "ТОО «Firmachi»", "БИН 260540032365", "Республика Казахстан, г. Алматы, Алмалинский район, ул. Желтоксан, д. 87", "Почта: hi@firmachi.kz" ] } ] }
+];
+
+class Component extends DCLogic {
+  state = { page: 'home', doc: 'terms', faqOpen: 0, w: typeof window !== 'undefined' ? window.innerWidth : 1200 };
+  componentDidMount() {
+    this.onR = () => this.setState({ w: window.innerWidth }); window.addEventListener('resize', this.onR);
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (this.reduced) return;
+    let tries = 0;
+    const wait = () => {
+      if (window.gsap && window.ScrollTrigger) return this.initMotion();
+      if (++tries < 60) this.waitT = setTimeout(wait, 100);
+    };
+    wait();
+  }
+  componentDidUpdate(_, prev) {
+    if (prev.page !== this.state.page && this.motionReady) setTimeout(() => this.initPage(), 40);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onR);
+    clearTimeout(this.waitT); this.cleanupPage();
+    if (this.lenis) { window.gsap && gsap.ticker.remove(this.raf); this.lenis.destroy(); }
+  }
+  initMotion() {
+    gsap.registerPlugin(ScrollTrigger);
+    if (window.Lenis) {
+      this.lenis = new Lenis({ duration: 1.1, easing: t => 1 - Math.pow(1 - t, 3) });
+      this.lenis.on('scroll', ScrollTrigger.update);
+      this.raf = t => this.lenis.raf(t * 1000);
+      gsap.ticker.add(this.raf); gsap.ticker.lagSmoothing(0);
+    }
+    this.motionReady = true;
+    this.initPage(true);
+    document.fonts && document.fonts.ready.then(() => ScrollTrigger.refresh());
+    window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
+  }
+  cleanupPage() {
+    if (this.ctx) this.ctx.revert();
+    clearInterval(this.chipT);
+    if (this.hero && this.onMove) { this.hero.removeEventListener('pointermove', this.onMove); this.hero.removeEventListener('pointerleave', this.onLeave); }
+    document.removeEventListener('visibilitychange', this.onVis || (() => {}));
+  }
+  splitWords(el) {
+    if (el.dataset.split) return el.querySelectorAll('[data-w]');
+    const text = el.textContent; el.setAttribute('aria-label', text); el.dataset.split = '1';
+    el.innerHTML = text.split(' ').map(t => '<span aria-hidden="true" style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em;"><span data-w="1" style="display:inline-block;">' + t + '</span></span>').join(' ');
+    return el.querySelectorAll('[data-w]');
+  }
+  initPage(first) {
+    this.cleanupPage();
+    const root = document;
+    this.ctx = gsap.context(() => {
+      const hero = root.querySelector('[data-screen-label="Hero"]');
+      if (hero) {
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+        tl.from(hero.querySelectorAll('h1 [data-w]'), { yPercent: 110, duration: 0.9, stagger: 0.08 }, 0.1)
+          .from(hero.querySelectorAll('[data-intro]'), { y: 24, opacity: 0, duration: 0.7, stagger: 0.08 }, 0.25)
+          .from(hero.querySelectorAll('[data-hero-card]'), { y: 120, opacity: 0, duration: 1.1, stagger: { each: 0.07, from: 'center' }, ease: 'power4.out' }, 0.45);
+        this.initPointer(hero);
+        this.initChips(hero);
+      }
+      root.querySelectorAll('main section:not([data-screen-label="Hero"]) h2, main[data-screen-label="Documents"] h1').forEach(h2 => {
+        const words = this.splitWords(h2);
+        gsap.from(words, { yPercent: 110, duration: 0.8, stagger: 0.06, ease: 'power3.out', scrollTrigger: { trigger: h2, start: 'top 85%' } });
+      });
+      root.querySelectorAll('main section').forEach(sec => {
+        const items = sec.querySelectorAll('[data-rv]');
+        if (items.length) gsap.from(items, { y: 48, opacity: 0, duration: 0.9, stagger: 0.08, ease: 'power3.out', scrollTrigger: { trigger: items[0], start: 'top 88%' } });
+      });
+      root.querySelectorAll('[data-count]').forEach(el => {
+        const end = +el.dataset.count; const o = { v: 0 };
+        const fmt = v => Math.round(v).toLocaleString('ru-RU').replace(/\u00a0|\s/g, '\u2009');
+        gsap.to(o, { v: end, duration: 1.8, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 90%' }, onUpdate: () => { el.textContent = fmt(o.v); }, onComplete: () => { el.textContent = fmt(end); } });
+      });
+    });
+    ScrollTrigger.refresh();
+  }
+  initPointer(hero) {
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+    const imgs = [...hero.querySelectorAll('[data-par]')];
+    const qs = imgs.map((img, i) => ({ x: gsap.quickTo(img, 'x', { duration: 0.8, ease: 'power3.out' }), y: gsap.quickTo(img, 'y', { duration: 0.8, ease: 'power3.out' }), d: 10 + (i % 3) * 6 }));
+    this.hero = hero;
+    this.onMove = e => {
+      const r = hero.getBoundingClientRect();
+      const nx = (e.clientX - r.left) / r.width - 0.5, ny = (e.clientY - r.top) / r.height - 0.5;
+      qs.forEach(q => { q.x(-nx * q.d); q.y(-ny * q.d); });
+    };
+    this.onLeave = () => qs.forEach(q => { q.x(0); q.y(0); });
+    hero.addEventListener('pointermove', this.onMove);
+    hero.addEventListener('pointerleave', this.onLeave);
+  }
+  initChips(hero) {
+    const pools = [['Тимур','Ерлан','Данияр'],['Арман','Санжар','Нурлан'],['Айгерим','Мадина','Асель'],['Дана','Жанель','Алия'],['Алихан','Бекзат','Руслан'],['Камила','Томирис','Сабина']];
+    const chips = [...hero.querySelectorAll('[data-chip-text]')];
+    if (!chips.length) return;
+    const cp = chips.map(c => pools.find(p => p.includes(c.textContent.split(' · ')[0])) || pools[0]);
+    const idx = chips.map(() => 0);
+    const tick = () => {
+      if (document.hidden) return;
+      const i = Math.floor(Math.random() * chips.length);
+      const el = chips[i], chip = el.parentElement, role = el.textContent.split(' · ')[1];
+      idx[i] = (idx[i] + 1) % cp[i].length;
+      gsap.timeline().to(chip, { y: 8, opacity: 0, duration: 0.25, ease: 'power2.in' })
+        .call(() => { el.textContent = cp[i][idx[i]] + ' · ' + role; })
+        .fromTo(chip, { y: -8 }, { y: 0, opacity: 1, duration: 0.35, ease: 'power3.out' });
+    };
+    this.chipT = setInterval(tick, 2400);
+  }
+  scrollToY(y, smooth) {
+    if (this.lenis) this.lenis.scrollTo(y, { immediate: !smooth });
+    else window.scrollTo({ top: y, behavior: smooth ? 'smooth' : 'auto' });
+  }
+  toTop() { this.scrollToY(0, false); }
+  renderVals() {
+    const p = this.props;
+    const { page, doc, faqOpen } = this.state;
+    const openDoc = id => e => { e && e.preventDefault(); this.setState({ page: 'docs', doc: id }); this.toTop(); };
+    const current = DOCS.find(d => d.id === doc) || DOCS[0];
+    const faqData = [
+      { q: 'Это бесплатно?', a: 'Скачать приложение, создать профиль и опубликовать задачу — бесплатно.' },
+      { q: 'Кого можно найти?', a: 'Режиссёров монтажа, графических и моушн-дизайнеров, фотографов, видеографов, smm-специалистов, ai-креаторов и сценаристов.' },
+      { q: 'В каких городах работает?', a: 'Основная база специалистов — Алматы и Астана, но многие работают удалённо по всему Казахстану.' },
+      { q: 'Как стать исполнителем?', a: 'Скачай приложение, заполни профиль, добавь портфолио и откликайся на задачи.' },
+      { q: 'Как связаться с поддержкой?', a: 'Напиши нам в Telegram или на hi@firmachi.kz.' }
+    ];
+    return {
+      isHome: page === 'home',
+      wide: this.state.w >= 760,
+      heroOuter: this.state.w >= 1100,
+      heroMid: this.state.w >= 640,
+      isDocs: page === 'docs',
+      showQr: this.state.w >= 760,
+      showKeys: this.state.w >= 760 && !(typeof navigator !== 'undefined' && /iPhone|iPad|Android/i.test(navigator.userAgent)),
+      modKey: (typeof navigator !== 'undefined' && /Mac/i.test(navigator.platform || navigator.userAgent)) ? '⌘' : 'Ctrl',
+      botHint: this.state.w >= 760 ? 'Наведи камеру телефона на код или открой бота по кнопке. Ничего не нужно скачивать.' : 'Открывается мгновенно, ничего не нужно скачивать.',
+      shareLabel: this.state.copied ? 'Ссылка скопирована' : (this.state.w >= 760 ? 'Скопировать ссылку' : 'Поделиться сайтом'),
+      shareSite: e => {
+        e && e.preventDefault();
+        const url = location.origin + location.pathname;
+        if (navigator.share && this.state.w < 760) { navigator.share({ title: 'Chik Chirik', text: 'Находи своих через Chik Chirik', url }).catch(() => {}); return; }
+        (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).catch(() => {}).finally(() => {
+          this.setState({ copied: true }); clearTimeout(this.cpT); this.cpT = setTimeout(() => this.setState({ copied: false }), 2000);
+        });
+      },
+      instagramUrl: p.instagramUrl ?? 'https://instagram.com/chikchirik',
+      telegramUrl: p.telegramUrl ?? 'https://t.me/chikchirik',
+      appStoreUrl: p.appStoreUrl ?? 'https://apps.apple.com/',
+      googlePlayUrl: p.googlePlayUrl ?? 'https://play.google.com/store',
+      docDate: p.docDate ?? '1 октября 2026',
+      goHome: e => { e && e.preventDefault(); this.setState({ page: 'home' }); this.toTop(); },
+      goHomeAnchor: e => {
+        const id = e.currentTarget.getAttribute('href').slice(1);
+        if (this.state.page !== 'home') {
+          e.preventDefault();
+          this.setState({ page: 'home' }, () => setTimeout(() => { const el = document.getElementById(id); if (el) this.scrollToY(el.getBoundingClientRect().top + window.scrollY - 90, false); }, 80));
+        } else {
+          e.preventDefault();
+          const el = document.getElementById(id); if (el) this.scrollToY(el.getBoundingClientRect().top + window.scrollY - 90, true);
+        }
+      },
+      openDocsFirst: openDoc(doc),
+      docTabs: DOCS.map(d => ({ title: d.title, open: openDoc(d.id), bg: page === 'docs' && d.id === doc ? 'var(--white)' : 'transparent', color: page === 'docs' && d.id === doc ? 'var(--blue-700)' : 'var(--ink-800)' })),
+      doc: { ...current, sections: current.sections.map(s => ({ h: s.h, ps: s.ps || [s.p] })) },
+      stats: [
+        { value: 5040, display: '5 040', suffix: '', label: 'пользователей в приложении' },
+        { value: 2149, display: '2 149', suffix: '', label: 'креативных специалистов готовы к заказам' },
+        { value: 636, display: '636', suffix: '', label: 'проектов уже опубликовано' },
+        { value: 17, display: '17', suffix: '', label: 'откликов в среднем получает активный проект' }
+      ],
+      categories: [
+        { img: 'assets/p-photographer.png', title: 'Фотографы', sub: 'Предметка, портреты, события' },
+        { img: 'assets/p-videographer.png', title: 'Видеографы', sub: 'Реклама, клипы, рилсы' },
+        { img: 'assets/p-designer.png', title: 'Дизайнеры', sub: 'Айдентика, иллюстрации, соцсети' },
+        { img: 'assets/p-blogger.png', title: 'SMM и блогеры', sub: 'Контент, съемка, таргетинг' }
+      ],
+      steps: [
+        { n: '01', title: 'Опиши задачу', text: 'Что нужно сделать, сроки и бюджет — бриф займёт пару минут.' },
+        { n: '02', title: 'Получи отклики', text: 'Исполнители сами откликаются. Смотри портфолио и выбирай своих.' },
+        { n: '03', title: 'Договорись в чате', text: 'Обсуди детали, правки и оплату напрямую с исполнителем.' }
+      ],
+      forClients: ['Проверенные портфолио в одном месте', 'Отклики в первые часы после публикации', 'Фильтры по навыкам, городу и бюджету', 'Все договорённости — в одном чате'],
+      forCreators: ['Свежие задачи от брендов и агентств', 'Профиль и портфолио вместо резюме', 'Бонусы за приглашённых друзей', 'Без комиссии за отклик'],
+      faq: faqData.map((f, i) => ({ ...f, open: faqOpen === i, sign: faqOpen === i ? '−' : '+', toggle: () => this.setState({ faqOpen: faqOpen === i ? -1 : i }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

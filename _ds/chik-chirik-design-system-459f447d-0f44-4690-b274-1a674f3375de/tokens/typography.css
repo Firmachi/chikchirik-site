@@ -1,0 +1,43 @@
+:root{
+  /* Scale — app UI is compact; posters go huge. */
+  --text-2xs:11px;
+  --text-xs:12px;
+  --text-sm:13px;
+  --text-md:15px;
+  --text-lg:17px;
+  --text-xl:20px;
+  --text-2xl:24px;
+  --text-3xl:28px;
+  --text-4xl:34px;
+  --text-5xl:48px;
+  --text-6xl:64px;
+  --text-display:120px;
+
+  --leading-tight:1.05;
+  --leading-snug:1.2;
+  --leading-normal:1.35;
+  --leading-relaxed:1.5;
+
+  --weight-regular:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --weight-bold:700;
+  --weight-black:900;
+
+  --tracking-display:-0.03em;
+  --tracking-tight:-0.02em;
+  --tracking-normal:-0.01em;
+  --tracking-wide:0.02em;
+
+  /* Roles */
+  --type-wordmark:var(--weight-black) var(--text-6xl)/var(--leading-tight) var(--font-display);
+  --type-poster:var(--weight-black) var(--text-4xl)/var(--leading-tight) var(--font-text);
+  --type-h1:var(--weight-bold) var(--text-3xl)/var(--leading-snug) var(--font-text);
+  --type-h2:var(--weight-bold) var(--text-xl)/var(--leading-snug) var(--font-text);
+  --type-h3:var(--weight-bold) var(--text-lg)/var(--leading-snug) var(--font-text);
+  --type-body:var(--weight-regular) var(--text-md)/var(--leading-normal) var(--font-text);
+  --type-body-strong:var(--weight-semibold) var(--text-md)/var(--leading-normal) var(--font-text);
+  --type-caption:var(--weight-regular) var(--text-sm)/var(--leading-normal) var(--font-text);
+  --type-label:var(--weight-semibold) var(--text-xs)/var(--leading-normal) var(--font-text);
+  --type-tab:var(--weight-semibold) var(--text-2xs)/1.2 var(--font-text);
+}

@@ -1,0 +1,57 @@
+:root{
+  /* Brand blue — sampled from the logo (#0057FF), poster (#003CD3) and app UI (#0B3DA9) */
+  --blue-50:#EFF5FF;
+  --blue-100:#E0E9FF;
+  --blue-200:#BFD5FF;
+  --blue-300:#4081FF;
+  --blue-400:#206CFF;
+  --blue-500:#0057FF;
+  --blue-600:#003CD3;
+  --blue-700:#0B3DA9;
+  --blue-900:#04205C;
+
+  /* Neutrals — app is white-on-white with flat grey cards */
+  --ink-1000:#000000;
+  --ink-900:#111214;
+  --ink-800:#292A2E;
+  --ink-600:#5B5C61;
+  --ink-400:#8E8E93;
+  --ink-300:#B8B8BC;
+  --ink-200:#E4E4E6;
+  --ink-100:#EAEAEA;
+  --ink-50:#F5F5F5;
+  --white:#FFFFFF;
+  --off-white:#F2F1EF;   /* poster paper */
+
+  /* Semantic */
+  --success:#12A150;
+  --warning:#E9A23B;
+  --danger:#E2373B;
+
+  /* Aliases */
+  --text-primary:var(--ink-1000);
+  --text-body:var(--ink-800);
+  --text-muted:var(--ink-400);
+  --text-inverse:var(--white);
+  --text-accent:var(--blue-700);
+  --text-link:var(--blue-600);
+
+  --surface-page:var(--white);
+  --surface-card:var(--ink-50);
+  --surface-card-alt:var(--white);
+  --surface-inverse:var(--ink-900);
+  --surface-brand:var(--blue-500);
+  --surface-brand-deep:var(--blue-600);
+  --surface-brand-soft:var(--blue-100);
+  --surface-paper:var(--off-white);
+
+  --border-subtle:var(--ink-100);
+  --border-strong:var(--ink-200);
+  --border-brand:var(--blue-500);
+
+  --icon-default:var(--ink-1000);
+  --icon-muted:var(--ink-400);
+  --icon-accent:var(--blue-700);
+
+  --focus-ring:var(--blue-500);
+}

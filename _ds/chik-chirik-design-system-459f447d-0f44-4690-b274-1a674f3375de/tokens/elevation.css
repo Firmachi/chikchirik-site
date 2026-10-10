@@ -1,0 +1,12 @@
+:root{
+  /* The product is mostly flat: surfaces separate by tone, not shadow.
+     Shadows exist only for floating chrome and the 3D brand renders. */
+  --shadow-none:none;
+  --shadow-tabbar:0 -1px 0 var(--border-subtle);
+  --shadow-float:0 8px 24px rgba(0,0,0,.10);
+  --shadow-sheet:0 -12px 40px rgba(0,0,0,.14);
+  --shadow-brand-glow:0 12px 40px rgba(0,87,255,.28);
+  --overlay-scrim:rgba(0,0,0,.48);
+  --overlay-protect:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.72) 100%); /* @kind other */
+  --blur-chrome:saturate(180%) blur(20px); /* @kind other */
+}
