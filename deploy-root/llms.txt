@@ -18,5 +18,8 @@
 - [Telegram](https://t.me/chikchirik)
 - [Instagram](https://instagram.com/chikchirik)
 
+## Кто стоит за сервисом
+Приложение разработано и управляется ТОО «Firmachi» (Studio Firmachi, https://firmachi.kz/), БИН 260540032365, г. Алматы, ул. Желтоксан, 87.
+
 ## Контакты
 hi@firmachi.kz
