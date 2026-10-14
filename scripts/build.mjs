@@ -24,6 +24,8 @@ fs.cpSync(path.join(ROOT, 'assets'), path.join(DIST, 'assets'), {
 });
 fs.cpSync(path.join(ROOT, '_ds'), path.join(DIST, '_ds'), { recursive: true });
 fs.copyFileSync(path.join(ROOT, 'support.js'), path.join(DIST, 'support.js'));
+// файлы подтверждения прав (Google Search Console, Яндекс Вебмастер)
+ROOT_FILES.push(...fs.readdirSync(path.join(ROOT, 'deploy-root')).filter((f) => /^(google[0-9a-f]+|yandex_[0-9a-f]+)\.html$/.test(f)));
 for (const f of ROOT_FILES) {
   const p = path.join(ROOT, 'deploy-root', f);
   if (fs.existsSync(p)) fs.copyFileSync(p, path.join(DIST, f));
