@@ -4,7 +4,8 @@
 // 2. Переносит SEO-теги (title, description, canonical, Open Graph, JSON-LD) из <helmet>
 //    прямо в <head>, чтобы их видели боты без JavaScript (Telegram, WhatsApp, Яндекс, ИИ-поисковики).
 // 3. Английская (/en/) и казахская (/kz/) версии: тот же исходник + словари i18n/en.json, i18n/kk.json.
-//    Тексты юридических документов не переводятся (только их названия).
+//    Юридические документы: если для языка есть i18n/<код>-docs.json — подставляется перевод,
+//    иначе тексты остаются на русском (переводятся только названия).
 // 4. Пре-рендер: открывает страницы в headless Chrome и кладёт в HTML статическую копию
 //    текста (#ssr). Её видят только боты/браузеры без JS — с JS живая страница рисуется как обычно.
 //    Если Chrome недоступен, сборка не падает — просто без шага 4.
@@ -37,7 +38,7 @@ for (const f of ROOT_FILES) {
 const SITE = 'https://chikchirik.kz';
 const LANGS = [
   { code: 'en', url: '/en/', file: 'en/index.html', dict: 'en.json' },
-  { code: 'kk', url: '/kz/', file: 'kz/index.html', dict: 'kk.json' },
+  { code: 'kk', url: '/kz/', file: 'kz/index.html', dict: 'kk.json', docs: 'kk-docs.json' },
 ];
 const hreflang = [
   `<link rel="alternate" hreflang="ru" href="${SITE}/">`,
@@ -67,16 +68,18 @@ function hoistHead(html) {
 }
 
 // --- 3. Перевод по словарю ---
-function translate(html, dict) {
-  // Массив DOCS (юридические тексты) не трогаем — переводим в нём только названия документов
+function translate(html, dict, docs) {
+  // Массив DOCS (юридические тексты): переведённый целиком, если есть docs, иначе — только названия
   const a = html.indexOf('const DOCS = [');
   const b = html.indexOf('\n];', a) + 3;
+  if (docs) html = html.slice(0, a) + `const DOCS = ${JSON.stringify(docs)};` + html.slice(b);
   const pairs = Object.entries(dict).sort((x, y) => y[0].length - x[0].length);
   const apply = (text, only) => {
     for (const [ru, en] of pairs) if (!only || only(ru)) text = text.split(ru).join(en);
     return text;
   };
-  const out = apply(html.slice(0, a)) + apply(html.slice(a, b), (ru) => ru.startsWith('title: ')) + apply(html.slice(b));
+  const end = docs ? html.indexOf('];', a) + 2 : b;
+  const out = apply(html.slice(0, a)) + (docs ? html.slice(a, end) : apply(html.slice(a, b), (ru) => ru.startsWith('title: '))) + apply(html.slice(end));
   // Страница лежит в подпапке (/en/, /kz/) — относительные пути к файлам делаем абсолютными
   return out.replace(/(["'(])(?:\.\/)?(assets|_ds|support\.js)(?=[\/"'])/g, '$1/$2');
 }
@@ -99,7 +102,8 @@ for (const l of LANGS) {
   const dict = readDict(l.dict);
   const missing = Object.keys(base).filter((k) => !(k in dict));
   if (missing.length) console.warn(`⚠️  В i18n/${l.dict} нет переводов для:\n  ${missing.join('\n  ')}`);
-  const html = hoistHead(translate(src, dict));
+  const docs = l.docs ? JSON.parse(fs.readFileSync(path.join(ROOT, 'i18n', l.docs), 'utf8')).docs : null;
+  const html = hoistHead(translate(src, dict, docs));
   // У английской страницы кириллицы быть не должно — так ловим строки, которых нет в словаре
   if (l.code === 'en') {
     const left = leftoverRussian(html);
