@@ -18,6 +18,7 @@
 
 ## Ссылки
 - [Сайт](https://chikchirik.kz/)
+- [Қазақша нұсқа](https://chikchirik.kz/kz/)
 - [Site in English](https://chikchirik.kz/en/)
 - [App Store](https://apps.apple.com/kz/app/chik-chirik/id6802269556)
 - [Google Play](https://play.google.com/store/apps/details?id=com.chikchirik.chikchirikApp)

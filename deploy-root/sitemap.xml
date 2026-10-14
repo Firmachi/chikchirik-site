@@ -4,6 +4,15 @@
     <loc>https://chikchirik.kz/</loc>
     <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://chikchirik.kz/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://chikchirik.kz/kz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chikchirik.kz/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chikchirik.kz/"/>
+  </url>
+  <url>
+    <loc>https://chikchirik.kz/kz/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://chikchirik.kz/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://chikchirik.kz/kz/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chikchirik.kz/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chikchirik.kz/"/>
   </url>
@@ -11,6 +20,7 @@
     <loc>https://chikchirik.kz/en/</loc>
     <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://chikchirik.kz/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://chikchirik.kz/kz/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chikchirik.kz/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chikchirik.kz/"/>
   </url>

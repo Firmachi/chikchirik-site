@@ -3,7 +3,7 @@
 // 1. Копирует исходник страницы и файлы сайта в dist/.
 // 2. Переносит SEO-теги (title, description, canonical, Open Graph, JSON-LD) из <helmet>
 //    прямо в <head>, чтобы их видели боты без JavaScript (Telegram, WhatsApp, Яндекс, ИИ-поисковики).
-// 3. Английская версия (/en/): тот же исходник + словарь i18n/en.json.
+// 3. Английская (/en/) и казахская (/kz/) версии: тот же исходник + словари i18n/en.json, i18n/kk.json.
 //    Тексты юридических документов не переводятся (только их названия).
 // 4. Пре-рендер: открывает страницы в headless Chrome и кладёт в HTML статическую копию
 //    текста (#ssr). Её видят только боты/браузеры без JS — с JS живая страница рисуется как обычно.
@@ -35,9 +35,13 @@ for (const f of ROOT_FILES) {
 
 // --- 2. SEO-теги из <helmet> → <head> ---
 const SITE = 'https://chikchirik.kz';
+const LANGS = [
+  { code: 'en', url: '/en/', file: 'en/index.html', dict: 'en.json' },
+  { code: 'kk', url: '/kz/', file: 'kz/index.html', dict: 'kk.json' },
+];
 const hreflang = [
   `<link rel="alternate" hreflang="ru" href="${SITE}/">`,
-  `<link rel="alternate" hreflang="en" href="${SITE}/en/">`,
+  ...LANGS.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE}${l.url}">`),
   `<link rel="alternate" hreflang="x-default" href="${SITE}/">`,
 ];
 
@@ -73,7 +77,7 @@ function translate(html, dict) {
     return text;
   };
   const out = apply(html.slice(0, a)) + apply(html.slice(a, b), (ru) => ru.startsWith('title: ')) + apply(html.slice(b));
-  // Страница лежит в /en/ — относительные пути к файлам делаем абсолютными
+  // Страница лежит в подпапке (/en/, /kz/) — относительные пути к файлам делаем абсолютными
   return out.replace(/(["'(])(?:\.\/)?(assets|_ds|support\.js)(?=[\/"'])/g, '$1/$2');
 }
 
@@ -82,21 +86,27 @@ function leftoverRussian(html) {
   const b = html.indexOf('\n];', a) + 3;
   const rest = (html.slice(0, a) + html.slice(b))
     .replace(/data-props="[^"]*"/, '')
-    .replace(/Русский/g, '')
+    .replace(/Русский|Қазақша/g, '')
     .replace(/(^|[^:])\/\/[^\n]*/g, '$1'); // комментарии в коде
   return [...new Set((rest.match(/[А-Яа-яЁё][А-Яа-яЁё\s,.«»—-]*/g) || []).map((t) => t.trim()).filter(Boolean))];
 }
 
-const ruHtml = hoistHead(fs.readFileSync(SRC, 'utf8'));
-const dict = JSON.parse(fs.readFileSync(path.join(ROOT, 'i18n', 'en.json'), 'utf8')).strings;
-const enHtml = hoistHead(translate(fs.readFileSync(SRC, 'utf8'), dict));
-const left = leftoverRussian(enHtml);
-if (left.length) console.warn(`⚠️  На английской странице остался русский текст (добавьте в i18n/en.json):\n  ${left.join('\n  ')}`);
-
-const PAGES = [
-  { url: '/', file: 'index.html', html: ruHtml },
-  { url: '/en/', file: 'en/index.html', html: enHtml },
-];
+const src = fs.readFileSync(SRC, 'utf8');
+const readDict = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'i18n', f), 'utf8')).strings;
+const base = readDict('en.json');
+const PAGES = [{ url: '/', file: 'index.html', html: hoistHead(src) }];
+for (const l of LANGS) {
+  const dict = readDict(l.dict);
+  const missing = Object.keys(base).filter((k) => !(k in dict));
+  if (missing.length) console.warn(`⚠️  В i18n/${l.dict} нет переводов для:\n  ${missing.join('\n  ')}`);
+  const html = hoistHead(translate(src, dict));
+  // У английской страницы кириллицы быть не должно — так ловим строки, которых нет в словаре
+  if (l.code === 'en') {
+    const left = leftoverRussian(html);
+    if (left.length) console.warn(`⚠️  На английской странице остался русский текст (добавьте в i18n/en.json и i18n/kk.json):\n  ${left.join('\n  ')}`);
+  }
+  PAGES.push({ url: l.url, file: l.file, html });
+}
 for (const pg of PAGES) {
   fs.mkdirSync(path.dirname(path.join(DIST, pg.file)), { recursive: true });
   fs.writeFileSync(path.join(DIST, pg.file), pg.html);

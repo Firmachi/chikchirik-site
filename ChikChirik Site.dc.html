@@ -66,6 +66,7 @@
       <div style="display:flex;align-items:center;gap:8px;">
         <sc-if value="{{ navLang }}" hint-placeholder-val="{{ true }}"><div style="display:flex;padding:3px;border-radius:999px;background:var(--ink-50);">
           <a href="/" hreflang="ru" lang="ru" aria-label="Русский" style="padding:7px 10px;border-radius:999px;font-size:13px;font-weight:700;line-height:1;letter-spacing:.02em;background:{{ ruBg }};color:{{ ruColor }};" style-hover="color:var(--ink-1000);">RU</a>
+          <a href="/kz/" hreflang="kk" lang="kk" aria-label="Қазақша" style="padding:7px 10px;border-radius:999px;font-size:13px;font-weight:700;line-height:1;letter-spacing:.02em;background:{{ kzBg }};color:{{ kzColor }};" style-hover="color:var(--ink-1000);">KZ</a>
           <a href="/en/" hreflang="en" lang="en" aria-label="English" style="padding:7px 10px;border-radius:999px;font-size:13px;font-weight:700;line-height:1;letter-spacing:.02em;background:{{ enBg }};color:{{ enColor }};" style-hover="color:var(--ink-1000);">EN</a>
         </div></sc-if>
         <a href="#download" onClick="{{ goHomeAnchor }}" style="display:flex;align-items:center;gap:8px;height:44px;padding:0 22px;border-radius:999px;background:var(--blue-500);color:var(--white);font-weight:600;font-size:15px;white-space:nowrap;" style-hover="background:var(--blue-600);color:var(--white);">Скачать</a>
@@ -374,6 +375,7 @@
         <span style="display:flex;gap:16px;flex-wrap:wrap;"><span>© 2026 Chik Chirik</span><span>Приложение создано в <a href="https://firmachi.kz/" target="_blank" rel="noopener" style="color:var(--white);font-weight:600;" style-hover="color:var(--blue-300);">Studio Firmachi</a></span></span>
         <span style="display:flex;gap:16px;flex-wrap:wrap;">
           <a href="/" hreflang="ru" lang="ru" style="color:{{ ruFoot }};" style-hover="color:var(--white);">Русский</a>
+          <a href="/kz/" hreflang="kk" lang="kk" style="color:{{ kzFoot }};" style-hover="color:var(--white);">Қазақша</a>
           <a href="/en/" hreflang="en" lang="en" style="color:{{ enFoot }};" style-hover="color:var(--white);">English</a>
           <a href="mailto:hi@firmachi.kz" style="color:var(--ink-400);" style-hover="color:var(--white);">hi@firmachi.kz</a>
         </span>
@@ -519,17 +521,20 @@ class Component extends DCLogic {
       { q: 'Как выбрать надёжного исполнителя?', a: 'Смотри портфолио и отзывы в профиле, фиксируй договорённости письменно и не вноси полную предоплату до начала работ.' },
       { q: 'Как связаться с поддержкой?', a: 'Напиши нам в Telegram или на hi@firmachi.kz.' }
     ];
-    const lang = typeof location !== 'undefined' && /^\/en(\/|$)/.test(location.pathname) ? 'en' : 'ru';
+    const lang = typeof location === 'undefined' ? 'ru' : (/^\/en(\/|$)/.test(location.pathname) ? 'en' : /^\/kz(\/|$)/.test(location.pathname) ? 'kk' : 'ru');
     return {
-      navLang: this.state.w >= 440,
+      navLang: this.state.w >= 480,
       ruBg: lang === 'ru' ? 'var(--white)' : 'transparent',
       enBg: lang === 'en' ? 'var(--white)' : 'transparent',
       ruColor: lang === 'ru' ? 'var(--ink-1000)' : 'var(--ink-400)',
       enColor: lang === 'en' ? 'var(--ink-1000)' : 'var(--ink-400)',
+      kzBg: lang === 'kk' ? 'var(--white)' : 'transparent',
+      kzColor: lang === 'kk' ? 'var(--ink-1000)' : 'var(--ink-400)',
+      kzFoot: lang === 'kk' ? 'var(--white)' : 'var(--ink-400)',
       ruFoot: lang === 'ru' ? 'var(--white)' : 'var(--ink-400)',
       enFoot: lang === 'en' ? 'var(--white)' : 'var(--ink-400)',
       isHome: page === 'home',
-      wide: this.state.w >= 960,
+      wide: this.state.w >= 1100,
       heroOuter: this.state.w >= 1100,
       heroMid: this.state.w >= 640,
       isDocs: page === 'docs',
