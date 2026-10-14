@@ -3,9 +3,11 @@
 // 1. Копирует исходник страницы и файлы сайта в dist/.
 // 2. Переносит SEO-теги (title, description, canonical, Open Graph, JSON-LD) из <helmet>
 //    прямо в <head>, чтобы их видели боты без JavaScript (Telegram, WhatsApp, Яндекс, ИИ-поисковики).
-// 3. Пре-рендер: открывает страницу в headless Chrome и кладёт в HTML статическую копию
+// 3. Английская версия (/en/): тот же исходник + словарь i18n/en.json.
+//    Тексты юридических документов не переводятся (только их названия).
+// 4. Пре-рендер: открывает страницы в headless Chrome и кладёт в HTML статическую копию
 //    текста (#ssr). Её видят только боты/браузеры без JS — с JS живая страница рисуется как обычно.
-//    Если Chrome недоступен, сборка не падает — просто без шага 3.
+//    Если Chrome недоступен, сборка не падает — просто без шага 4.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -32,29 +34,76 @@ for (const f of ROOT_FILES) {
 }
 
 // --- 2. SEO-теги из <helmet> → <head> ---
-let html = fs.readFileSync(SRC, 'utf8');
-const hm = /<helmet>([\s\S]*?)<\/helmet>/.exec(html);
-if (!hm) throw new Error('В исходнике не найден <helmet>');
-let helmet = hm[1];
-const seoTag = /<title>[\s\S]*?<\/title>|<meta\b(?=[^>]*\b(?:name|property)=)[^>]*>|<link\b(?=[^>]*\brel="(?:canonical|icon|apple-touch-icon)")[^>]*>|<script type="application\/ld\+json">[\s\S]*?<\/script>/g;
-const hoisted = helmet.match(seoTag) || [];
-helmet = helmet.replace(seoTag, '').replace(/\n\s*\n+/g, '\n');
-html = html.replace(hm[0], `<helmet>${helmet}</helmet>`);
+const SITE = 'https://chikchirik.kz';
+const hreflang = [
+  `<link rel="alternate" hreflang="ru" href="${SITE}/">`,
+  `<link rel="alternate" hreflang="en" href="${SITE}/en/">`,
+  `<link rel="alternate" hreflang="x-default" href="${SITE}/">`,
+];
 
-const headExtra = [
-  ...hoisted,
-  '<link rel="preconnect" href="https://unpkg.com" crossorigin>',
-  '<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>',
-  '<link rel="preconnect" href="https://fonts.googleapis.com">',
-  '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
-  '<script>document.documentElement.className+=" js"</script>',
-  '<style>x-dc{display:none}.js #ssr{display:none}#ssr{font-family:system-ui,sans-serif;max-width:960px;margin:0 auto;padding:24px 16px;line-height:1.5}#ssr img{max-width:240px;height:auto}</style>',
-].join('\n');
-html = html.replace(/(<meta name="viewport"[^>]*>)/, `$1\n${headExtra}`);
-fs.writeFileSync(path.join(DIST, 'index.html'), html);
-console.log(`SEO-теги перенесены в <head>: ${hoisted.length}`);
+function hoistHead(html) {
+  const hm = /<helmet>([\s\S]*?)<\/helmet>/.exec(html);
+  if (!hm) throw new Error('В исходнике не найден <helmet>');
+  let helmet = hm[1];
+  const seoTag = /<title>[\s\S]*?<\/title>|<meta\b(?=[^>]*\b(?:name|property)=)[^>]*>|<link\b(?=[^>]*\brel="(?:canonical|icon|apple-touch-icon)")[^>]*>|<script type="application\/ld\+json">[\s\S]*?<\/script>/g;
+  const hoisted = helmet.match(seoTag) || [];
+  helmet = helmet.replace(seoTag, '').replace(/\n\s*\n+/g, '\n');
+  html = html.replace(hm[0], `<helmet>${helmet}</helmet>`);
+  const headExtra = [
+    ...hoisted,
+    ...hreflang,
+    '<link rel="preconnect" href="https://unpkg.com" crossorigin>',
+    '<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>',
+    '<link rel="preconnect" href="https://fonts.googleapis.com">',
+    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+    '<script>document.documentElement.className+=" js"</script>',
+    '<style>x-dc{display:none}.js #ssr{display:none}#ssr{font-family:system-ui,sans-serif;max-width:960px;margin:0 auto;padding:24px 16px;line-height:1.5}#ssr img{max-width:240px;height:auto}</style>',
+  ].join('\n');
+  return html.replace(/(<meta name="viewport"[^>]*>)/, `$1\n${headExtra}`);
+}
 
-// --- 3. Пре-рендер ---
+// --- 3. Перевод по словарю ---
+function translate(html, dict) {
+  // Массив DOCS (юридические тексты) не трогаем — переводим в нём только названия документов
+  const a = html.indexOf('const DOCS = [');
+  const b = html.indexOf('\n];', a) + 3;
+  const pairs = Object.entries(dict).sort((x, y) => y[0].length - x[0].length);
+  const apply = (text, only) => {
+    for (const [ru, en] of pairs) if (!only || only(ru)) text = text.split(ru).join(en);
+    return text;
+  };
+  const out = apply(html.slice(0, a)) + apply(html.slice(a, b), (ru) => ru.startsWith('title: ')) + apply(html.slice(b));
+  // Страница лежит в /en/ — относительные пути к файлам делаем абсолютными
+  return out.replace(/(["'(])(?:\.\/)?(assets|_ds|support\.js)(?=[\/"'])/g, '$1/$2');
+}
+
+function leftoverRussian(html) {
+  const a = html.indexOf('const DOCS = [');
+  const b = html.indexOf('\n];', a) + 3;
+  const rest = (html.slice(0, a) + html.slice(b))
+    .replace(/data-props="[^"]*"/, '')
+    .replace(/Русский/g, '')
+    .replace(/(^|[^:])\/\/[^\n]*/g, '$1'); // комментарии в коде
+  return [...new Set((rest.match(/[А-Яа-яЁё][А-Яа-яЁё\s,.«»—-]*/g) || []).map((t) => t.trim()).filter(Boolean))];
+}
+
+const ruHtml = hoistHead(fs.readFileSync(SRC, 'utf8'));
+const dict = JSON.parse(fs.readFileSync(path.join(ROOT, 'i18n', 'en.json'), 'utf8')).strings;
+const enHtml = hoistHead(translate(fs.readFileSync(SRC, 'utf8'), dict));
+const left = leftoverRussian(enHtml);
+if (left.length) console.warn(`⚠️  На английской странице остался русский текст (добавьте в i18n/en.json):\n  ${left.join('\n  ')}`);
+
+const PAGES = [
+  { url: '/', file: 'index.html', html: ruHtml },
+  { url: '/en/', file: 'en/index.html', html: enHtml },
+];
+for (const pg of PAGES) {
+  fs.mkdirSync(path.dirname(path.join(DIST, pg.file)), { recursive: true });
+  fs.writeFileSync(path.join(DIST, pg.file), pg.html);
+}
+console.log(`Страницы: ${PAGES.map((p) => p.url).join(', ')}`);
+
+// --- 4. Пре-рендер ---
 async function launch() {
   const puppeteer = (await import('puppeteer-core')).default;
   if (process.platform === 'linux') {
@@ -80,13 +129,11 @@ function serve() {
   });
 }
 
-async function prerender() {
-  const srv = await serve();
-  const browser = await launch();
-  try {
+async function prerender(browser, port, url) {
+  {
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 900 });
-    await page.goto(`http://127.0.0.1:${srv.address().port}/`, { waitUntil: 'networkidle0', timeout: 60000 });
+    await page.goto(`http://127.0.0.1:${port}${url}`, { waitUntil: 'networkidle0', timeout: 60000 });
     await page.waitForSelector('#dc-root h1', { timeout: 30000 });
     // Собираем «чистую» семантическую копию: без стилей, скриптов, декоративных элементов и id (чтобы якоря вели на живую страницу)
     return await page.evaluate(() => {
@@ -102,17 +149,21 @@ async function prerender() {
       });
       return root.innerHTML.replace(/<(div|span)>\s*<\/\1>/g, '').replace(/\s{2,}/g, ' ');
     });
-  } finally {
-    await browser.close();
-    srv.close();
   }
 }
 
+const srv = await serve();
+let browser;
 try {
-  const ssr = await prerender();
-  const out = html.replace(/<body>/, `<body>\n<div id="ssr">${ssr}</div>`);
-  fs.writeFileSync(path.join(DIST, 'index.html'), out);
-  console.log(`Пре-рендер готов: ${Math.round(ssr.length / 1024)} КБ текста для ботов`);
+  browser = await launch();
+  for (const pg of PAGES) {
+    const ssr = await prerender(browser, srv.address().port, pg.url);
+    fs.writeFileSync(path.join(DIST, pg.file), pg.html.replace(/<body>/, `<body>\n<div id="ssr">${ssr}</div>`));
+    console.log(`Пре-рендер ${pg.url}: ${Math.round(ssr.length / 1024)} КБ текста для ботов`);
+  }
 } catch (e) {
   console.warn('⚠️  Пре-рендер пропущен:', e.message);
+} finally {
+  if (browser) await browser.close();
+  srv.close();
 }

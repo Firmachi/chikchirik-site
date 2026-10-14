@@ -18,6 +18,7 @@
 
 ## Ссылки
 - [Сайт](https://chikchirik.kz/)
+- [Site in English](https://chikchirik.kz/en/)
 - [App Store](https://apps.apple.com/kz/app/chik-chirik/id6802269556)
 - [Google Play](https://play.google.com/store/apps/details?id=com.chikchirik.chikchirikApp)
 - [Telegram-бот](https://t.me/Chikchirik_bird_bot)
