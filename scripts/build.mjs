@@ -88,7 +88,7 @@ async function prerender() {
     await page.setViewport({ width: 1280, height: 900 });
     await page.goto(`http://127.0.0.1:${srv.address().port}/`, { waitUntil: 'networkidle0', timeout: 60000 });
     await page.waitForSelector('#dc-root h1', { timeout: 30000 });
-    // Собираем «чистую» семантическую копию: без стилей, скриптов и декоративных элементов
+    // Собираем «чистую» семантическую копию: без стилей, скриптов, декоративных элементов и id (чтобы якоря вели на живую страницу)
     return await page.evaluate(() => {
       const root = document.querySelector('#dc-root').cloneNode(true);
       // Заголовки, анимированные по словам, хранят текст в aria-label, а слова — в aria-hidden
@@ -97,7 +97,7 @@ async function prerender() {
       });
       root.querySelectorAll('script,style,svg,canvas,video,iframe,noscript,[aria-hidden="true"]').forEach((n) => n.remove());
       root.querySelectorAll('*').forEach((el) => {
-        for (const a of [...el.attributes]) if (!['href', 'src', 'alt', 'id'].includes(a.name)) el.removeAttribute(a.name);
+        for (const a of [...el.attributes]) if (!['href', 'src', 'alt'].includes(a.name)) el.removeAttribute(a.name);
         if (el.tagName === 'A' && el.getAttribute('href') === '#docs') el.removeAttribute('href');
       });
       return root.innerHTML.replace(/<(div|span)>\s*<\/\1>/g, '').replace(/\s{2,}/g, ' ');
