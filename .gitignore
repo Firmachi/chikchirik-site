@@ -2,3 +2,4 @@
 .claude
 dist
 .vercel
+node_modules
