@@ -1,4 +1,4 @@
-/* Chik Chirik — global CSS entry. Import order matters. */
+/* ChikChirik — global CSS entry. Import order matters. */
 @import "tokens/fonts.css";
 @import "tokens/colors.css";
 @import "tokens/typography.css";

@@ -1,6 +1,6 @@
-# Chik Chirik — Design System
+# ChikChirik — Design System
 
-**Chik-chirik (Chik Chirik)** is a mobile app for finding creative talent fast — editors, graphic designers, motion artists, photographers, SMM and AI creators — in Kazakhstan (Almaty / Astana, Russian-language UI). Clients post a brief, performers respond, work is agreed in chat. Positioning line from the campaign posters: **«находи своих через Chik Chirik»** — find your people.
+**Chik-chirik (ChikChirik)** is a mobile app for finding creative talent fast — editors, graphic designers, motion artists, photographers, SMM and AI creators — in Kazakhstan (Almaty / Astana, Russian-language UI). Clients post a brief, performers respond, work is agreed in chat. Positioning line from the campaign posters: **«находи своих через ChikChirik»** — find your people.
 
 ## Sources given
 Seven reference images, uploaded by the user (originals in `uploads/`, working copies in `assets/`):
@@ -44,7 +44,7 @@ The only concrete source (one Home screenshot) defines Button, Card, HeroBanner,
 - `Logo` — wrapper so nobody redraws the mark.
 
 ## CONTENT FUNDAMENTALS
-**Language.** Russian UI with Kazakh proper nouns (Qyzqaras, Astana) and Latin brand words left untranslated (SHOW LAB 2.0, product design, service). The brand name is always Latin: **Chik Chirik**, never «Чик Чирик».
+**Language.** Russian UI with Kazakh proper nouns (Qyzqaras, Astana) and Latin brand words left untranslated (SHOW LAB 2.0, product design, service). The brand name is always Latin: **ChikChirik**, never «Чик Чирик».
 
 **Address.** Informal second person, «ты» — imperative and short: «Пригласи друзей», «Получи 1000 бонусов в свой профиль», «Оставь заявку в телеграм-боте», «Откликнуться». Never «Вы», never corporate «мы предлагаем».
 
@@ -61,7 +61,7 @@ The only concrete source (one Home screenshot) defines Button, Card, HeroBanner,
 ## VISUAL FOUNDATIONS
 **Colour.** One saturated electric blue against white and grey — nothing else. `#0057FF` is the logo/primary; `#003CD3` is the deep poster field; `#0B3DA9` is the in-app accent used for active tab glyphs; `#E0E9FF` is the only tint (active tab pill, avatars, soft badges). Neutrals: white page, `#F5F5F5` card fill, `#EAEAEA` hairlines, near-black `#000`/`#292A2E` text, `#8E8E93` for sub-lines. Semantic green/amber/red exist for statuses only and never appear as fills larger than a badge. Max one blue fill per screen.
 
-**Type.** Two families. A chunky soft serif (Cooper Black/Windsor character) carries the Latin wordmark and small editorial labels — «Chik Chirik», «product design», «Instruments». A neutral grotesk carries every Cyrillic word, bold and tightly tracked for headlines, regular for body. *Substitution:* no font files were supplied, so `fonts.css` loads **Bitter 900** for display and **Golos Text** for the grotesk (Cyrillic-complete). Please send the real files.
+**Type.** Two families. A chunky soft serif (Cooper Black/Windsor character) carries the Latin wordmark and small editorial labels — «ChikChirik», «product design», «Instruments». A neutral grotesk carries every Cyrillic word, bold and tightly tracked for headlines, regular for body. *Substitution:* no font files were supplied, so `fonts.css` loads **Bitter 900** for display and **Golos Text** for the grotesk (Cyrillic-complete). Please send the real files.
 
 **Spacing & layout.** 16px screen gutters, 12px between sibling cards, 16px card padding (20px for larger content cards). Horizontal rails bleed to the screen edge and crop the last card mid-way, signalling scroll. The tab bar floats: 16px inset from three edges, pill-shaped, white, hairline border plus a soft shadow. Content scrolls under it with ~120px bottom padding.
 
@@ -90,7 +90,7 @@ Observed rules, preserved here:
 - Assets in `assets/`: `logo-bird.png` (+ white), `logo-wordmark.png` (+ blue, white), `logo-lockup.png`, `app-icon-blue.png`, `app-icon-key.png`, `cat-editor.png`, `cat-figma.png`, `cat-smm.png`, `hero-qyzqaras.png`, posters and the social set.
 
 ## Logo
-The dotted-pixel bird flying up-right, and the serif «Chik Chirik» wordmark under it. Bird alone for app icon, avatars, apparel and loading states; wordmark alone in the app header; the lockup for covers. Clear space ≥ half the bird's width. Colourways: blue on white, white on blue, white on photography. Never recolour, rotate, outline, add effects to, or redraw the bird — always use the files in `assets/`.
+The dotted-pixel bird flying up-right, and the serif «ChikChirik» wordmark under it. Bird alone for app icon, avatars, apparel and loading states; wordmark alone in the app header; the lockup for covers. Clear space ≥ half the bird's width. Colourways: blue on white, white on blue, white on photography. Never recolour, rotate, outline, add effects to, or redraw the bird — always use the files in `assets/`.
 
 ## Known gaps
 - No font binaries (Bitter + Golos Text substituted).

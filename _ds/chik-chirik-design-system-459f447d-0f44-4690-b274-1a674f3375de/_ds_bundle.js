@@ -29,7 +29,7 @@ function Logo({
   const src = (basePath ? basePath.replace(/\/$/, "") + "/" : "") + (SRC[variant] || SRC.lockup);
   return /*#__PURE__*/React.createElement("img", _extends({
     src: src,
-    alt: "Chik Chirik",
+    alt: "ChikChirik",
     style: {
       height,
       width: "auto",
@@ -784,7 +784,7 @@ function ScreenHeader({
     }
   }, logo ? /*#__PURE__*/React.createElement("img", {
     src: logo,
-    alt: "Chik Chirik",
+    alt: "ChikChirik",
     style: {
       height: 22,
       width: "auto"
