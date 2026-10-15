@@ -128,6 +128,7 @@
     "title: 'Дрон-операторы', sub: 'Аэросъёмка, недвижимость, события'": "title: 'Drone operators', sub: 'Aerial footage, real estate, events'",
     "title: 'Моушн-дизайнеры', sub: 'Анимация, графика, титры'": "title: 'Motion designers', sub: 'Animation, graphics, titles'",
     "aria-label=\"Назад\"": "aria-label=\"Back\"",
-    "aria-label=\"Вперёд\"": "aria-label=\"Next\""
+    "aria-label=\"Вперёд\"": "aria-label=\"Next\"",
+    "title: 'AI-креаторы', sub: 'Видео, фото и визуал с нейросетями'": "title: 'AI creators', sub: 'Video, photos and visuals made with AI'"
   }
 }
