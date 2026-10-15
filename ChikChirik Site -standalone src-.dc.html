@@ -52,6 +52,7 @@
     .lenis.lenis-smooth{scroll-behavior:auto!important}
     a{color:var(--blue-600);text-decoration:none}
     a:hover{color:var(--blue-700)}
+    [data-carousel]::-webkit-scrollbar{display:none}
   </style>
 </helmet>
 
@@ -169,11 +170,17 @@
       <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:40px;">
         <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;">
           <h2 style="margin:0;font-size:clamp(32px,4.4vw,56px);line-height:1.02;letter-spacing:-0.035em;font-weight:800;max-width:640px;text-wrap:balance;">Все, кто нужен для проекта</h2>
-          <p style="margin:0;max-width:380px;font-size:17px;line-height:1.45;color:var(--ink-600);">дизайн, анимация, продакшн, видео, моушн, иллюстрации, съемка, фото, сценарий, smm-контент, таргетинг</p>
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px;">
+            <p style="margin:0;max-width:380px;font-size:17px;line-height:1.45;color:var(--ink-600);">дизайн, анимация, продакшн, видео, моушн, иллюстрации, съемка, фото, сценарий, smm-контент, таргетинг</p>
+            <div style="display:flex;gap:8px;">
+              <button onClick="{{ catsPrev }}" aria-label="Назад" style="width:48px;height:48px;border-radius:999px;border:1px solid var(--ink-200);background:var(--white);color:var(--ink-1000);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;line-height:1;padding:0;" style-hover="background:var(--ink-50);">←</button>
+              <button onClick="{{ catsNext }}" aria-label="Вперёд" style="width:48px;height:48px;border-radius:999px;border:1px solid var(--ink-200);background:var(--white);color:var(--ink-1000);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;line-height:1;padding:0;" style-hover="background:var(--ink-50);">→</button>
+            </div>
+          </div>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px;">
+        <div data-carousel="1" style="display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;">
           <sc-for list="{{ categories }}" as="c" hint-placeholder-count="4">
-            <sc-if value="{{ c.link }}" hint-placeholder-val="{{ false }}"><a href="{{ c.href }}" data-rv="1" style="position:relative;border-radius:20px;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--ink-200);color:var(--white);text-decoration:none;" style-hover="color:var(--white);">
+            <sc-if value="{{ c.link }}" hint-placeholder-val="{{ false }}"><a href="{{ c.href }}" data-rv="1" style="position:relative;flex:0 0 clamp(240px,26vw,290px);scroll-snap-align:start;border-radius:20px;overflow:hidden;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--ink-200);color:var(--white);text-decoration:none;" style-hover="color:var(--white);">
               <img loading="lazy" decoding="async" src="{{ c.img }}" alt="{{ c.title }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;">
               <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.72) 100%);"></div>
               <div style="position:relative;padding:20px;display:flex;flex-direction:column;gap:6px;color:var(--white);">
@@ -182,7 +189,7 @@
                 <div style="font-size:15px;font-weight:600;color:var(--white);margin-top:6px;">{{ c.details }} →</div>
               </div>
             </a></sc-if>
-            <sc-if value="{{ c.nolink }}" hint-placeholder-val="{{ true }}"><div data-rv="1" style="position:relative;border-radius:20px;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--ink-200);">
+            <sc-if value="{{ c.nolink }}" hint-placeholder-val="{{ true }}"><div data-rv="1" style="position:relative;flex:0 0 clamp(240px,26vw,290px);scroll-snap-align:start;border-radius:20px;overflow:hidden;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--ink-200);">
               <img loading="lazy" decoding="async" src="{{ c.img }}" alt="{{ c.title }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;">
               <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.72) 100%);"></div>
               <div style="position:relative;padding:20px;display:flex;flex-direction:column;gap:6px;color:var(--white);">
@@ -603,7 +610,7 @@ const CATS = /*CATS*/{
     },
     {
       "id": "mobilographers",
-      "img": "assets/p-phone.webp",
+      "img": "assets/p-mobilographer.webp",
       "imgAlt": "Мобилограф снимает видео на телефон",
       "name": "Мобилографы",
       "metaTitle": "Мобилограф в Алматы и Астане — съёмка reels | ChikChirik",
@@ -660,7 +667,7 @@ const CATS = /*CATS*/{
     },
     {
       "id": "video-editors",
-      "img": "assets/p-headphones.webp",
+      "img": "assets/p-video-editor.webp",
       "imgAlt": "Монтажёр работает над видео",
       "name": "Монтажёры",
       "metaTitle": "Монтажёр видео — заказать монтаж в Казахстане | ChikChirik",
@@ -1101,9 +1108,15 @@ class Component extends DCLogic {
       categories: (() => [
         { img: (window.__resources && window.__resources.p_photographer) || 'assets/p-photographer.webp', title: 'Фотографы', sub: 'Предметка, портреты, события', href: base + '/photographers' },
         { img: (window.__resources && window.__resources.p_videographer) || 'assets/p-videographer.webp', title: 'Видеографы', sub: 'Реклама, клипы, рилсы', href: base + '/videographers' },
+        { img: 'assets/p-video-editor.webp', title: 'Режиссёры монтажа', sub: 'Рилсы, YouTube, реклама', href: base + '/video-editors' },
+        { img: 'assets/p-mobilographer.webp', title: 'Мобилографы', sub: 'Reels и контент на телефон', href: base + '/mobilographers' },
+        { img: 'assets/p-drone.webp', title: 'Дрон-операторы', sub: 'Аэросъёмка, недвижимость, события' },
+        { img: 'assets/p-motion.webp', title: 'Моушн-дизайнеры', sub: 'Анимация, графика, титры' },
         { img: (window.__resources && window.__resources.p_designer) || 'assets/p-designer.webp', title: 'Дизайнеры', sub: 'Айдентика, иллюстрации, соцсети', href: base + '/designers' },
         { img: (window.__resources && window.__resources.p_blogger) || 'assets/p-blogger.webp', title: 'SMM и блогеры', sub: 'Контент, съемка, таргетинг', href: base + '/smm' }
       ].map(c => ({ ...c, link: !!c.href, nolink: !c.href, details: CATS.ui.details })))(),
+      catsPrev: e => { e && e.preventDefault(); const el = document.querySelector('#dc-root [data-carousel]'); if (el) el.scrollBy({ left: -el.clientWidth * 0.8, behavior: 'smooth' }); },
+      catsNext: e => { e && e.preventDefault(); const el = document.querySelector('#dc-root [data-carousel]'); if (el) el.scrollBy({ left: el.clientWidth * 0.8, behavior: 'smooth' }); },
       steps: [
         { n: '01', title: 'Опиши задачу', text: 'Что нужно сделать, сроки и бюджет — бриф займёт пару минут.' },
         { n: '02', title: 'Получи отклики', text: 'Исполнители сами откликаются. Смотри портфолио и выбирай своих.' },

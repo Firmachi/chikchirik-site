@@ -122,6 +122,12 @@
     ">Документы</a>": ">Documents</a>",
     "Приложение создано в ": "Built by ",
     "ChikChirik — бесплатное приложение для поиска креативных специалистов в Казахстане: видеографы, фотографы, дизайнеры, SMM. Опиши задачу и получи отклики.": "ChikChirik is a free app for finding creative professionals in Kazakhstan: videographers, photographers, designers, SMM. Post a task, get responses.",
-    ">Документы</div>": ">Documents</div>"
+    ">Документы</div>": ">Documents</div>",
+    "title: 'Режиссёры монтажа', sub: 'Рилсы, YouTube, реклама'": "title: 'Video editors', sub: 'Reels, YouTube, ads'",
+    "title: 'Мобилографы', sub: 'Reels и контент на телефон'": "title: 'Mobile content creators', sub: 'Reels and phone content'",
+    "title: 'Дрон-операторы', sub: 'Аэросъёмка, недвижимость, события'": "title: 'Drone operators', sub: 'Aerial footage, real estate, events'",
+    "title: 'Моушн-дизайнеры', sub: 'Анимация, графика, титры'": "title: 'Motion designers', sub: 'Animation, graphics, titles'",
+    "aria-label=\"Назад\"": "aria-label=\"Back\"",
+    "aria-label=\"Вперёд\"": "aria-label=\"Next\""
   }
 }
