@@ -65,7 +65,7 @@
         }
       ],
       "related": [
-        "mobilographers",
+        "drone-operators",
         "video-editors"
       ]
     },
@@ -179,8 +179,65 @@
         }
       ],
       "related": [
+        "motion-designers",
+        "videographers"
+      ]
+    },
+    {
+      "id": "drone-operators",
+      "img": "assets/p-drone.webp",
+      "imgAlt": "A drone operator flying a drone on a shoot",
+      "name": "Drone operators",
+      "metaTitle": "Drone operator in Almaty and Astana — aerial filming | ChikChirik",
+      "metaDesc": "Find a drone operator: aerial footage of real estate, events, ads and travel. Post your task on ChikChirik — operators with portfolios will respond.",
+      "h1": "Drone operators in Almaty and Astana",
+      "lead": "Aerial filming for ads, real estate, events and travel. Describe your task on ChikChirik — drone operators will send responses with examples of their work. Choose by portfolio and agree on the details in chat.",
+      "servicesTitle": "What you can order from a drone operator",
+      "services": [
+        "Aerial footage of real estate and residential complexes",
+        "Events, weddings and concerts from above",
+        "Commercials and brand videos",
+        "Travel and nature locations",
+        "Construction progress and sites over time",
+        "Aerial photos and videos for websites and social media"
+      ],
+      "priceTitle": "How much does aerial filming cost",
+      "priceText": "The operator sets the price, and you state your budget in the task — so you can see right away who is ready to work within it. The price depends on:",
+      "priceFactors": [
+        "flight time and number of locations",
+        "photos, video or both",
+        "editing and colour grading",
+        "travel outside the city",
+        "flight approvals for the area"
+      ],
+      "tipsTitle": "How to choose a drone operator",
+      "tips": [
+        "Look at work in a similar format: real estate, events and ads are filmed differently.",
+        "Check who is responsible for flight permissions — flights are restricted in some areas.",
+        "Agree on a backup date in case of wind or rain.",
+        "Put agreements in writing in the chat and don’t pay the full amount before work starts."
+      ],
+      "faq": [
+        {
+          "q": "Are flight permissions needed?",
+          "a": "Flights are restricted in some areas — for example, near airports and government sites. Agree with the operator before the shoot on who handles approvals."
+        },
+        {
+          "q": "What if the weather turns bad?",
+          "a": "Drones don’t fly in strong wind or rain, so it’s best to agree on a backup date right away."
+        },
+        {
+          "q": "How much does it cost to post a task?",
+          "a": "Posting a task and receiving responses is free. You agree on the price of the shoot directly with the operator."
+        },
+        {
+          "q": "Can the operator edit the video?",
+          "a": "Many drone operators edit their own footage — ask in the chat. If you only need editing, look for a video editor."
+        }
+      ],
+      "related": [
         "videographers",
-        "mobilographers"
+        "video-editors"
       ]
     },
     {
@@ -241,6 +298,63 @@
       ]
     },
     {
+      "id": "motion-designers",
+      "img": "assets/p-motion.webp",
+      "imgAlt": "A motion designer working on an animation",
+      "name": "Motion designers",
+      "metaTitle": "Motion designer — order animation | ChikChirik",
+      "metaDesc": "Find a motion designer: logo animation, graphics for ads and social media, explainer videos. Post your task on ChikChirik — designers will respond.",
+      "h1": "Motion designers in Kazakhstan",
+      "lead": "Logo animation, graphics for ads and social media, explainer videos and titles. Describe your task on ChikChirik — motion designers will send responses with their showreels. They work remotely across Kazakhstan.",
+      "servicesTitle": "What you can order from a motion designer",
+      "services": [
+        "Logo and brand identity animation",
+        "Explainer videos and infographics",
+        "Graphics and animation for ads",
+        "Animated posts and reels",
+        "Titles, lower thirds and video graphics",
+        "3D animation and visualisation"
+      ],
+      "priceTitle": "How much does motion design cost",
+      "priceText": "The designer sets the price, and you state your budget in the task. The price depends on:",
+      "priceFactors": [
+        "video length",
+        "2D or 3D",
+        "whether a script and storyboard are needed",
+        "style complexity and number of elements",
+        "deadlines and number of revisions"
+      ],
+      "tipsTitle": "How to choose a motion designer",
+      "tips": [
+        "Look at a showreel in the style you need — minimalism, characters and 3D require different skills.",
+        "Send references, your logo and brand colours.",
+        "Approve the storyboard before animation starts — it means fewer revisions.",
+        "Clarify which formats you’ll receive and whether source files are included."
+      ],
+      "faq": [
+        {
+          "q": "What do I need to get started?",
+          "a": "The purpose of the video, its length, references, your logo and brand colours, the deadline and your budget."
+        },
+        {
+          "q": "What’s the difference between a motion designer and a video editor?",
+          "a": "A video editor assembles a video from filmed footage, while a motion designer creates animation and graphics from scratch."
+        },
+        {
+          "q": "How much does it cost to post a task?",
+          "a": "Posting a task and receiving responses is free. You agree on the price of the work directly with the designer."
+        },
+        {
+          "q": "Will I get the source files?",
+          "a": "That’s agreed with the designer. Settle in advance which files and formats you’ll receive."
+        }
+      ],
+      "related": [
+        "video-editors",
+        "designers"
+      ]
+    },
+    {
       "id": "designers",
       "img": "assets/p-designer.webp",
       "imgAlt": "A graphic designer working on a layout",
@@ -293,8 +407,65 @@
         }
       ],
       "related": [
-        "smm",
-        "photographers"
+        "motion-designers",
+        "ai-creators"
+      ]
+    },
+    {
+      "id": "ai-creators",
+      "img": "assets/p-ai-creator.webp",
+      "imgAlt": "An AI creator making content with neural networks",
+      "name": "AI creators",
+      "metaTitle": "AI creator — content made with AI | ChikChirik",
+      "metaDesc": "Find an AI creator: videos, product photos, avatars and social media visuals made with AI. Post your task on ChikChirik — creators will respond.",
+      "h1": "AI creators in Kazakhstan",
+      "lead": "Videos, photos and visuals made with neural networks — for ads, social media and marketplaces. Describe your task on ChikChirik — AI creators will send responses with examples of their work.",
+      "servicesTitle": "What you can order from an AI creator",
+      "services": [
+        "AI videos and commercials",
+        "Product photos and product scenes",
+        "AI avatars and characters",
+        "Visuals and illustrations for social media",
+        "Photo and video enhancement",
+        "Voice-over and music made with AI"
+      ],
+      "priceTitle": "How much does an AI creator cost",
+      "priceText": "The creator sets the price, and you state your budget in the task. The price depends on:",
+      "priceFactors": [
+        "number of images or video length",
+        "complexity and number of iterations",
+        "whether manual retouching is needed",
+        "usage rights for the result",
+        "deadlines"
+      ],
+      "tipsTitle": "How to choose an AI creator",
+      "tips": [
+        "Look at examples in your exact format: video, product photos or characters.",
+        "Describe the style and send references.",
+        "Check whether the result can be used in ads.",
+        "Agree on the number of options and revisions."
+      ],
+      "faq": [
+        {
+          "q": "When should I choose an AI creator?",
+          "a": "When you need visuals quickly without a shoot: concepts, product backgrounds, unusual scenes. For real people and real locations, a photographer or videographer is usually a better fit."
+        },
+        {
+          "q": "Can AI content be used in ads?",
+          "a": "It depends on the tools the creator uses and your agreement. Discuss the rights to the result in advance."
+        },
+        {
+          "q": "How much does it cost to post a task?",
+          "a": "Posting a task and receiving responses is free. You agree on the price of the work directly with the creator."
+        },
+        {
+          "q": "Can the result be refined?",
+          "a": "Yes, creators usually do several iterations — agree on the number of revisions in advance."
+        }
+      ],
+      "related": [
+        "designers",
+        "motion-designers"
       ]
     },
     {

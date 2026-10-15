@@ -62,23 +62,23 @@
       "permanent": true
     },
     {
-      "source": "/:id(terms|privacy|consent|offer|videographers|mobilographers|video-editors|photographers|designers|smm)/",
+      "source": "/:id(terms|privacy|consent|offer|videographers|mobilographers|video-editors|drone-operators|photographers|motion-designers|designers|ai-creators|smm)/",
       "destination": "/:id",
       "permanent": true
     },
     {
-      "source": "/:lang(en|kz)/:id(terms|privacy|consent|offer|videographers|mobilographers|video-editors|photographers|designers|smm)/",
+      "source": "/:lang(en|kz)/:id(terms|privacy|consent|offer|videographers|mobilographers|video-editors|drone-operators|photographers|motion-designers|designers|ai-creators|smm)/",
       "destination": "/:lang/:id",
       "permanent": true
     }
   ],
   "rewrites": [
     {
-      "source": "/:id(terms|privacy|consent|offer|videographers|mobilographers|video-editors|photographers|designers|smm)",
+      "source": "/:id(terms|privacy|consent|offer|videographers|mobilographers|video-editors|drone-operators|photographers|motion-designers|designers|ai-creators|smm)",
       "destination": "/:id/index.html"
     },
     {
-      "source": "/:lang(en|kz)/:id(terms|privacy|consent|offer|videographers|mobilographers|video-editors|photographers|designers|smm)",
+      "source": "/:lang(en|kz)/:id(terms|privacy|consent|offer|videographers|mobilographers|video-editors|drone-operators|photographers|motion-designers|designers|ai-creators|smm)",
       "destination": "/:lang/:id/index.html"
     }
   ]
