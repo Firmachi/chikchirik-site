@@ -47,12 +47,84 @@
         "Put agreements in writing in the chat and don’t pay the full amount before work starts."
       ],
       "faq": [
-        { "q": "How do I find a videographer on ChikChirik?", "a": "Download the app and describe your task: what to film, where, when and your budget. Videographers will respond — you just choose by portfolio." },
-        { "q": "How much does it cost to post a task?", "a": "Posting a task and receiving responses is free. You agree on the price of the work directly with the videographer." },
-        { "q": "Do videographers work outside Almaty and Astana?", "a": "Most specialists are based in Almaty and Astana, but many work across Kazakhstan." },
-        { "q": "Do I need a separate video editor?", "a": "Many videographers edit their own footage — ask in the chat. If you only need existing footage edited, look for a video editor." }
+        {
+          "q": "How do I find a videographer on ChikChirik?",
+          "a": "Download the app and describe your task: what to film, where, when and your budget. Videographers will respond — you just choose by portfolio."
+        },
+        {
+          "q": "How much does it cost to post a task?",
+          "a": "Posting a task and receiving responses is free. You agree on the price of the work directly with the videographer."
+        },
+        {
+          "q": "Do videographers work outside Almaty and Astana?",
+          "a": "Most specialists are based in Almaty and Astana, but many work across Kazakhstan."
+        },
+        {
+          "q": "Do I need a separate video editor?",
+          "a": "Many videographers edit their own footage — ask in the chat. If you only need existing footage edited, look for a video editor."
+        }
       ],
-      "related": ["video-editors", "smm"]
+      "related": [
+        "mobilographers",
+        "video-editors"
+      ]
+    },
+    {
+      "id": "mobilographers",
+      "img": "assets/p-phone.webp",
+      "imgAlt": "A mobile content creator filming on a phone",
+      "name": "Mobile content creators",
+      "metaTitle": "Mobile content creator in Almaty and Astana — reels | ChikChirik",
+      "metaDesc": "Find a mobile content creator: reels, stories and business content shot on a phone. Post your task on ChikChirik — creators with portfolios will respond.",
+      "h1": "Mobile content creators in Almaty and Astana",
+      "lead": "A mobile content creator (mobilographer) shoots and edits content on a smartphone — fast and made for social media. Describe your task on ChikChirik and creators will send responses with examples of their reels.",
+      "servicesTitle": "What you can order from a mobile content creator",
+      "services": [
+        "Reels and short videos for Instagram and TikTok",
+        "Stories and content for daily posting",
+        "Shoots for cafes, restaurants, shops and salons",
+        "Unboxings and product reviews",
+        "Event coverage in social media format",
+        "Phone editing with music and captions"
+      ],
+      "priceTitle": "How much does a mobile content creator cost",
+      "priceText": "The creator sets the price, and you state your budget in the task. The price depends on:",
+      "priceFactors": [
+        "how many videos are needed per visit",
+        "whether a script and content ideas are needed",
+        "whether editing, music and captions are included",
+        "travel to the location and shooting time",
+        "a one-off shoot or regular content"
+      ],
+      "tipsTitle": "How to choose a mobile content creator",
+      "tips": [
+        "Look at reels in your niche — cafes, beauty and retail are filmed differently.",
+        "Check who comes up with the scripts and how many videos you’ll get per visit.",
+        "Agree on editing deadlines and the number of revisions.",
+        "Put agreements in writing in the chat and don’t pay the full amount before work starts."
+      ],
+      "faq": [
+        {
+          "q": "Mobile content creator or videographer — which do I need?",
+          "a": "For quick social media content, a mobile content creator works well. For a commercial, a music video or a shoot with a camera and lighting, choose a videographer."
+        },
+        {
+          "q": "Do I need a script?",
+          "a": "It helps. Many creators help with ideas and scripts — ask in the chat."
+        },
+        {
+          "q": "How much does it cost to post a task?",
+          "a": "Posting a task and receiving responses is free. You agree on the price of the work directly with the creator."
+        },
+        {
+          "q": "Can I order regular content?",
+          "a": "Yes, many creators film content on an ongoing basis — for example, several visits a month."
+        }
+      ],
+      "related": [
+        "videographers",
+        "smm"
+      ]
     },
     {
       "id": "video-editors",
@@ -89,12 +161,141 @@
         "Clarify how you’ll share the footage and in what form you’ll get the result."
       ],
       "faq": [
-        { "q": "Can I work with a video editor remotely?", "a": "Yes, editing is almost always done remotely: you share the footage via a link and discuss revisions in chat." },
-        { "q": "What do I need to get started?", "a": "The raw footage, an example of the result you want, the length and format of the video, the deadline and your budget." },
-        { "q": "How much does it cost to post a task?", "a": "Posting a task and receiving responses is free. You agree on the price of editing directly with the creator." },
-        { "q": "Can a video editor also film?", "a": "Some editors film too — ask in the chat. If you need a shoot, check out videographers." }
+        {
+          "q": "Can I work with a video editor remotely?",
+          "a": "Yes, editing is almost always done remotely: you share the footage via a link and discuss revisions in chat."
+        },
+        {
+          "q": "What do I need to get started?",
+          "a": "The raw footage, an example of the result you want, the length and format of the video, the deadline and your budget."
+        },
+        {
+          "q": "How much does it cost to post a task?",
+          "a": "Posting a task and receiving responses is free. You agree on the price of editing directly with the creator."
+        },
+        {
+          "q": "Can a video editor also film?",
+          "a": "Some editors film too — ask in the chat. If you need a shoot, check out videographers."
+        }
       ],
-      "related": ["videographers", "smm"]
+      "related": [
+        "videographers",
+        "mobilographers"
+      ]
+    },
+    {
+      "id": "photographers",
+      "img": "assets/p-photographer.webp",
+      "imgAlt": "A photographer on a shoot for a client",
+      "name": "Photographers",
+      "metaTitle": "Photographer in Almaty and Astana — book a shoot | ChikChirik",
+      "metaDesc": "Find a photographer: product shots, portraits, events, social media content. Post your task on ChikChirik — photographers with portfolios will respond.",
+      "h1": "Photographers in Almaty and Astana",
+      "lead": "Find a photographer for your task — from product shots for marketplaces to portraits and events. Describe your task on ChikChirik and photographers with portfolios will send you responses. Choose by their work and agree on the details in chat.",
+      "servicesTitle": "What you can order from a photographer",
+      "services": [
+        "Product photography for websites and marketplaces",
+        "Portraits and business portraits",
+        "Events and conferences",
+        "Social media content for brands",
+        "Food, interiors and venues",
+        "Studio and on-location photo shoots"
+      ],
+      "priceTitle": "How much does a photographer cost",
+      "priceText": "The photographer sets the price, and you state your budget in the task — so you can see right away who is ready to work within it. The price depends on:",
+      "priceFactors": [
+        "shoot duration and number of photos",
+        "retouching: how many photos and how detailed",
+        "studio rental and props",
+        "travel to the location",
+        "delivery time for the final photos"
+      ],
+      "tipsTitle": "How to choose a photographer",
+      "tips": [
+        "Look at the portfolio in the genre you need: product, portrait and event photography are different skills.",
+        "Check how many photos you’ll get and how many will be retouched.",
+        "Discuss where and how you can use the photos — for example, in ads.",
+        "Put agreements in writing in the chat and don’t pay the full amount before the shoot."
+      ],
+      "faq": [
+        {
+          "q": "How do I find a photographer on ChikChirik?",
+          "a": "Download the app and describe your task: what to shoot, where, when and your budget. Photographers will respond — you just choose by portfolio."
+        },
+        {
+          "q": "How much does it cost to post a task?",
+          "a": "Posting a task and receiving responses is free. You agree on the price of the shoot directly with the photographer."
+        },
+        {
+          "q": "Who pays for the studio?",
+          "a": "That’s agreed with the photographer: sometimes rental is included in the price, sometimes it’s paid separately. Ask in the chat before the shoot."
+        },
+        {
+          "q": "Can I use the photos in ads?",
+          "a": "You and the photographer agree on usage rights yourselves — settle this in advance and put it in writing in the chat."
+        }
+      ],
+      "related": [
+        "videographers",
+        "mobilographers"
+      ]
+    },
+    {
+      "id": "designers",
+      "img": "assets/p-designer.webp",
+      "imgAlt": "A graphic designer working on a layout",
+      "name": "Designers",
+      "metaTitle": "Graphic designer in Almaty — logo, branding | ChikChirik",
+      "metaDesc": "Find a graphic designer: logo, branding, social media design, presentations, packaging. Post your task on ChikChirik — designers will respond.",
+      "h1": "Graphic designers in Kazakhstan",
+      "lead": "Logos, branding, social media and packaging design. Describe your task on ChikChirik — designers and illustrators will send responses with portfolios. Designers work remotely across Kazakhstan.",
+      "servicesTitle": "What you can order from a designer",
+      "services": [
+        "Logo and brand identity",
+        "Posts, stories and covers for social media",
+        "Presentations and sales decks",
+        "Packaging and labels",
+        "Illustrations",
+        "Banners and ad layouts"
+      ],
+      "priceTitle": "How much does a designer cost",
+      "priceText": "The designer sets the price, and you state your budget in the task. The price depends on:",
+      "priceFactors": [
+        "scope: a single layout or a full brand identity",
+        "number of concepts and revisions",
+        "whether source files and usage rights are included",
+        "complexity: illustration, animation, print",
+        "deadlines"
+      ],
+      "tipsTitle": "How to choose a designer",
+      "tips": [
+        "Look at the portfolio in the area you need: logos, social media and packaging are different tasks.",
+        "Send examples you like and describe the brand’s audience.",
+        "Agree on the number of concepts and revisions in advance.",
+        "Clarify in what form you’ll receive the files and whether source files are included."
+      ],
+      "faq": [
+        {
+          "q": "How do I write a brief for a designer?",
+          "a": "Describe what needs to be done, who the brand is for, which colours and style you like, attach examples and state the deadline and budget."
+        },
+        {
+          "q": "Will I get the source files?",
+          "a": "That’s agreed with the designer. Settle in advance which files and formats you’ll receive."
+        },
+        {
+          "q": "How much does it cost to post a task?",
+          "a": "Posting a task and receiving responses is free. You agree on the price of the work directly with the designer."
+        },
+        {
+          "q": "Can I work with a designer from another city?",
+          "a": "Yes, designers usually work remotely: discussion and revisions happen in the chat."
+        }
+      ],
+      "related": [
+        "smm",
+        "photographers"
+      ]
     },
     {
       "id": "smm",
@@ -131,12 +332,27 @@
         "Start with a one-off task or a trial month."
       ],
       "faq": [
-        { "q": "What’s the difference between an SMM specialist and a targeting specialist?", "a": "An SMM specialist runs social media and creates content; a targeting specialist sets up paid ads. Many do both — ask in the chat." },
-        { "q": "Can I order a one-off task?", "a": "Yes: a content plan, a profile audit or an ad launch can be ordered separately from ongoing management." },
-        { "q": "How much does it cost to post a task?", "a": "Posting a task and receiving responses is free. You agree on the price of the work directly with the specialist." },
-        { "q": "Do SMM specialists work remotely?", "a": "Most do, across Kazakhstan. If you need content shot, look for a specialist in your city." }
+        {
+          "q": "What’s the difference between an SMM specialist and a targeting specialist?",
+          "a": "An SMM specialist runs social media and creates content; a targeting specialist sets up paid ads. Many do both — ask in the chat."
+        },
+        {
+          "q": "Can I order a one-off task?",
+          "a": "Yes: a content plan, a profile audit or an ad launch can be ordered separately from ongoing management."
+        },
+        {
+          "q": "How much does it cost to post a task?",
+          "a": "Posting a task and receiving responses is free. You agree on the price of the work directly with the specialist."
+        },
+        {
+          "q": "Do SMM specialists work remotely?",
+          "a": "Most do, across Kazakhstan. If you need content shot, look for a specialist in your city."
+        }
       ],
-      "related": ["videographers", "video-editors"]
+      "related": [
+        "mobilographers",
+        "designers"
+      ]
     }
   ]
 }
