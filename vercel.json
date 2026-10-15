@@ -47,6 +47,21 @@
   ],
   "redirects": [
     {
+      "source": "/site/privacy.html",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/site/payment.html",
+      "destination": "/offer",
+      "permanent": true
+    },
+    {
+      "source": "/site/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
