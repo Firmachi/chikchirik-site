@@ -1,0 +1,142 @@
+{
+  "_comment": "Category landing pages in English (/en/<id>). Same ids and structure as the CATS object in the Russian source.",
+  "ui": {
+    "home": "Home",
+    "categories": "Categories",
+    "more": "Other specialists",
+    "stepsTitle": "How to find a specialist on ChikChirik",
+    "faqTitle": "Frequently asked questions",
+    "ctaTitle": "Post your task for free",
+    "ctaText": "Download the app and describe your task — specialists with portfolios will respond. Or start in our Telegram bot, nothing to download.",
+    "ctaBot": "Open the Telegram bot",
+    "details": "Learn more"
+  },
+  "cats": [
+    {
+      "id": "videographers",
+      "img": "assets/p-videographer.webp",
+      "imgAlt": "A videographer filming a client project",
+      "name": "Videographers",
+      "metaTitle": "Videographer in Almaty and Astana — book a shoot | ChikChirik",
+      "metaDesc": "Find a videographer in Almaty or Astana: reels, ads, music videos, events. Post your task on ChikChirik — videographers with portfolios will respond.",
+      "h1": "Videographers in Almaty and Astana",
+      "lead": "Find a videographer for your task — from social media reels to a commercial. Describe your task on ChikChirik and videographers with portfolios will send you responses. Choose by their work and agree on the details in chat.",
+      "servicesTitle": "What you can order from a videographer",
+      "services": [
+        "Reels and short videos for social media",
+        "Commercials and brand videos",
+        "Events, concerts and conferences",
+        "Music videos",
+        "Interviews, podcasts and expert content",
+        "Product and service videos for websites and marketplaces"
+      ],
+      "priceTitle": "How much does a videographer cost",
+      "priceText": "The creator sets the price, and you state your budget in the task — so you can see right away who is ready to work within it. The price depends on:",
+      "priceFactors": [
+        "shoot duration and number of locations",
+        "whether editing, colour grading and music are needed",
+        "how many videos and in which formats — vertical or horizontal",
+        "equipment: cameras, lighting, drone, gimbal",
+        "deadlines: rush orders usually cost more"
+      ],
+      "tipsTitle": "How to choose a videographer",
+      "tips": [
+        "Look at work in a similar genre: filming an event and a commercial are different skills.",
+        "Check what the price includes: editing, number of revisions, raw footage.",
+        "Agree on the delivery date and file formats in advance.",
+        "Put agreements in writing in the chat and don’t pay the full amount before work starts."
+      ],
+      "faq": [
+        { "q": "How do I find a videographer on ChikChirik?", "a": "Download the app and describe your task: what to film, where, when and your budget. Videographers will respond — you just choose by portfolio." },
+        { "q": "How much does it cost to post a task?", "a": "Posting a task and receiving responses is free. You agree on the price of the work directly with the videographer." },
+        { "q": "Do videographers work outside Almaty and Astana?", "a": "Most specialists are based in Almaty and Astana, but many work across Kazakhstan." },
+        { "q": "Do I need a separate video editor?", "a": "Many videographers edit their own footage — ask in the chat. If you only need existing footage edited, look for a video editor." }
+      ],
+      "related": ["video-editors", "smm"]
+    },
+    {
+      "id": "video-editors",
+      "img": "assets/p-headphones.webp",
+      "imgAlt": "A video editor working on a video",
+      "name": "Video editors",
+      "metaTitle": "Video editor in Kazakhstan — order video editing | ChikChirik",
+      "metaDesc": "Find a video editor: reels, YouTube, ads, music videos. Post your task on ChikChirik — editors with portfolios will respond. They work remotely.",
+      "h1": "Video editors in Kazakhstan",
+      "lead": "Editing for reels, YouTube videos, ads and music videos. Describe your task on ChikChirik — video editors will send responses with portfolios. Editing is usually done remotely, so your city doesn’t matter.",
+      "servicesTitle": "What you can order from a video editor",
+      "services": [
+        "Editing reels, TikTok and Shorts",
+        "YouTube videos and podcasts",
+        "Commercials and brand videos",
+        "Colour grading and sound",
+        "Subtitles and animated titles",
+        "Re-cutting existing videos for different social networks"
+      ],
+      "priceTitle": "How much does video editing cost",
+      "priceText": "The editor sets the price, and you state your budget in the task. The price depends on:",
+      "priceFactors": [
+        "video length and amount of raw footage",
+        "complexity: cuts, effects, graphics, colour grading",
+        "whether subtitles, music and sound work are needed",
+        "number of versions and formats",
+        "deadlines and number of revisions"
+      ],
+      "tipsTitle": "How to choose a video editor",
+      "tips": [
+        "Look at work in the format you need — editing reels and YouTube videos is different.",
+        "Send an example of a video you like — it makes it easier to match the style.",
+        "Agree on the number of revisions in advance.",
+        "Clarify how you’ll share the footage and in what form you’ll get the result."
+      ],
+      "faq": [
+        { "q": "Can I work with a video editor remotely?", "a": "Yes, editing is almost always done remotely: you share the footage via a link and discuss revisions in chat." },
+        { "q": "What do I need to get started?", "a": "The raw footage, an example of the result you want, the length and format of the video, the deadline and your budget." },
+        { "q": "How much does it cost to post a task?", "a": "Posting a task and receiving responses is free. You agree on the price of editing directly with the creator." },
+        { "q": "Can a video editor also film?", "a": "Some editors film too — ask in the chat. If you need a shoot, check out videographers." }
+      ],
+      "related": ["videographers", "smm"]
+    },
+    {
+      "id": "smm",
+      "img": "assets/p-blogger.webp",
+      "imgAlt": "An SMM specialist creating social media content",
+      "name": "SMM specialists",
+      "metaTitle": "SMM specialist in Almaty and Kazakhstan | ChikChirik",
+      "metaDesc": "Find an SMM specialist: Instagram and TikTok management, content plans, targeted ads. Post your task on ChikChirik — specialists with case studies will respond.",
+      "h1": "SMM specialists in Kazakhstan",
+      "lead": "Social media management, content, targeted ads and promotion. Describe your task on ChikChirik — SMM specialists and content creators will send responses with case studies and portfolios.",
+      "servicesTitle": "What you can order from an SMM specialist",
+      "services": [
+        "Instagram, TikTok and Telegram management",
+        "Content plan and strategy",
+        "Shooting and creating content",
+        "Targeted advertising",
+        "Working with bloggers",
+        "Analytics and reports"
+      ],
+      "priceTitle": "How much do SMM services cost",
+      "priceText": "The specialist sets the price, and you state your budget in the task. The price depends on:",
+      "priceFactors": [
+        "how many social networks and posts per month",
+        "whether content needs to be shot or already exists",
+        "whether targeted ads are included — the ad budget is paid separately",
+        "a one-off task or ongoing management",
+        "the specialist’s experience in your niche"
+      ],
+      "tipsTitle": "How to choose an SMM specialist",
+      "tips": [
+        "Ask for case studies with numbers: reach, followers, leads.",
+        "Look for experience in your niche.",
+        "Agree on goals and the reporting format.",
+        "Start with a one-off task or a trial month."
+      ],
+      "faq": [
+        { "q": "What’s the difference between an SMM specialist and a targeting specialist?", "a": "An SMM specialist runs social media and creates content; a targeting specialist sets up paid ads. Many do both — ask in the chat." },
+        { "q": "Can I order a one-off task?", "a": "Yes: a content plan, a profile audit or an ad launch can be ordered separately from ongoing management." },
+        { "q": "How much does it cost to post a task?", "a": "Posting a task and receiving responses is free. You agree on the price of the work directly with the specialist." },
+        { "q": "Do SMM specialists work remotely?", "a": "Most do, across Kazakhstan. If you need content shot, look for a specialist in your city." }
+      ],
+      "related": ["videographers", "video-editors"]
+    }
+  ]
+}

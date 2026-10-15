@@ -60,6 +60,26 @@
       "source": "/kz",
       "destination": "/kz/",
       "permanent": true
+    },
+    {
+      "source": "/:id(terms|privacy|consent|offer|videographers|video-editors|smm)/",
+      "destination": "/:id",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|kz)/:id(terms|privacy|consent|offer|videographers|video-editors|smm)/",
+      "destination": "/:lang/:id",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/:id(terms|privacy|consent|offer|videographers|video-editors|smm)",
+      "destination": "/:id/index.html"
+    },
+    {
+      "source": "/:lang(en|kz)/:id(terms|privacy|consent|offer|videographers|video-editors|smm)",
+      "destination": "/:lang/:id/index.html"
     }
   ]
 }

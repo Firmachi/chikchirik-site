@@ -109,7 +109,6 @@
     ">сохрани сайт в закладки<": ">bookmark this site<",
     "QR-код телеграм-бота ChikChirik": "QR code for the ChikChirik Telegram bot",
     "← На главную": "← Back to home",
-    ">Документы</h1>": ">Documents</h1>",
     "Редакция от {{ docDate }}": "Version of {{ docDate }} · available in Russian only",
     "1 октября 2026": "1 October 2026",
     "Вопросы по документу — пиши на ": "Questions about this document? Email ",
@@ -122,6 +121,7 @@
     ">Соцсети</div>": ">Social</div>",
     ">Документы</a>": ">Documents</a>",
     "Приложение создано в ": "Built by ",
-    "ChikChirik — бесплатное приложение для поиска креативных специалистов в Казахстане: видеографы, фотографы, дизайнеры, SMM. Опиши задачу и получи отклики.": "ChikChirik is a free app for finding creative professionals in Kazakhstan: videographers, photographers, designers, SMM. Post a task, get responses."
+    "ChikChirik — бесплатное приложение для поиска креативных специалистов в Казахстане: видеографы, фотографы, дизайнеры, SMM. Опиши задачу и получи отклики.": "ChikChirik is a free app for finding creative professionals in Kazakhstan: videographers, photographers, designers, SMM. Post a task, get responses.",
+    ">Документы</div>": ">Documents</div>"
   }
 }

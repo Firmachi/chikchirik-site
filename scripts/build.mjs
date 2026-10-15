@@ -1,14 +1,20 @@
 // Сборка сайта для Vercel → dist/
 //
-// 1. Копирует исходник страницы и файлы сайта в dist/.
-// 2. Переносит SEO-теги (title, description, canonical, Open Graph, JSON-LD) из <helmet>
-//    прямо в <head>, чтобы их видели боты без JavaScript (Telegram, WhatsApp, Яндекс, ИИ-поисковики).
-// 3. Английская (/en/) и казахская (/kz/) версии: тот же исходник + словари i18n/en.json, i18n/kk.json.
-//    Юридические документы: если для языка есть i18n/<код>-docs.json — подставляется перевод,
-//    иначе тексты остаются на русском (переводятся только названия).
-// 4. Пре-рендер: открывает страницы в headless Chrome и кладёт в HTML статическую копию
-//    текста (#ssr). Её видят только боты/браузеры без JS — с JS живая страница рисуется как обычно.
-//    Если Chrome недоступен, сборка не падает — просто без шага 4.
+// Исходник один: "ChikChirik Site -standalone src-.dc.html" (русский). Из него собираются
+// страницы на трёх языках (ru: /, kk: /kz/, en: /en/), и для каждого языка:
+//   главная, юридические документы (/terms, /privacy, /consent, /offer)
+//   и страницы категорий (/videographers, /video-editors, /smm — список берётся из CATS в исходнике).
+//
+// 1. Копирует файлы сайта в dist/.
+// 2. Перевод: словари i18n/<код>.json (строки), i18n/<код>-cats.json (категории),
+//    i18n/<код>-docs.json (документы; если файла нет — тексты документов остаются на русском).
+// 3. Для каждой страницы: SEO-теги из <helmet> переносятся в <head>, подставляются свои title,
+//    description, canonical, hreflang и JSON-LD (тексты для документов — i18n/meta.json).
+// 4. Пре-рендер: страницы открываются в headless Chrome, в HTML кладётся статическая копия текста
+//    (#ssr) — её видят только боты без JS. Если Chrome недоступен, сборка не падает.
+// 5. sitemap.xml генерируется из списка страниц.
+//
+// Новая категория/документ → добавьте id в rewrites в vercel.json (сборка предупредит).
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -17,8 +23,17 @@ import http from 'node:http';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'ChikChirik Site -standalone src-.dc.html');
 const DIST = path.join(ROOT, 'dist');
-const ROOT_FILES = ['robots.txt', 'sitemap.xml', 'llms.txt', 'favicon.ico', 'favicon.png', 'apple-touch-icon.png', 'og.jpg'];
+const SITE = 'https://chikchirik.kz';
+const TODAY = new Date().toISOString().slice(0, 10);
+const ROOT_FILES = ['robots.txt', 'llms.txt', 'favicon.ico', 'favicon.png', 'apple-touch-icon.png', 'og.jpg'];
 
+const LANGS = [
+  { code: 'ru', dir: '', ogLocale: 'ru_RU' },
+  { code: 'kk', dir: 'kz', ogLocale: 'kk_KZ', dict: 'kk.json', docs: 'kk-docs.json', cats: 'kk-cats.json' },
+  { code: 'en', dir: 'en', ogLocale: 'en_US', dict: 'en.json', cats: 'en-cats.json' },
+];
+
+// --- 1. Файлы ---
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });
 fs.cpSync(path.join(ROOT, 'assets'), path.join(DIST, 'assets'), {
@@ -34,29 +49,78 @@ for (const f of ROOT_FILES) {
   if (fs.existsSync(p)) fs.copyFileSync(p, path.join(DIST, f));
 }
 
-// --- 2. SEO-теги из <helmet> → <head> ---
-const SITE = 'https://chikchirik.kz';
-const LANGS = [
-  { code: 'en', url: '/en/', file: 'en/index.html', dict: 'en.json' },
-  { code: 'kk', url: '/kz/', file: 'kz/index.html', dict: 'kk.json', docs: 'kk-docs.json' },
+// --- Исходник и данные ---
+const src = fs.readFileSync(SRC, 'utf8');
+const readJson = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'i18n', f), 'utf8'));
+const block = (html, start, end) => {
+  const a = html.indexOf(start);
+  const b = html.indexOf(end, a) + end.length;
+  if (a < 0 || b < end.length) throw new Error(`В исходнике не найден блок ${start}`);
+  return [a, b];
+};
+const DOCS_START = 'const DOCS = [', DOCS_END = '\n];';
+const CATS_START = '/*CATS*/', CATS_END = '/*END CATS*/';
+const ruDocs = (() => { const [a, b] = block(src, DOCS_START, DOCS_END); return Function(`return ${src.slice(a + DOCS_START.length - 1, b - 1)}`)(); })();
+const ruCats = (() => { const [a, b] = block(src, CATS_START, CATS_END); return JSON.parse(src.slice(a + CATS_START.length, b - CATS_END.length)); })();
+const meta = readJson('meta.json');
+
+const ROUTES = [
+  { id: '', type: 'home' },
+  ...ruDocs.map((d) => ({ id: d.id, type: 'doc' })),
+  ...ruCats.cats.map((c) => ({ id: c.id, type: 'cat' })),
 ];
-const hreflang = [
-  `<link rel="alternate" hreflang="ru" href="${SITE}/">`,
-  ...LANGS.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE}${l.url}">`),
-  `<link rel="alternate" hreflang="x-default" href="${SITE}/">`,
-];
+const urlOf = (lang, id) => `/${lang.dir ? lang.dir + '/' : ''}${id}`;
+
+// --- 2. Перевод ---
+function translate(html, lang) {
+  if (!lang.dict) return html;
+  const dict = readJson(lang.dict).strings;
+  const pairs = Object.entries(dict).sort((x, y) => y[0].length - x[0].length);
+  const apply = (text, only) => {
+    for (const [from, to] of pairs) if (!only || only(from)) text = text.split(from).join(to);
+    return text;
+  };
+  // Категории — целиком из i18n/<код>-cats.json
+  const cats = readJson(lang.cats);
+  delete cats._comment;
+  let [a, b] = block(html, CATS_START, CATS_END);
+  html = html.slice(0, a) + CATS_START + JSON.stringify(cats) + CATS_END + html.slice(b);
+  // Документы — переведённые целиком, если есть файл, иначе только названия
+  const docs = lang.docs ? readJson(lang.docs).docs : null;
+  [a, b] = block(html, DOCS_START, DOCS_END);
+  if (docs) html = html.slice(0, a) + `const DOCS = ${JSON.stringify(docs)};` + html.slice(b);
+  [a, b] = block(html, DOCS_START, docs ? '];' : DOCS_END);
+  const [c, d] = block(html, CATS_START, CATS_END);
+  // Словарь применяется ко всему, кроме данных документов и категорий
+  return apply(html.slice(0, a))
+    + (docs ? html.slice(a, b) : apply(html.slice(a, b), (s) => s.startsWith('title: ')))
+    + apply(html.slice(b, c)) + html.slice(c, d) + apply(html.slice(d));
+}
+
+// Пути к файлам — абсолютные (страницы лежат во вложенных папках)
+const absolutize = (html) => html.replace(/(["'(])(?:\.\/)?(assets|_ds|support\.js)(?=[\/"'])/g, '$1/$2');
+
+function leftoverRussian(html) {
+  const [a, b] = block(html, DOCS_START, '];');
+  const rest = (html.slice(0, a) + html.slice(b))
+    .replace(/data-props="[^"]*"/, '')
+    .replace(/Русский|Қазақша/g, '')
+    .replace(/(^|[^:])\/\/[^\n]*/g, '$1'); // комментарии в коде
+  return [...new Set((rest.match(/[А-Яа-яЁё][А-Яа-яЁё\s,.«»—-]*/g) || []).map((t) => t.trim()).filter(Boolean))];
+}
+
+// --- 3. <head> для конкретной страницы ---
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
 function hoistHead(html) {
   const hm = /<helmet>([\s\S]*?)<\/helmet>/.exec(html);
   if (!hm) throw new Error('В исходнике не найден <helmet>');
-  let helmet = hm[1];
   const seoTag = /<title>[\s\S]*?<\/title>|<meta\b(?=[^>]*\b(?:name|property)=)[^>]*>|<link\b(?=[^>]*\brel="(?:canonical|icon|apple-touch-icon)")[^>]*>|<script type="application\/ld\+json">[\s\S]*?<\/script>/g;
-  const hoisted = helmet.match(seoTag) || [];
-  helmet = helmet.replace(seoTag, '').replace(/\n\s*\n+/g, '\n');
-  html = html.replace(hm[0], `<helmet>${helmet}</helmet>`);
+  const hoisted = hm[1].match(seoTag) || [];
+  html = html.replace(hm[0], `<helmet>${hm[1].replace(seoTag, '').replace(/\n\s*\n+/g, '\n')}</helmet>`);
   const headExtra = [
     ...hoisted,
-    ...hreflang,
+    '<!--hreflang-->',
     '<link rel="preconnect" href="https://unpkg.com" crossorigin>',
     '<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>',
     '<link rel="preconnect" href="https://fonts.googleapis.com">',
@@ -67,55 +131,91 @@ function hoistHead(html) {
   return html.replace(/(<meta name="viewport"[^>]*>)/, `$1\n${headExtra}`);
 }
 
-// --- 3. Перевод по словарю ---
-function translate(html, dict, docs) {
-  // Массив DOCS (юридические тексты): переведённый целиком, если есть docs, иначе — только названия
-  const a = html.indexOf('const DOCS = [');
-  const b = html.indexOf('\n];', a) + 3;
-  if (docs) html = html.slice(0, a) + `const DOCS = ${JSON.stringify(docs)};` + html.slice(b);
-  const pairs = Object.entries(dict).sort((x, y) => y[0].length - x[0].length);
-  const apply = (text, only) => {
-    for (const [ru, en] of pairs) if (!only || only(ru)) text = text.split(ru).join(en);
-    return text;
-  };
-  const end = docs ? html.indexOf('];', a) + 2 : b;
-  const out = apply(html.slice(0, a)) + (docs ? html.slice(a, end) : apply(html.slice(a, b), (ru) => ru.startsWith('title: '))) + apply(html.slice(end));
-  // Страница лежит в подпапке (/en/, /kz/) — относительные пути к файлам делаем абсолютными
-  return out.replace(/(["'(])(?:\.\/)?(assets|_ds|support\.js)(?=[\/"'])/g, '$1/$2');
+function pageHead(html, lang, route, data) {
+  const url = SITE + urlOf(lang, route.id);
+  const alternates = [
+    ...LANGS.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE}${urlOf(l, route.id)}">`),
+    `<link rel="alternate" hreflang="x-default" href="${SITE}${urlOf(LANGS[0], route.id)}">`,
+  ].join('\n');
+  html = html.replace('<!--hreflang-->', alternates)
+    .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${url}">`)
+    .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${url}">`);
+  if (route.type === 'home') return html;
+
+  const { title, desc, name, faq } = data;
+  html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(title)}</title>`)
+    .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(desc)}">`)
+    .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${esc(title)}">`)
+    .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${esc(desc)}">`);
+  // JSON-LD: своя WebPage, хлебные крошки, FAQ категории (у документов FAQ главной убираем)
+  return html.replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/, (m, open, json, close) => {
+    const ld = JSON.parse(json);
+    const home = SITE + urlOf(lang, '');
+    ld['@graph'] = ld['@graph'].flatMap((n) => {
+      if (n['@type'] === 'WebPage') return [{ ...n, '@id': url + '#webpage', url, name: title, description: desc, breadcrumb: { '@id': url + '#breadcrumb' } }];
+      if (n['@type'] === 'FAQPage') return faq ? [{ '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }] : [];
+      return [n];
+    });
+    ld['@graph'].push({
+      '@type': 'BreadcrumbList', '@id': url + '#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: data.homeName, item: home },
+        { '@type': 'ListItem', position: 2, name, item: url },
+      ],
+    });
+    return open + JSON.stringify(ld) + close;
+  });
 }
 
-function leftoverRussian(html) {
-  const a = html.indexOf('const DOCS = [');
-  const b = html.indexOf('\n];', a) + 3;
-  const rest = (html.slice(0, a) + html.slice(b))
-    .replace(/data-props="[^"]*"/, '')
-    .replace(/Русский|Қазақша/g, '')
-    .replace(/(^|[^:])\/\/[^\n]*/g, '$1'); // комментарии в коде
-  return [...new Set((rest.match(/[А-Яа-яЁё][А-Яа-яЁё\s,.«»—-]*/g) || []).map((t) => t.trim()).filter(Boolean))];
-}
-
-const src = fs.readFileSync(SRC, 'utf8');
-const readDict = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'i18n', f), 'utf8')).strings;
-const base = readDict('en.json');
-const PAGES = [{ url: '/', file: 'index.html', html: hoistHead(src) }];
-for (const l of LANGS) {
-  const dict = readDict(l.dict);
-  const missing = Object.keys(base).filter((k) => !(k in dict));
-  if (missing.length) console.warn(`⚠️  В i18n/${l.dict} нет переводов для:\n  ${missing.join('\n  ')}`);
-  const docs = l.docs ? JSON.parse(fs.readFileSync(path.join(ROOT, 'i18n', l.docs), 'utf8')).docs : null;
-  const html = hoistHead(translate(src, dict, docs));
-  // У английской страницы кириллицы быть не должно — так ловим строки, которых нет в словаре
-  if (l.code === 'en') {
+// --- Сборка страниц ---
+const PAGES = [];
+for (const lang of LANGS) {
+  if (lang.dict) {
+    const missing = Object.keys(readJson('en.json').strings).filter((k) => !(k in readJson(lang.dict).strings));
+    if (missing.length) console.warn(`⚠️  В i18n/${lang.dict} нет переводов для:\n  ${missing.join('\n  ')}`);
+  }
+  const html = hoistHead(absolutize(translate(src, lang)));
+  if (lang.code === 'en') {
     const left = leftoverRussian(html);
     if (left.length) console.warn(`⚠️  На английской странице остался русский текст (добавьте в i18n/en.json и i18n/kk.json):\n  ${left.join('\n  ')}`);
   }
-  PAGES.push({ url: l.url, file: l.file, html });
+  const cats = lang.cats ? readJson(lang.cats) : ruCats;
+  for (const route of ROUTES) {
+    let data = {};
+    if (route.type === 'doc') {
+      const m = meta[lang.code][route.id];
+      data = { title: m.title, desc: m.desc, name: m.title.replace(/ — ChikChirik$/, ''), homeName: cats.ui.home };
+    } else if (route.type === 'cat') {
+      const c = cats.cats.find((x) => x.id === route.id);
+      data = { title: c.metaTitle, desc: c.metaDesc, name: c.name, faq: c.faq, homeName: cats.ui.home };
+      if (c.metaTitle.length > 65 || c.metaDesc.length > 165) console.warn(`⚠️  Длинные title/description: ${lang.code}/${route.id} (${c.metaTitle.length}/${c.metaDesc.length})`);
+    }
+    const url = urlOf(lang, route.id);
+    PAGES.push({ url, file: path.join(lang.dir, route.id, 'index.html'), html: pageHead(html, lang, route, data) });
+  }
 }
 for (const pg of PAGES) {
   fs.mkdirSync(path.dirname(path.join(DIST, pg.file)), { recursive: true });
   fs.writeFileSync(path.join(DIST, pg.file), pg.html);
 }
-console.log(`Страницы: ${PAGES.map((p) => p.url).join(', ')}`);
+console.log(`Страниц: ${PAGES.length}`);
+
+// Проверка: все адреса документов и категорий есть в rewrites vercel.json
+const vercel = fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8');
+const notRouted = ROUTES.filter((r) => r.id && !vercel.includes(r.id)).map((r) => r.id);
+if (notRouted.length) console.warn(`⚠️  Добавьте в rewrites vercel.json: ${notRouted.join(', ')}`);
+
+// --- 5. sitemap.xml ---
+const sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'];
+for (const route of ROUTES) {
+  const alts = [
+    ...LANGS.map((l) => `    <xhtml:link rel="alternate" hreflang="${l.code}" href="${SITE}${urlOf(l, route.id)}"/>`),
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${urlOf(LANGS[0], route.id)}"/>`,
+  ];
+  for (const lang of LANGS) sitemap.push('  <url>', `    <loc>${SITE}${urlOf(lang, route.id)}</loc>`, `    <lastmod>${TODAY}</lastmod>`, ...alts, '  </url>');
+}
+sitemap.push('</urlset>', '');
+fs.writeFileSync(path.join(DIST, 'sitemap.xml'), sitemap.join('\n'));
 
 // --- 4. Пре-рендер ---
 async function launch() {
@@ -132,9 +232,8 @@ const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '
 function serve() {
   return new Promise((resolve) => {
     const srv = http.createServer((req, res) => {
-      let p = decodeURIComponent(req.url.split('?')[0]);
-      if (p.endsWith('/')) p += 'index.html';
-      const file = path.join(DIST, p);
+      let file = path.join(DIST, decodeURIComponent(req.url.split('?')[0]));
+      if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
       if (!file.startsWith(DIST) || !fs.existsSync(file)) { res.writeHead(404); return res.end(); }
       res.writeHead(200, { 'Content-Type': TYPES[path.extname(file)] || 'application/octet-stream' });
       fs.createReadStream(file).pipe(res);
@@ -144,12 +243,12 @@ function serve() {
 }
 
 async function prerender(browser, port, url) {
-  {
-    const page = await browser.newPage();
+  const page = await browser.newPage();
+  try {
     await page.setViewport({ width: 1280, height: 900 });
     await page.goto(`http://127.0.0.1:${port}${url}`, { waitUntil: 'networkidle0', timeout: 60000 });
     await page.waitForSelector('#dc-root h1', { timeout: 30000 });
-    // Собираем «чистую» семантическую копию: без стилей, скриптов, декоративных элементов и id (чтобы якоря вели на живую страницу)
+    // «Чистая» семантическая копия: без стилей, скриптов, декоративных элементов и id (чтобы якоря вели на живую страницу)
     return await page.evaluate(() => {
       const root = document.querySelector('#dc-root').cloneNode(true);
       // Заголовки, анимированные по словам, хранят текст в aria-label, а слова — в aria-hidden
@@ -159,10 +258,11 @@ async function prerender(browser, port, url) {
       root.querySelectorAll('script,style,svg,canvas,video,iframe,noscript,[aria-hidden="true"]').forEach((n) => n.remove());
       root.querySelectorAll('*').forEach((el) => {
         for (const a of [...el.attributes]) if (!['href', 'src', 'alt'].includes(a.name)) el.removeAttribute(a.name);
-        if (el.tagName === 'A' && el.getAttribute('href') === '#docs') el.removeAttribute('href');
       });
       return root.innerHTML.replace(/<(div|span)>\s*<\/\1>/g, '').replace(/\s{2,}/g, ' ');
     });
+  } finally {
+    await page.close();
   }
 }
 
@@ -170,11 +270,16 @@ const srv = await serve();
 let browser;
 try {
   browser = await launch();
-  for (const pg of PAGES) {
-    const ssr = await prerender(browser, srv.address().port, pg.url);
-    fs.writeFileSync(path.join(DIST, pg.file), pg.html.replace(/<body>/, `<body>\n<div id="ssr">${ssr}</div>`));
-    console.log(`Пре-рендер ${pg.url}: ${Math.round(ssr.length / 1024)} КБ текста для ботов`);
-  }
+  const queue = [...PAGES];
+  let done = 0;
+  await Promise.all(Array.from({ length: 4 }, async () => {
+    for (let pg; (pg = queue.shift());) {
+      const ssr = await prerender(browser, srv.address().port, pg.url);
+      fs.writeFileSync(path.join(DIST, pg.file), pg.html.replace(/<body>/, `<body>\n<div id="ssr">${ssr}</div>`));
+      done++;
+    }
+  }));
+  console.log(`Пре-рендер: ${done} из ${PAGES.length} страниц`);
 } catch (e) {
   console.warn('⚠️  Пре-рендер пропущен:', e.message);
 } finally {

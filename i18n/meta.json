@@ -1,0 +1,21 @@
+{
+  "_comment": "Title и description для страниц юридических документов (/terms, /privacy, /consent, /offer) на каждом языке. Для категорий они лежат в данных категорий (metaTitle, metaDesc).",
+  "ru": {
+    "terms": { "title": "Пользовательское соглашение — ChikChirik", "desc": "Условия использования приложения и сайта ChikChirik: роль сервиса, аккаунт, платная услуга «Открытие номера», контент и ответственность." },
+    "privacy": { "title": "Политика конфиденциальности — ChikChirik", "desc": "Какие персональные данные собирает ChikChirik, для чего, кому передаёт и как защищает. Права пользователя и контакты." },
+    "consent": { "title": "Согласие на обработку персональных данных — ChikChirik", "desc": "Согласие пользователя ChikChirik на сбор и обработку персональных данных: перечень данных, цели, срок действия и порядок отзыва." },
+    "offer": { "title": "Публичная оферта — ChikChirik", "desc": "Условия платной услуги «Открытие номера» в ChikChirik: стоимость, оплата через FreedomPay, порядок оказания и возврата." }
+  },
+  "en": {
+    "terms": { "title": "Terms of Use — ChikChirik", "desc": "Terms of use of the ChikChirik app and website: the role of the service, accounts, the paid phone number reveal, content and liability. In Russian." },
+    "privacy": { "title": "Privacy Policy — ChikChirik", "desc": "What personal data ChikChirik collects, why, who it is shared with and how it is protected. User rights and contacts. In Russian." },
+    "consent": { "title": "Consent to Personal Data Processing — ChikChirik", "desc": "ChikChirik user consent to the collection and processing of personal data: data list, purposes, validity and withdrawal. In Russian." },
+    "offer": { "title": "Public Offer — ChikChirik", "desc": "Terms of the paid phone number reveal service in ChikChirik: price, payment via FreedomPay, delivery and refunds. In Russian." }
+  },
+  "kk": {
+    "terms": { "title": "Пайдаланушы келісімі — ChikChirik", "desc": "ChikChirik қосымшасы мен сайтын пайдалану шарттары: сервистің рөлі, аккаунт, «Нөмірді ашу» ақылы қызметі, контент және жауапкершілік." },
+    "privacy": { "title": "Құпиялылық саясаты — ChikChirik", "desc": "ChikChirik қандай дербес деректерді жинайды, не үшін, кімге береді және қалай қорғайды. Пайдаланушы құқықтары мен байланыс." },
+    "consent": { "title": "Дербес деректерді өңдеуге келісім — ChikChirik", "desc": "ChikChirik пайдаланушысының дербес деректерді өңдеуге келісімі: деректер тізбесі, мақсаттар, мерзім және кері қайтарып алу тәртібі." },
+    "offer": { "title": "Жария оферта — ChikChirik", "desc": "ChikChirik-тегі «Нөмірді ашу» ақылы қызметінің шарттары: құны, FreedomPay арқылы төлеу, көрсету және қайтару тәртібі." }
+  }
+}
