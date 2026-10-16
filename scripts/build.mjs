@@ -25,6 +25,8 @@ const SRC = path.join(ROOT, 'ChikChirik Site -standalone src-.dc.html');
 const DIST = path.join(ROOT, 'dist');
 const SITE = 'https://chikchirik.kz';
 const TODAY = new Date().toISOString().slice(0, 10);
+// Яндекс Метрика (счётчик на всех страницах; при пре-рендере запросы к ней блокируются)
+const METRIKA_ID = 113654864;
 const ROOT_FILES = ['robots.txt', 'llms.txt', 'favicon.ico', 'favicon.png', 'apple-touch-icon.png', 'og.jpg'];
 
 const LANGS = [
@@ -126,8 +128,10 @@ function hoistHead(html) {
     '<link rel="preconnect" href="https://fonts.googleapis.com">',
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
     '<script>document.documentElement.className+=" js"</script>',
+    `<script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=${METRIKA_ID}','ym');ym(${METRIKA_ID},'init',{ssr:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script>`,
     '<style>x-dc{display:none}.js #ssr{display:none}#ssr{font-family:system-ui,sans-serif;max-width:960px;margin:0 auto;padding:24px 16px;line-height:1.5}#ssr img{max-width:240px;height:auto}</style>',
   ].join('\n');
+  html = html.replace(/<body>/, `<body>\n<noscript><div><img src="https://mc.yandex.ru/watch/${METRIKA_ID}" style="position:absolute;left:-9999px" alt=""></div></noscript>`);
   return html.replace(/(<meta name="viewport"[^>]*>)/, `$1\n${headExtra}`);
 }
 
@@ -246,6 +250,9 @@ async function prerender(browser, port, url) {
   const page = await browser.newPage();
   try {
     await page.setViewport({ width: 1280, height: 900 });
+    // Не засчитывать визиты сборки в Метрику
+    await page.setRequestInterception(true);
+    page.on('request', (req) => (/mc\.yandex\.(ru|com|kz)/.test(req.url()) ? req.abort() : req.continue()));
     await page.goto(`http://127.0.0.1:${port}${url}`, { waitUntil: 'networkidle0', timeout: 60000 });
     await page.waitForSelector('#dc-root h1', { timeout: 30000 });
     // «Чистая» семантическая копия: без стилей, скриптов, декоративных элементов и id (чтобы якоря вели на живую страницу)
@@ -275,7 +282,7 @@ try {
   await Promise.all(Array.from({ length: 4 }, async () => {
     for (let pg; (pg = queue.shift());) {
       const ssr = await prerender(browser, srv.address().port, pg.url);
-      fs.writeFileSync(path.join(DIST, pg.file), pg.html.replace(/<body>/, `<body>\n<div id="ssr">${ssr}</div>`));
+      fs.writeFileSync(path.join(DIST, pg.file), pg.html.replace(/<body>\n/, `<body>\n<div id="ssr">${ssr}</div>\n`));
       done++;
     }
   }));
