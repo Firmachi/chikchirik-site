@@ -59,11 +59,12 @@ fs.writeFileSync(path.join(DIST, 'support.js'), fs.readFileSync(path.join(ROOT, 
   .replace('https://unpkg.com/react@18.3.1/umd/react.production.min.js', '/vendor/react-18.3.1.min.js')
   .replace('https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js', '/vendor/react-dom-18.3.1.min.js'));
 const DS = fs.readdirSync(path.join(ROOT, '_ds'))[0];
-const FONTS_URL = 'https://fonts.googleapis.com/css2?family=Bitter:wght@900&family=Golos+Text:wght@400;500;600;700;800&display=swap';
 const siteCss = ['fonts', 'colors', 'typography', 'spacing', 'radius', 'elevation', 'motion', 'base']
   .map((t) => fs.readFileSync(path.join(ROOT, '_ds', DS, 'tokens', `${t}.css`), 'utf8').replace(/@import url\([^)]*\);?/g, ''))
   .join('\n').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*\n+/g, '\n');
-fs.writeFileSync(path.join(DIST, 'assets', 'site.css'), siteCss);
+// Шрифты Bitter и Golos Text (OFL) — со своего домена, @font-face из assets/fonts/fonts.css
+const fontsCss = fs.readFileSync(path.join(ROOT, 'assets', 'fonts', 'fonts.css'), 'utf8');
+fs.writeFileSync(path.join(DIST, 'assets', 'site.css'), fontsCss + siteCss);
 // файлы подтверждения прав (Google Search Console, Яндекс Вебмастер)
 ROOT_FILES.push(...fs.readdirSync(path.join(ROOT, 'deploy-root')).filter((f) => /^(google[0-9a-f]+|yandex_[0-9a-f]+)\.html$/.test(f)));
 for (const f of ROOT_FILES) {
@@ -151,13 +152,15 @@ function hoistHead(html) {
   const headExtra = [
     ...hoisted,
     '<!--hreflang-->',
-    '<link rel="preconnect" href="https://fonts.googleapis.com">',
-    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+    '<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/golos-text-400-cyrillic.woff2" crossorigin>',
+    '<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/golos-text-800-cyrillic.woff2" crossorigin>',
     '<link rel="preload" as="script" href="/vendor/react-18.3.1.min.js" crossorigin="anonymous" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z">',
     '<link rel="preload" as="script" href="/vendor/react-dom-18.3.1.min.js" crossorigin="anonymous" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1">',
-    `<link rel="stylesheet" href="${FONTS_URL}">`,
     '<link rel="stylesheet" href="/assets/site.css">',
     ...inlineStyles,
+    '<link rel="preload" as="script" href="/vendor/gsap-3.12.5.min.js">',
+    '<link rel="preload" as="script" href="/vendor/scrolltrigger-3.12.5.min.js">',
+    '<link rel="preload" as="script" href="/vendor/lenis-1.1.13.min.js">',
     '<script async src="/vendor/gsap-3.12.5.min.js"></script>',
     '<script async src="/vendor/scrolltrigger-3.12.5.min.js"></script>',
     '<script async src="/vendor/lenis-1.1.13.min.js"></script>',

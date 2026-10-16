@@ -320,7 +320,7 @@
         </div>
         <sc-if value="{{ showQr }}" hint-placeholder-val="{{ true }}">
           <div style="justify-self:end;width:220px;padding:16px;border-radius:20px;background:var(--white);display:flex;flex-direction:column;align-items:center;gap:10px;">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=360x360&amp;margin=0&amp;color=0057FF&amp;data=https%3A%2F%2Ft.me%2FChikchirik_bird_bot" alt="QR-код телеграм-бота ChikChirik" style="width:188px;height:188px;display:block;">
+            <img src="assets/qr-telegram-bot.svg" alt="QR-код телеграм-бота ChikChirik" style="width:188px;height:188px;display:block;">
             <span style="font-size:13px;font-weight:600;color:var(--ink-600);">t.me/Chikchirik_bird_bot</span>
           </div>
         </sc-if>
@@ -1082,6 +1082,7 @@ const ROUTE = (() => {
 class Component extends DCLogic {
   state = { page: ROUTE.page, doc: ROUTE.page === 'docs' ? ROUTE.id : 'terms', cat: ROUTE.page === 'cat' ? ROUTE.id : CATS.cats[0].id, faqOpen: 0, w: typeof window !== 'undefined' ? window.innerWidth : 1200 };
   componentDidMount() {
+    this.mountedAt = performance.now();
     this.lastPage = this.state.page;
     this.onR = () => this.setState({ w: window.innerWidth }); window.addEventListener('resize', this.onR);
     if (location.hash && this.state.page === 'home') setTimeout(() => { const el = document.getElementById(location.hash.slice(1)); if (el) this.scrollToY(el.getBoundingClientRect().top + window.scrollY - 90, false); }, 500);
@@ -1134,7 +1135,8 @@ class Component extends DCLogic {
     const root = document;
     this.ctx = gsap.context(() => {
       const hero = root.querySelector('[data-screen-label="Hero"]');
-      if (hero) {
+      // Вступительная анимация — только если библиотеки успели быстро; иначе первый экран уже виден и не прячется
+      if (hero && (!first || performance.now() - this.mountedAt < 1200)) {
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
         tl.from(hero.querySelectorAll('h1 [data-w]'), { yPercent: 110, duration: 0.9, stagger: 0.08 }, 0.1)
           .from(hero.querySelectorAll('[data-intro]'), { y: 24, opacity: 0, duration: 0.7, stagger: 0.08 }, 0.25)
