@@ -1,17 +1,179 @@
-{"summary":{"health_score":46,"business_type":"Marketplace / mobile app landing (KZ, RU)",
-"top_findings":["robots.txt and sitemap.xml return 404","www and /index.html duplicate with no canonical","No meta description / Open Graph","No structured data","Thin single-URL site; FAQ answers and legal docs not crawlable"],
-"quick_wins":["Add robots.txt + sitemap.xml","301 www to apex + canonical","Meta description + OG image","Organization/WebSite/MobileApplication JSON-LD","Long cache headers on /media"]},
-"categories":[
-{"name":"Technical SEO","score":55,"what_works":["HTTPS + http→https 301","Server-rendered HTML","gzip"],"findings":[{"title":"robots.txt/sitemap.xml missing","severity":"High","description":"Both 404 (Express JSON)","recommendation":"Serve both from site root"},{"title":"Duplicate hosts","severity":"High","description":"www and /index.html return 200, no canonical","recommendation":"301 to https://chikchirik.kz/ + canonical"},{"title":"Security headers missing","severity":"Medium","description":"No HSTS/nosniff/referrer policy; X-Powered-By exposed","recommendation":"Add in nginx"}]},
-{"name":"Content Quality","score":45,"what_works":["Clear value prop","Operator named"],"findings":[{"title":"Thin content","severity":"High","description":"~350 words, single URL","recommendation":"Add About block, category pages"},{"title":"FAQ answers not in HTML","severity":"High","description":"4 of 5 answers injected on click","recommendation":"Render all answers in HTML"}]},
-{"name":"On-Page SEO","score":45,"what_works":["Good title","Single visible H1"],"findings":[{"title":"No meta description / OG / favicon","severity":"High","description":"Missing in head","recommendation":"Add tags"},{"title":"Legal docs without URLs","severity":"Medium","description":"Modal only","recommendation":"Create /privacy, /terms etc."}]},
-{"name":"Schema / Structured Data","score":5,"what_works":[],"findings":[{"title":"No JSON-LD","severity":"High","description":"0 blocks","recommendation":"Organization, WebSite, MobileApplication, FAQPage"}]},
-{"name":"Performance (CWV)","score":80,"what_works":["TTFB 331ms","Load 625ms","CLS 0"],"findings":[{"title":"Caching disabled","severity":"Medium","description":"max-age=0 on hashed media","recommendation":"max-age=31536000, immutable"},{"title":"Legacy image formats","severity":"Low","description":"JPEG/PNG only; 36KB PNG for 24px icon","recommendation":"WebP/AVIF, resize"}]},
-{"name":"AI Search Readiness","score":30,"what_works":["Crawlers not blocked"],"findings":[{"title":"Low citability","severity":"Medium","description":"No entity definition, schema, sameAs, hidden FAQ","recommendation":"Add About paragraph, schema sameAs, visible FAQ"}]},
-{"name":"Images","score":70,"what_works":["Descriptive alts on people/category images"],"findings":[{"title":"Empty alt on 3 content photos","severity":"Low","description":"Feature and CTA photos","recommendation":"Add descriptive alt"}]}],
-"action_plan":{"phases":[
-{"name":"Phase 1: Critical Fixes","timeframe":"Week 1","items":["robots.txt + sitemap.xml","301 www & /index.html + canonical","Meta description, OG, favicon","JSON-LD","GSC + Yandex Webmaster + analytics"]},
-{"name":"Phase 2: High-Impact Improvements","timeframe":"Weeks 2-3","items":["FAQ answers in HTML + FAQPage","Legal pages with URLs","Security & cache headers","WebP images, alt text"]},
-{"name":"Phase 3: Content & Authority","timeframe":"Month 2","items":["Category pages","City pages","Kazakh version + hreflang","Public profiles/portfolio"]},
-{"name":"Phase 4: Monitoring & Iteration","timeframe":"Ongoing","items":["GSC/Yandex monitoring","PSI with API key","Review acquisition"]}]},
-"artifacts":{"findings_dir":"findings/","screenshots_dir":"screenshots/"}}
+{
+  "summary": {
+    "health_score": 80,
+    "business_type": "Two-sided marketplace for creative professionals (mobile app + Telegram bot), Kazakhstan",
+    "top_findings": [
+      "No real data (prices, specialist counts) on category pages",
+      "No third-party brand mentions",
+      "Legal docs contradict Yandex Metrica usage",
+      "LCP 2.6-3.2 s under heavy throttling (client-side rendering)",
+      "No articles yet"
+    ],
+    "quick_wins": [
+      "Submit sitemap (38 URLs) to GSC and Yandex Webmaster",
+      "Create 2GIS / Google Business / Yandex Business listings",
+      "Add real budget ranges to category pages"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 95,
+      "what_works": [
+        "All 42 URLs 200",
+        "canonical/hreflang/og:url consistent",
+        "308 redirects",
+        "custom 404",
+        "security headers"
+      ],
+      "findings": [
+        {
+          "title": "Sitemap lastmod is build date",
+          "severity": "Low",
+          "description": "All URLs get today's date on every deploy",
+          "recommendation": "Use real last-change date"
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 65,
+      "what_works": [
+        "9 category landing pages x3 languages",
+        "FAQ per page"
+      ],
+      "findings": [
+        {
+          "title": "No real data on category pages",
+          "severity": "High",
+          "description": "No prices, counts or work samples",
+          "recommendation": "Add data from the app"
+        },
+        {
+          "title": "No articles",
+          "severity": "Medium",
+          "description": "Informational queries uncovered",
+          "recommendation": "Publish per CONTENT-PLAN.md"
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 92,
+      "what_works": [
+        "1 H1 per page",
+        "unique titles/descriptions",
+        "lengths within limits"
+      ],
+      "findings": []
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 90,
+      "what_works": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "MobileApplication",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "findings": [
+        {
+          "title": "No aggregateRating",
+          "severity": "Low",
+          "description": "Store ratings not in markup",
+          "recommendation": "Add only real ratings"
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 65,
+      "what_works": [
+        "Self-hosted libs and fonts",
+        "srcset images",
+        "async animations"
+      ],
+      "findings": [
+        {
+          "title": "Client-side rendering limits LCP",
+          "severity": "Medium",
+          "description": "LCP 2.6-3.2 s on slow 4G + 4x CPU",
+          "recommendation": "Serve first screen as prerendered HTML"
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 60,
+      "what_works": [
+        "Text available without JS",
+        "llms.txt",
+        "AI crawlers allowed"
+      ],
+      "findings": [
+        {
+          "title": "No third-party brand mentions",
+          "severity": "High",
+          "description": "Web search finds no mentions",
+          "recommendation": "Directory listings, media, Telegram channels"
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 92,
+      "what_works": [
+        "WebP",
+        "srcset 480/640/800",
+        "alt texts",
+        "per-category OG images"
+      ],
+      "findings": []
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Submit sitemap to GSC and Yandex",
+          "Directory listings (2GIS, GBP, Yandex Business)",
+          "Resolve legal docs vs Metrica"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Real data on category pages",
+          "First pricing article",
+          "Decide on SSR first screen"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Weekly articles",
+          "PR and mentions",
+          "Store ratings in schema"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Search Console review after 4-6 weeks",
+          "Core Web Vitals field data"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}
