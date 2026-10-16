@@ -149,7 +149,7 @@
     <section data-screen-label="Stats" style="padding:clamp(56px,8vw,104px) 16px;">
       <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:40px;">
         <h2 style="margin:0;font-size:clamp(32px,4.4vw,56px);line-height:1.02;letter-spacing:-0.035em;font-weight:800;max-width:720px;text-wrap:balance;">Здесь уже работают</h2>
-        <p style="margin:-24px 0 0;font-size:15px;line-height:1.4;color:var(--ink-400);">Данные приложения на октябрь 2026</p>
+        <p style="margin:-24px 0 0;font-size:15px;line-height:1.4;color:var(--ink-600);">Данные приложения на октябрь 2026</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));border-top:1px solid var(--ink-100);">
           <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
             <div data-rv="1" style="padding:28px 24px 8px 0;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid var(--ink-100);">
@@ -328,7 +328,7 @@
   <main data-screen-label="Category" style="padding:clamp(32px,5vw,64px) 16px 0;">
     <section data-screen-label="Category hero" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(24px,4vw,56px);align-items:center;">
       <div style="display:flex;flex-direction:column;gap:20px;">
-        <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:15px;color:var(--ink-400);"><a href="{{ homeUrl }}" style="color:var(--ink-400);" style-hover="color:var(--ink-1000);">{{ catUi.home }}</a><span>/</span><span style="color:var(--ink-800);">{{ cat.name }}</span></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:15px;color:var(--ink-600);"><a href="{{ homeUrl }}" style="color:var(--ink-600);" style-hover="color:var(--ink-1000);">{{ catUi.home }}</a><span>/</span><span style="color:var(--ink-800);">{{ cat.name }}</span></div>
         <h1 style="margin:0;font-size:clamp(40px,6vw,80px);line-height:1;letter-spacing:-0.045em;font-weight:800;text-wrap:balance;">{{ cat.h1 }}</h1>
         <p style="margin:0;max-width:560px;font-size:clamp(17px,1.6vw,20px);line-height:1.5;color:var(--ink-600);text-wrap:pretty;">{{ cat.lead }}</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
@@ -447,7 +447,7 @@
   <main data-screen-label="Documents" style="padding:clamp(40px,6vw,72px) 16px clamp(56px,8vw,104px);">
     <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:32px;">
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <a href="{{ homeUrl }}" style="font-size:15px;font-weight:500;color:var(--ink-400);" style-hover="color:var(--ink-1000);">← На главную</a>
+        <a href="{{ homeUrl }}" style="font-size:15px;font-weight:500;color:var(--ink-600);" style-hover="color:var(--ink-1000);">← На главную</a>
         <div style="margin:0;font-size:clamp(40px,5.4vw,72px);line-height:1;letter-spacing:-0.04em;font-weight:800;">Документы</div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px;align-items:start;">
@@ -459,7 +459,7 @@
         <article style="grid-column:span 2;min-width:0;max-width:760px;display:flex;flex-direction:column;gap:28px;">
           <div style="display:flex;flex-direction:column;gap:10px;padding-bottom:24px;border-bottom:1px solid var(--ink-100);">
             <h1 style="margin:0;font-size:clamp(28px,3vw,40px);line-height:1.08;letter-spacing:-0.03em;font-weight:800;text-wrap:balance;">{{ doc.title }}</h1>
-            <div style="font-size:14px;color:var(--ink-400);">Редакция от {{ docDate }}</div>
+            <div style="font-size:14px;color:var(--ink-600);">Редакция от {{ docDate }}</div>
           </div>
           <sc-for list="{{ doc.sections }}" as="s" hint-placeholder-count="3">
             <div style="display:flex;flex-direction:column;gap:10px;">
@@ -893,7 +893,7 @@ const CATS = /*CATS*/{
       "img": "assets/p-designer.webp",
       "imgAlt": "Графический дизайнер работает над макетом",
       "name": "Дизайнеры",
-      "metaTitle": "Графический дизайнер в Алматы — логотип, айдентика | ChikChirik",
+      "metaTitle": "Графический дизайнер в Алматы — логотип | ChikChirik",
       "metaDesc": "Найди графического дизайнера: логотип, айдентика, дизайн для соцсетей, презентации, упаковка. Опиши задачу в ChikChirik — дизайнеры сами откликнутся.",
       "h1": "Графический дизайнер",
       "lead": "Логотип, айдентика, дизайн для соцсетей и упаковки. Опиши задачу в ChikChirik — дизайнеры и иллюстраторы пришлют отклики с портфолио. Дизайнеры работают удалённо по всему Казахстану.",

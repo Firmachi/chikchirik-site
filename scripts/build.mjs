@@ -93,6 +93,8 @@ const ROUTES = [
   ...ruCats.cats.map((c) => ({ id: c.id, type: 'cat' })),
 ];
 const urlOf = (lang, id) => `/${lang.dir ? lang.dir + '/' : ''}${id}`;
+// Документы на английском не переведены (текст на русском) — такие страницы не индексируем
+const indexable = (lang, route) => !(route.type === 'doc' && lang.code === 'en');
 
 // --- 2. Перевод ---
 function translate(html, lang) {
@@ -192,7 +194,8 @@ function hoistHead(html) {
 function pageHead(html, lang, route, data) {
   const url = SITE + urlOf(lang, route.id);
   const alternates = [
-    ...LANGS.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE}${urlOf(l, route.id)}">`),
+    ...(indexable(lang, route) ? [] : ['<meta name="robots" content="noindex, follow">']),
+    ...LANGS.filter((l) => indexable(l, route)).map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE}${urlOf(l, route.id)}">`),
     `<link rel="alternate" hreflang="x-default" href="${SITE}${urlOf(LANGS[0], route.id)}">`,
   ].join('\n');
   html = html.replace('<!--hreflang-->', alternates)
@@ -201,6 +204,12 @@ function pageHead(html, lang, route, data) {
   if (route.type === 'home') return html;
 
   const { title, desc, name, faq } = data;
+  // Своё превью для страниц категорий (assets/og/<язык>-<id>.jpg)
+  if (route.type === 'cat' && fs.existsSync(path.join(ROOT, 'assets', 'og', `${lang.code}-${route.id}.jpg`))) {
+    const og = `${SITE}/assets/og/${lang.code}-${route.id}.jpg`;
+    html = html.replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${og}">`)
+      .replace(/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${og}">`);
+  }
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(desc)}">`)
     .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${esc(title)}">`)
@@ -263,14 +272,34 @@ const vercel = fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8');
 const notRouted = ROUTES.filter((r) => r.id && !vercel.includes(r.id)).map((r) => r.id);
 if (notRouted.length) console.warn(`⚠️  Добавьте в rewrites vercel.json: ${notRouted.join(', ')}`);
 
+// --- 404 ---
+{
+  const ru = ruCats;
+  const links = ru.cats.map((c) => `<a href="/${c.id}">${c.name}</a>`).join('');
+  fs.writeFileSync(path.join(DIST, '404.html'), `<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Страница не найдена — ChikChirik</title><meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="stylesheet" href="/assets/site.css">
+<style>body{font-family:var(--font-text);color:var(--ink-1000);background:#fff;margin:0}main{max-width:760px;margin:0 auto;padding:72px 16px;display:flex;flex-direction:column;gap:24px}
+h1{margin:0;font-size:clamp(40px,7vw,72px);line-height:1;letter-spacing:-.04em;font-weight:800}p{margin:0;font-size:18px;line-height:1.5;color:var(--ink-600)}
+.btn{align-self:flex-start;height:52px;padding:0 24px;display:flex;align-items:center;border-radius:999px;background:var(--blue-500);color:#fff;font-weight:600}
+.cats{display:flex;flex-wrap:wrap;gap:8px}.cats a{padding:10px 14px;border-radius:999px;background:var(--ink-50);color:var(--ink-800);font-size:15px;font-weight:500}
+.alt{font-size:15px;color:var(--ink-600)}.alt a{color:var(--blue-600)}a{text-decoration:none}</style></head>
+<body><main><a href="/"><img src="/assets/logo-wordmark.png" alt="ChikChirik" style="height:28px"></a>
+<h1>Страница не найдена</h1><p>Такой страницы нет — возможно, ссылка устарела. Начни с главной или выбери специалистов:</p>
+<a class="btn" href="/">На главную</a><div class="cats">${links}</div>
+<p class="alt">Бет табылмады — <a href="/kz/">басты бетке</a> · Page not found — <a href="/en/">home</a></p></main></body></html>
+`);
+}
+
 // --- 5. sitemap.xml ---
 const sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'];
 for (const route of ROUTES) {
   const alts = [
-    ...LANGS.map((l) => `    <xhtml:link rel="alternate" hreflang="${l.code}" href="${SITE}${urlOf(l, route.id)}"/>`),
+    ...LANGS.filter((l) => indexable(l, route)).map((l) => `    <xhtml:link rel="alternate" hreflang="${l.code}" href="${SITE}${urlOf(l, route.id)}"/>`),
     `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${urlOf(LANGS[0], route.id)}"/>`,
   ];
-  for (const lang of LANGS) sitemap.push('  <url>', `    <loc>${SITE}${urlOf(lang, route.id)}</loc>`, `    <lastmod>${TODAY}</lastmod>`, ...alts, '  </url>');
+  for (const lang of LANGS.filter((l) => indexable(l, route))) sitemap.push('  <url>', `    <loc>${SITE}${urlOf(lang, route.id)}</loc>`, `    <lastmod>${TODAY}</lastmod>`, ...alts, '  </url>');
 }
 sitemap.push('</urlset>', '');
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), sitemap.join('\n'));
