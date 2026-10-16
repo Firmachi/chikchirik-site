@@ -31,8 +31,8 @@ const ROOT_FILES = ['robots.txt', 'llms.txt', 'favicon.ico', 'favicon.png', 'app
 
 const LANGS = [
   { code: 'ru', dir: '', ogLocale: 'ru_RU' },
-  { code: 'kk', dir: 'kz', ogLocale: 'kk_KZ', dict: 'kk.json', docs: 'kk-docs.json', cats: 'kk-cats.json' },
-  { code: 'en', dir: 'en', ogLocale: 'en_US', dict: 'en.json', cats: 'en-cats.json' },
+  { code: 'kk', dir: 'kz', ogLocale: 'kk_KZ', dict: 'kk.json', docs: 'kk-docs.json', cats: 'kk-cats.json', posts: 'kk-posts.json' },
+  { code: 'en', dir: 'en', ogLocale: 'en_US', dict: 'en.json', cats: 'en-cats.json', posts: 'en-posts.json' },
 ];
 
 // --- 1. Файлы ---
@@ -83,14 +83,18 @@ const block = (html, start, end) => {
 };
 const DOCS_START = 'const DOCS = [', DOCS_END = '\n];';
 const CATS_START = '/*CATS*/', CATS_END = '/*END CATS*/';
+const POSTS_START = '/*POSTS*/', POSTS_END = '/*END POSTS*/';
 const ruDocs = (() => { const [a, b] = block(src, DOCS_START, DOCS_END); return Function(`return ${src.slice(a + DOCS_START.length - 1, b - 1)}`)(); })();
 const ruCats = (() => { const [a, b] = block(src, CATS_START, CATS_END); return JSON.parse(src.slice(a + CATS_START.length, b - CATS_END.length)); })();
+const ruPosts = (() => { const [a, b] = block(src, POSTS_START, POSTS_END); return JSON.parse(src.slice(a + POSTS_START.length, b - POSTS_END.length)); })();
 const meta = readJson('meta.json');
 
 const ROUTES = [
   { id: '', type: 'home' },
   ...ruDocs.map((d) => ({ id: d.id, type: 'doc' })),
   ...ruCats.cats.map((c) => ({ id: c.id, type: 'cat' })),
+  { id: 'blog', type: 'blog' },
+  ...ruPosts.posts.map((p) => ({ id: `blog/${p.slug}`, type: 'post', slug: p.slug })),
 ];
 const urlOf = (lang, id) => `/${lang.dir ? lang.dir + '/' : ''}${id}`;
 // Документы на английском не переведены (текст на русском) — такие страницы не индексируем
@@ -110,16 +114,22 @@ function translate(html, lang) {
   delete cats._comment;
   let [a, b] = block(html, CATS_START, CATS_END);
   html = html.slice(0, a) + CATS_START + JSON.stringify(cats) + CATS_END + html.slice(b);
+  // Блог — целиком из i18n/<код>-posts.json
+  const posts = readJson(lang.posts);
+  delete posts._comment;
+  [a, b] = block(html, POSTS_START, POSTS_END);
+  html = html.slice(0, a) + POSTS_START + JSON.stringify(posts) + POSTS_END + html.slice(b);
   // Документы — переведённые целиком, если есть файл, иначе только названия
   const docs = lang.docs ? readJson(lang.docs).docs : null;
   [a, b] = block(html, DOCS_START, DOCS_END);
   if (docs) html = html.slice(0, a) + `const DOCS = ${JSON.stringify(docs)};` + html.slice(b);
   [a, b] = block(html, DOCS_START, docs ? '];' : DOCS_END);
   const [c, d] = block(html, CATS_START, CATS_END);
-  // Словарь применяется ко всему, кроме данных документов и категорий
+  const [e, f] = block(html, POSTS_START, POSTS_END);
+  // Словарь применяется ко всему, кроме данных документов, категорий и блога (CATS идут раньше POSTS)
   return apply(html.slice(0, a))
     + (docs ? html.slice(a, b) : apply(html.slice(a, b), (s) => s.startsWith('title: ')))
-    + apply(html.slice(b, c)) + html.slice(c, d) + apply(html.slice(d));
+    + apply(html.slice(b, c)) + html.slice(c, d) + apply(html.slice(d, e)) + html.slice(e, f) + apply(html.slice(f));
 }
 
 // Пути к файлам — абсолютные (страницы лежат во вложенных папках)
@@ -147,6 +157,10 @@ function trimData(html, route) {
     cats.cats = cats.cats.map((c) => ({ id: c.id, name: c.name, img: c.img, tips: [], faq: [], related: [] }));
     html = html.slice(0, a) + CATS_START + JSON.stringify(cats) + CATS_END + html.slice(b);
   }
+  [a, b] = block(html, POSTS_START, POSTS_END);
+  const posts = JSON.parse(html.slice(a + POSTS_START.length, b - POSTS_END.length));
+  posts.posts = posts.posts.map((p) => (route.type === 'post' && p.slug === route.slug ? p : { ...p, sections: [], faq: [] }));
+  html = html.slice(0, a) + POSTS_START + JSON.stringify(posts) + POSTS_END + html.slice(b);
   return html;
 }
 
@@ -205,8 +219,9 @@ function pageHead(html, lang, route, data) {
 
   const { title, desc, name, faq } = data;
   // Своё превью для страниц категорий (assets/og/<язык>-<id>.jpg)
-  if (route.type === 'cat' && fs.existsSync(path.join(ROOT, 'assets', 'og', `${lang.code}-${route.id}.jpg`))) {
-    const og = `${SITE}/assets/og/${lang.code}-${route.id}.jpg`;
+  const ogName = `${lang.code}-${route.id.replace('/', '-')}.jpg`;
+  if (['cat', 'post'].includes(route.type) && fs.existsSync(path.join(ROOT, 'assets', 'og', ogName))) {
+    const og = `${SITE}/assets/og/${ogName}`;
     html = html.replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${og}">`)
       .replace(/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${og}">`);
   }
@@ -220,16 +235,15 @@ function pageHead(html, lang, route, data) {
     const home = SITE + urlOf(lang, '');
     ld['@graph'] = ld['@graph'].flatMap((n) => {
       if (n['@type'] === 'WebPage') return [{ ...n, '@id': url + '#webpage', url, name: title, description: desc, breadcrumb: { '@id': url + '#breadcrumb' } }];
-      if (n['@type'] === 'FAQPage') return faq ? [{ '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }] : [];
+      if (n['@type'] === 'FAQPage') return faq && faq.length ? [{ '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }] : [];
       return [n];
     });
+    const crumbs = [{ name: data.homeName, item: home }, ...(data.parent ? [data.parent] : []), { name, item: url }];
     ld['@graph'].push({
       '@type': 'BreadcrumbList', '@id': url + '#breadcrumb',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: data.homeName, item: home },
-        { '@type': 'ListItem', position: 2, name, item: url },
-      ],
+      itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.item })),
     });
+    if (data.article) ld['@graph'].push({ '@type': 'BlogPosting', '@id': url + '#article', mainEntityOfPage: { '@id': url + '#webpage' }, headline: data.article.title, description: desc, image: data.article.image, datePublished: data.article.date, dateModified: data.article.date, inLanguage: lang.code, author: { '@id': 'https://chikchirik.kz/#org' }, publisher: { '@id': 'https://chikchirik.kz/#org' } });
     return open + JSON.stringify(ld) + close;
   });
 }
@@ -247,6 +261,8 @@ for (const lang of LANGS) {
     if (left.length) console.warn(`⚠️  На английской странице остался русский текст (добавьте в i18n/en.json и i18n/kk.json):\n  ${left.join('\n  ')}`);
   }
   const cats = lang.cats ? readJson(lang.cats) : ruCats;
+  const posts = lang.posts ? readJson(lang.posts) : ruPosts;
+  const blogUrl = SITE + urlOf(lang, 'blog');
   for (const route of ROUTES) {
     let data = {};
     if (route.type === 'doc') {
@@ -256,6 +272,14 @@ for (const lang of LANGS) {
       const c = cats.cats.find((x) => x.id === route.id);
       data = { title: c.metaTitle, desc: c.metaDesc, name: c.name, faq: c.faq, homeName: cats.ui.home };
       if (c.metaTitle.length > 65 || c.metaDesc.length > 165) console.warn(`⚠️  Длинные title/description: ${lang.code}/${route.id} (${c.metaTitle.length}/${c.metaDesc.length})`);
+    } else if (route.type === 'blog') {
+      data = { title: posts.ui.blogMetaTitle, desc: posts.ui.blogMetaDesc, name: posts.ui.blog, homeName: posts.ui.home };
+    } else if (route.type === 'post') {
+      const p = posts.posts.find((x) => x.slug === route.slug);
+      const ogName = `${lang.code}-blog-${p.slug}.jpg`;
+      data = { title: p.metaTitle, desc: p.metaDesc, name: p.title, faq: p.faq, homeName: posts.ui.home, parent: { name: posts.ui.blog, item: blogUrl },
+        article: { title: p.title, date: p.date, image: fs.existsSync(path.join(ROOT, 'assets', 'og', ogName)) ? `${SITE}/assets/og/${ogName}` : `${SITE}/og.jpg` } };
+      if (p.metaTitle.length > 65 || p.metaDesc.length > 165) console.warn(`⚠️  Длинные title/description: ${lang.code}/${route.id} (${p.metaTitle.length}/${p.metaDesc.length})`);
     }
     const url = urlOf(lang, route.id);
     PAGES.push({ url, file: path.join(lang.dir, route.id, 'index.html'), html: pageHead(trimData(html, route), lang, route, data) });
@@ -269,7 +293,8 @@ console.log(`Страниц: ${PAGES.length}`);
 
 // Проверка: все адреса документов и категорий есть в rewrites vercel.json
 const vercel = fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8');
-const notRouted = ROUTES.filter((r) => r.id && !vercel.includes(r.id)).map((r) => r.id);
+const notRouted = ROUTES.filter((r) => r.id && !r.id.startsWith('blog') && !vercel.includes(r.id)).map((r) => r.id);
+if (!vercel.includes('/blog/:slug')) notRouted.push('blog');
 if (notRouted.length) console.warn(`⚠️  Добавьте в rewrites vercel.json: ${notRouted.join(', ')}`);
 
 // --- 404 ---

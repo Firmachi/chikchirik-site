@@ -27,6 +27,10 @@
 - [AI-креаторы](https://chikchirik.kz/ai-creators)
 - [SMM-специалисты](https://chikchirik.kz/smm)
 
+## Блог
+- [Блог ChikChirik](https://chikchirik.kz/blog)
+- [Как составить ТЗ для видеографа: шаблон и примеры](https://chikchirik.kz/blog/tz-dlya-videografa)
+
 ## Документы
 - [Пользовательское соглашение](https://chikchirik.kz/terms)
 - [Политика конфиденциальности](https://chikchirik.kz/privacy)

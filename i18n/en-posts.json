@@ -1,0 +1,110 @@
+{
+  "_comment": "Blog in English (/en/blog). Same slugs and structure as the POSTS object in the Russian source.",
+  "ui": {
+    "blog": "Blog",
+    "home": "Home",
+    "blogTitle": "ChikChirik Blog",
+    "blogLead": "Useful guides for clients and creative professionals: how to brief a task, what to look for when choosing a creator and how to agree on the result.",
+    "blogMetaTitle": "ChikChirik Blog — tips for clients and creators",
+    "blogMetaDesc": "Useful articles for clients and creative professionals in Kazakhstan: how to write a brief, choose a creator and agree on the result.",
+    "read": "Read",
+    "minRead": "min read",
+    "copy": "Copy template",
+    "copied": "Template copied",
+    "example": "Example",
+    "faqTitle": "Frequently asked questions",
+    "relatedTitle": "Related specialists",
+    "alsoRead": "Useful articles",
+    "ctaTitle": "Post your task for free",
+    "ctaText": "Download the app and paste your brief into the task — specialists with portfolios will send you responses."
+  },
+  "posts": [
+    {
+      "slug": "tz-dlya-videografa",
+      "img": "assets/p-videographer.webp",
+      "date": "2026-10-16",
+      "dateText": "16 October 2026",
+      "readTime": 5,
+      "cats": ["videographers", "mobilographers", "video-editors"],
+      "title": "How to write a brief for a videographer: template and example",
+      "metaTitle": "Videographer brief: template and example | ChikChirik",
+      "metaDesc": "How to write a brief for a videographer: goal, format, timing and budget. A ready-to-use template, a filled-in example and common mistakes.",
+      "lead": "A good brief saves time and money: the videographer understands the task right away, quotes an accurate price and doesn’t spend days on questions. Here’s what to include in a brief, plus a ready template you can copy and paste into your task on ChikChirik.",
+      "sections": [
+        {
+          "h": "Why you need a brief",
+          "ps": [
+            "Without a brief, a videographer answers “it depends” and guesses the price. With a brief, they immediately see the scope, the equipment needed and the timeline. You get accurate responses and compare offers on the same terms.",
+            "A brief doesn’t have to be long. Answering the eight questions below takes 10–15 minutes."
+          ]
+        },
+        {
+          "h": "What to include in a brief",
+          "items": [
+            "Goal of the video. What it’s for: sales, awareness, a product presentation, an event recap.",
+            "Where the video will be used. Instagram and TikTok — vertical 9:16, YouTube and websites — horizontal 16:9, ads or a screen at an event.",
+            "Format and length. For example: 3 reels of 30 seconds or one 1–2 minute video.",
+            "What and where to film. Location, people on camera, a product or a process. Whether a studio is needed.",
+            "Shoot date and time. The exact day and how many hours the shoot will take.",
+            "Editing and deliverables. Whether you need editing, colour grading, music, subtitles, how many rounds of revisions and whether you need the raw footage.",
+            "References. 2–3 videos whose style you like — clearer than any description.",
+            "Budget and deadline. Your budget range and the date you need the finished video."
+          ],
+          "numbered": true
+        },
+        {
+          "h": "Videographer brief template",
+          "template": [
+            "Goal of the video: …",
+            "Where it will be published: …",
+            "Format and length: …",
+            "What we film: …",
+            "Location and shoot date: …",
+            "Editing and deliverables: …",
+            "References (links): …",
+            "Budget: from … to … ₸",
+            "Deadline: …"
+          ],
+          "ps": ["Copy the template, fill it in and paste it into your task description on ChikChirik — videographers will see all the details at once."]
+        },
+        {
+          "h": "Filled-in example",
+          "example": [
+            "Goal of the video: attract guests to a new coffee shop.",
+            "Where it will be published: Instagram and TikTok.",
+            "Format and length: 4 vertical reels of 20–30 seconds.",
+            "What we film: the interior, coffee being made, baristas and guests.",
+            "Location and shoot date: a coffee shop in Almaty, Saturday, 10:00–13:00.",
+            "Editing and deliverables: edited with music and subtitles, 2 rounds of revisions.",
+            "References (links): 2 reels from other coffee shops.",
+            "Budget: your range in tenge.",
+            "Deadline: 5 days after the shoot."
+          ]
+        },
+        {
+          "h": "Common mistakes",
+          "items": [
+            "No goal — the videographer films something “beautiful” but not what you need for sales.",
+            "No format — the video was shot horizontally when you needed vertical reels.",
+            "No references — you and the videographer imagine different styles.",
+            "Revisions not discussed — every change turns into an argument.",
+            "No budget — you get responses with prices far from what you expected."
+          ]
+        },
+        {
+          "h": "How to find a videographer on ChikChirik",
+          "ps": [
+            "Download the app, describe your task using the template and state your budget. Videographers will send responses with portfolios — compare their work and agree on the details in chat.",
+            "Posting a task and receiving responses is free."
+          ]
+        }
+      ],
+      "faq": [
+        { "q": "How long does it take to write a brief?", "a": "10–15 minutes if you answer the questions in the template. That’s enough to get accurate responses." },
+        { "q": "What if I don’t know which format I need?", "a": "Say where the video will be published and the videographer will suggest the format. Reels and TikTok usually need a vertical 9:16 video." },
+        { "q": "Do I need a brief for a simple shoot?", "a": "Yes, even a short one: goal, format, date and budget. A few lines prevent misunderstandings." },
+        { "q": "Can I change the brief after work starts?", "a": "You can, but discuss it with the videographer first: changes may affect the timeline and the price." }
+      ]
+    }
+  ]
+}

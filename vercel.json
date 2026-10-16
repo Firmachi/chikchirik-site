@@ -108,6 +108,26 @@
       "source": "/:lang(en|kz)/:id(terms|privacy|consent|offer|videographers|mobilographers|video-editors|drone-operators|photographers|motion-designers|designers|ai-creators|smm)/",
       "destination": "/:lang/:id",
       "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug/",
+      "destination": "/blog/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|kz)/blog/",
+      "destination": "/:lang/blog",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|kz)/blog/:slug/",
+      "destination": "/:lang/blog/:slug",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -118,6 +138,22 @@
     {
       "source": "/:lang(en|kz)/:id(terms|privacy|consent|offer|videographers|mobilographers|video-editors|drone-operators|photographers|motion-designers|designers|ai-creators|smm)",
       "destination": "/:lang/:id/index.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/blog/:slug/index.html"
+    },
+    {
+      "source": "/:lang(en|kz)/blog",
+      "destination": "/:lang/blog/index.html"
+    },
+    {
+      "source": "/:lang(en|kz)/blog/:slug",
+      "destination": "/:lang/blog/:slug/index.html"
     }
   ]
 }
