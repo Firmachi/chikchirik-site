@@ -132,6 +132,22 @@ function leftoverRussian(html) {
   return [...new Set((rest.match(/[А-Яа-яЁё][А-Яа-яЁё\s,.«»—-]*/g) || []).map((t) => t.trim()).filter(Boolean))];
 }
 
+// Скорость: в каждой странице оставляем только её данные. Тексты документов нужны только на странице
+// документа, подробности категорий — только на странице категории; остальным хватает названий (подвал).
+function trimData(html, route) {
+  let [a, b] = block(html, DOCS_START, '];');
+  const docs = Function(`return ${html.slice(a + DOCS_START.length - 1, b - 1)}`)();
+  const slimDocs = docs.map((d) => (route.type === 'doc' && d.id === route.id ? d : { id: d.id, title: d.title, sections: [] }));
+  html = html.slice(0, a) + `const DOCS = ${JSON.stringify(slimDocs)};` + html.slice(b);
+  if (route.type !== 'cat') {
+    [a, b] = block(html, CATS_START, CATS_END);
+    const cats = JSON.parse(html.slice(a + CATS_START.length, b - CATS_END.length));
+    cats.cats = cats.cats.map((c) => ({ id: c.id, name: c.name, img: c.img, tips: [], faq: [], related: [] }));
+    html = html.slice(0, a) + CATS_START + JSON.stringify(cats) + CATS_END + html.slice(b);
+  }
+  return html;
+}
+
 // --- 3. <head> для конкретной страницы ---
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
@@ -232,7 +248,7 @@ for (const lang of LANGS) {
       if (c.metaTitle.length > 65 || c.metaDesc.length > 165) console.warn(`⚠️  Длинные title/description: ${lang.code}/${route.id} (${c.metaTitle.length}/${c.metaDesc.length})`);
     }
     const url = urlOf(lang, route.id);
-    PAGES.push({ url, file: path.join(lang.dir, route.id, 'index.html'), html: pageHead(html, lang, route, data) });
+    PAGES.push({ url, file: path.join(lang.dir, route.id, 'index.html'), html: pageHead(trimData(html, route), lang, route, data) });
   }
 }
 for (const pg of PAGES) {
