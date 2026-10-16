@@ -43,7 +43,27 @@ fs.cpSync(path.join(ROOT, 'assets'), path.join(DIST, 'assets'), {
   filter: (p) => !/\.png$/.test(p) || !fs.existsSync(p.replace(/\.png$/, '.webp')), // PNG с WebP-заменой не нужны
 });
 fs.cpSync(path.join(ROOT, '_ds'), path.join(DIST, '_ds'), { recursive: true });
-fs.copyFileSync(path.join(ROOT, 'support.js'), path.join(DIST, 'support.js'));
+
+// Скорость: библиотеки с собственного домена (те же файлы, что раньше грузились с unpkg/cdnjs —
+// поэтому SRI-хеши в support.js продолжают совпадать), один CSS вместо девяти, шрифты одной ссылкой.
+const VENDOR = {
+  'react-18.3.1.min.js': 'node_modules/react/umd/react.production.min.js',
+  'react-dom-18.3.1.min.js': 'node_modules/react-dom/umd/react-dom.production.min.js',
+  'gsap-3.12.5.min.js': 'node_modules/gsap/dist/gsap.min.js',
+  'scrolltrigger-3.12.5.min.js': 'node_modules/gsap/dist/ScrollTrigger.min.js',
+  'lenis-1.1.13.min.js': 'node_modules/lenis/dist/lenis.min.js',
+};
+fs.mkdirSync(path.join(DIST, 'vendor'), { recursive: true });
+for (const [name, from] of Object.entries(VENDOR)) fs.copyFileSync(path.join(ROOT, from), path.join(DIST, 'vendor', name));
+fs.writeFileSync(path.join(DIST, 'support.js'), fs.readFileSync(path.join(ROOT, 'support.js'), 'utf8')
+  .replace('https://unpkg.com/react@18.3.1/umd/react.production.min.js', '/vendor/react-18.3.1.min.js')
+  .replace('https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js', '/vendor/react-dom-18.3.1.min.js'));
+const DS = fs.readdirSync(path.join(ROOT, '_ds'))[0];
+const FONTS_URL = 'https://fonts.googleapis.com/css2?family=Bitter:wght@900&family=Golos+Text:wght@400;500;600;700;800&display=swap';
+const siteCss = ['fonts', 'colors', 'typography', 'spacing', 'radius', 'elevation', 'motion', 'base']
+  .map((t) => fs.readFileSync(path.join(ROOT, '_ds', DS, 'tokens', `${t}.css`), 'utf8').replace(/@import url\([^)]*\);?/g, ''))
+  .join('\n').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*\n+/g, '\n');
+fs.writeFileSync(path.join(DIST, 'assets', 'site.css'), siteCss);
 // файлы подтверждения прав (Google Search Console, Яндекс Вебмастер)
 ROOT_FILES.push(...fs.readdirSync(path.join(ROOT, 'deploy-root')).filter((f) => /^(google[0-9a-f]+|yandex_[0-9a-f]+)\.html$/.test(f)));
 for (const f of ROOT_FILES) {
@@ -119,14 +139,28 @@ function hoistHead(html) {
   if (!hm) throw new Error('В исходнике не найден <helmet>');
   const seoTag = /<title>[\s\S]*?<\/title>|<meta\b(?=[^>]*\b(?:name|property)=)[^>]*>|<link\b(?=[^>]*\brel="(?:canonical|icon|apple-touch-icon)")[^>]*>|<script type="application\/ld\+json">[\s\S]*?<\/script>/g;
   const hoisted = hm[1].match(seoTag) || [];
-  html = html.replace(hm[0], `<helmet>${hm[1].replace(seoTag, '').replace(/\n\s*\n+/g, '\n')}</helmet>`);
+  // Из <helmet> (его подключает скрипт после старта) убираем стили дизайн-системы, неиспользуемый
+  // _ds_bundle.js и библиотеки анимации — они подключаются ниже прямо в <head>
+  const inlineStyles = hm[1].match(/<style>[\s\S]*?<\/style>/g) || [];
+  const rest = hm[1].replace(seoTag, '')
+    .replace(/<style>[\s\S]*?<\/style>/g, '')
+    .replace(/<link rel="stylesheet" href="[^"]*_ds\/[^"]*">/g, '')
+    .replace(/<script src="[^"]*(?:_ds_bundle\.js|gsap\.min\.js|ScrollTrigger\.min\.js|lenis\.min\.js)"><\/script>/g, '')
+    .replace(/\n\s*\n+/g, '\n');
+  html = html.replace(hm[0], `<helmet>${rest}</helmet>`);
   const headExtra = [
     ...hoisted,
     '<!--hreflang-->',
-    '<link rel="preconnect" href="https://unpkg.com" crossorigin>',
-    '<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>',
     '<link rel="preconnect" href="https://fonts.googleapis.com">',
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+    '<link rel="preload" as="script" href="/vendor/react-18.3.1.min.js" crossorigin="anonymous" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z">',
+    '<link rel="preload" as="script" href="/vendor/react-dom-18.3.1.min.js" crossorigin="anonymous" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1">',
+    `<link rel="stylesheet" href="${FONTS_URL}">`,
+    '<link rel="stylesheet" href="/assets/site.css">',
+    ...inlineStyles,
+    '<script defer src="/vendor/gsap-3.12.5.min.js"></script>',
+    '<script defer src="/vendor/scrolltrigger-3.12.5.min.js"></script>',
+    '<script defer src="/vendor/lenis-1.1.13.min.js"></script>',
     '<script>document.documentElement.className+=" js"</script>',
     `<script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=${METRIKA_ID}','ym');ym(${METRIKA_ID},'init',{ssr:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script>`,
     '<style>x-dc{display:none}.js #ssr{display:none}#ssr{font-family:system-ui,sans-serif;max-width:960px;margin:0 auto;padding:24px 16px;line-height:1.5}#ssr img{max-width:240px;height:auto}</style>',
