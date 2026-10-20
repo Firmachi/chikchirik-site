@@ -164,8 +164,22 @@ function trimData(html, route) {
   return html;
 }
 
+// Шаблон <x-dc> скрыт CSS, но боты без JS (GPTBot, PerplexityBot, OAI-SearchBot) читают его как текст:
+// на каждой странице оказывались текст главной, второй H1 и заготовки {{…}}. Прячем шаблон в
+// <script type="text/x-dc-template"> (его текст ботами не индексируется) и до запуска рантайма
+// (он стартует на DOMContentLoaded) возвращаем разметку в пустой <x-dc>.
+function hideTemplate(html) {
+  const open = '<x-dc>', close = '</x-dc>';
+  const a = html.indexOf(open), b = html.lastIndexOf(close);
+  if (a === -1 || b < a) return html;
+  const tpl = html.slice(a + open.length, b).replace(/<\/script/gi, '<\\/script');
+  const restore = '<script>(function(){var t=document.getElementById("dc-tpl"),d=document.querySelector("x-dc");'
+    + 'if(t&&d)d.innerHTML=t.textContent.replace(/<\\\\\\/script/gi,"<\\/script")})()</script>';
+  return html.slice(0, a) + `${open}${close}\n<script type="text/x-dc-template" id="dc-tpl">${tpl}</script>\n${restore}` + html.slice(b + close.length);
+}
+
 // --- 3. <head> для конкретной страницы ---
-const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+const esc =(s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
 function hoistHead(html) {
   const hm = /<helmet>([\s\S]*?)<\/helmet>/.exec(html);
@@ -282,7 +296,7 @@ for (const lang of LANGS) {
       if (p.metaTitle.length > 65 || p.metaDesc.length > 165) console.warn(`⚠️  Длинные title/description: ${lang.code}/${route.id} (${p.metaTitle.length}/${p.metaDesc.length})`);
     }
     const url = urlOf(lang, route.id);
-    PAGES.push({ url, file: path.join(lang.dir, route.id, 'index.html'), html: pageHead(trimData(html, route), lang, route, data) });
+    PAGES.push({ url, file: path.join(lang.dir, route.id, 'index.html'), html: hideTemplate(pageHead(trimData(html, route), lang, route, data)) });
   }
 }
 for (const pg of PAGES) {
