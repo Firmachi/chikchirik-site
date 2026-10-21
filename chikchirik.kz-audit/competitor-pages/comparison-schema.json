@@ -1,0 +1,71 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://chikchirik.kz/blog/gde-najti-videografa-dizajnera-smm#article",
+      "headline": "Где найти видеографа, дизайнера и SMM в Казахстане",
+      "description": "Сравнили Kaspi Объявления, OLX, Naimi, Profi.kz, фриланс-биржи и ChikChirik: как ищут исполнителя, кто платит, есть ли портфолио и отзывы.",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-21",
+      "dateModified": "2026-10-21",
+      "author": {
+        "@type": "Person",
+        "name": "[Имя автора]",
+        "jobTitle": "[Должность в Studio Firmachi]",
+        "worksFor": { "@id": "https://chikchirik.kz/#org" }
+      },
+      "publisher": { "@id": "https://chikchirik.kz/#org" },
+      "mainEntityOfPage": "https://chikchirik.kz/blog/gde-najti-videografa-dizajnera-smm",
+      "about": { "@id": "https://chikchirik.kz/blog/gde-najti-videografa-dizajnera-smm#list" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://chikchirik.kz/blog/gde-najti-videografa-dizajnera-smm#list",
+      "name": "Площадки для поиска креативных специалистов в Казахстане",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "numberOfItems": 6,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ChikChirik", "url": "https://chikchirik.kz/" },
+        { "@type": "ListItem", "position": 2, "name": "Kaspi Объявления", "url": "https://obyavleniya.kaspi.kz/" },
+        { "@type": "ListItem", "position": 3, "name": "OLX.kz", "url": "https://www.olx.kz/" },
+        { "@type": "ListItem", "position": 4, "name": "Naimi.kz", "url": "https://naimi.kz/" },
+        { "@type": "ListItem", "position": 5, "name": "Profi.kz", "url": "https://profi.kz/" },
+        { "@type": "ListItem", "position": 6, "name": "hh.kz", "url": "https://hh.kz/" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://chikchirik.kz/" },
+        { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://chikchirik.kz/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Где найти видеографа, дизайнера и SMM", "item": "https://chikchirik.kz/blog/gde-najti-videografa-dizajnera-smm" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Где найти видеографа в Алматы?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Для разовой съёмки — в Kaspi Объявлениях и на OLX, где сотни объявлений. Если хотите сравнить портфолио и получить отклики на свою задачу — в специализированных сервисах: ChikChirik, Profi.kz, Naimi.kz." }
+        },
+        {
+          "@type": "Question",
+          "name": "Есть ли в Казахстане биржа фриланса для дизайнеров?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Да: Profi.kz, allfreelance.kz, а также международные биржи вроде Kwork и Freelancehunt. Для креативных задач в Алматы и Астане есть приложение ChikChirik, где работают только дизайнеры, видеографы, фотографы, SMM и моушн-специалисты." }
+        },
+        {
+          "@type": "Question",
+          "name": "Чем ChikChirik отличается от Kaspi Объявлений?",
+          "acceptedAnswer": { "@type": "Answer", "text": "В Kaspi Объявлениях вы сами ищете и обзваниваете исполнителей. В ChikChirik вы публикуете задачу, а исполнители с портфолио откликаются сами; на площадке только креативные специалисты. Оплата в обоих случаях идёт напрямую исполнителю." }
+        },
+        {
+          "@type": "Question",
+          "name": "Безопасно ли платить исполнителю напрямую?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Да, если зафиксировать договорённости письменно, проверить похожие работы исполнителя и не вносить полную предоплату до начала работ. Безопасная сделка через сервис есть, например, на Naimi.kz." }
+        }
+      ]
+    }
+  ]
+}

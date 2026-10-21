@@ -20,6 +20,473 @@
   },
   "posts": [
     {
+      "slug": "skolko-stoit-videograf-fotograf-smm",
+      "img": "assets/p-photographer.webp",
+      "date": "2026-10-21",
+      "dateText": "October 21, 2026",
+      "readTime": 6,
+      "cats": [
+        "videographers",
+        "mobilographers",
+        "photographers",
+        "video-editors",
+        "smm",
+        "designers"
+      ],
+      "title": "How much videographers, photographers, editors and SMM cost in Kazakhstan in 2026",
+      "metaTitle": "Videographer, photographer and SMM prices in Kazakhstan 2026",
+      "metaDesc": "What videographers, mobile videographers, photographers, video editors and SMM cost in Almaty and Astana: price ranges as of October 2026 and what drives them.",
+      "lead": "Prices for creative services in Kazakhstan vary tenfold: one videographer in the classifieds charges ₸10,000, another ₸450,000. We collected public price lists from platforms, classifieds and agencies as of October 2026 to show the real ranges and explain what the price is made of.",
+      "sections": [
+        {
+          "h": "In short: prices in 2026",
+          "ps": [
+            "Below are ranges for Almaty and Astana. The lower end is beginners and simple tasks, the upper end is experienced professionals and production-level work. Most orders land in the middle."
+          ],
+          "table": {
+            "head": [
+              "Specialist",
+              "Priced by",
+              "Range, ₸"
+            ],
+            "cols": "minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr)",
+            "minWidth": 0,
+            "rows": [
+              [
+                "Videographer, camera operator",
+                "per hour of filming",
+                "5,000 – 100,000"
+              ],
+              [
+                "Videographer, turnkey project",
+                "per video or shoot day",
+                "15,000 – 450,000"
+              ],
+              [
+                "Mobile videographer",
+                "per hour or reels package",
+                "10,000 – 40,000"
+              ],
+              [
+                "Photographer",
+                "per hour of shooting",
+                "15,000 – 50,000"
+              ],
+              [
+                "Product photography",
+                "per hour",
+                "12,000 – 35,000"
+              ],
+              [
+                "Video editing",
+                "per video",
+                "3,500 – 48,000"
+              ],
+              [
+                "SMM, one-off service",
+                "per service",
+                "8,000 – 100,000"
+              ],
+              [
+                "Targeted ads",
+                "per setup",
+                "20,000 – 120,000"
+              ],
+              [
+                "Social media management by an agency",
+                "per month",
+                "from 139,000"
+              ]
+            ]
+          },
+          "notes": [
+            "Sources: Profi.kz price lists (Almaty and Astana), Kaspi Obyavleniya and OLX listings, studio and SMM agency websites — as of October 2026. Ad budget, studio rental and out-of-town travel are not included."
+          ]
+        },
+        {
+          "h": "Videographer and mobile videographer",
+          "ps": [
+            "Hourly rates for camera operators on Profi.kz in Almaty range from ₸5,000 to ₸100,000. Experienced videographers usually quote ₸15,000–50,000 per hour of filming. A studio may charge about ₸35,000 per hour without editing, and an agency shift of 4–8 hours starts at ₸139,200.",
+            "Kaspi listings more often offer packages: a reels shoot with simple editing costs ₸15,000–35,000, a turnkey ad or event video ₸30,000 to ₸450,000. Mobile videographers on Profi.kz charge ₸10,000–40,000 per hour.",
+            "Always check whether editing is included: it is often a separate line."
+          ]
+        },
+        {
+          "h": "Photographer",
+          "ps": [
+            "Portrait, commercial and content photography in Almaty costs ₸15,000–50,000 per hour, product photography ₸12,000–35,000 per hour, food photography ₸10,000–30,000. Retouching is priced separately: ₸500 to ₸10,000 per photo depending on complexity.",
+            "If you need a studio, rental adds from ₸8,000 per hour."
+          ]
+        },
+        {
+          "h": "Video editing",
+          "ps": [
+            "Editing one reel costs from ₸3,500 with beginner editors. On Profi.kz in Almaty the range is ₸5,000–48,000 per video. Length, color grading, graphics, subtitles and the number of revisions push the price up."
+          ]
+        },
+        {
+          "h": "SMM and targeted ads",
+          "ps": [
+            "One-off SMM services on Profi.kz start at ₸8,000, Instagram promotion costs ₸16,000–100,000, targeted ad setup ₸20,000–120,000. The ad budget is paid separately.",
+            "Social media management by an agency in Almaty starts at ₸139,000 per month; full packages with content and ads cost ₸350,000–700,000. Freelancers usually charge less than agencies, but compare the scope: posts, reels, stories, filming, reports."
+          ]
+        },
+        {
+          "h": "Designer and motion designer",
+          "ps": [
+            "Simple tasks — a banner, a cover, a post — start at ₸2,800 on Profi.kz, simple animation from motion designers at ₸2,490. A logo, brand identity or complex animation is quoted per project: ask for an estimate with stages and the number of options."
+          ]
+        },
+        {
+          "h": "What affects the price",
+          "items": [
+            "The creator's experience and portfolio.",
+            "Equipment: camera, lighting, sound, drone, gimbal.",
+            "Scope: how many hours of filming, how many videos or photos you get.",
+            "Post-production: editing, color grading, graphics, subtitles, music.",
+            "Revisions and source files: how many rounds of revisions and whether raw files are handed over.",
+            "Urgency: work needed tomorrow costs more.",
+            "Travel, location and studio rental.",
+            "Usage rights, for example in paid advertising."
+          ]
+        },
+        {
+          "h": "How not to overpay",
+          "items": [
+            "Write a brief: goal, format, deadline, what you need as the result.",
+            "Give a budget range so offers fit your limits.",
+            "Compare 3–5 offers on the same terms.",
+            "Ask what exactly the price includes: editing, revisions, source files, travel.",
+            "Put agreements in writing and don't pay 100% upfront before work starts."
+          ],
+          "numbered": true,
+          "links": [
+            {
+              "text": "Brief template for a videographer",
+              "href": "/blog/tz-dlya-videografa"
+            }
+          ]
+        },
+        {
+          "h": "Where to compare prices",
+          "ps": [
+            "Post a task in ChikChirik with your budget: videographers, photographers, editors and SMM specialists will send responses with their price and portfolio, and you pick the offer that suits you. Posting a task is free.",
+            "If you want to compare other platforms too — Kaspi Obyavleniya, OLX, Naimi, Profi.kz — we reviewed them in a separate article."
+          ],
+          "links": [
+            {
+              "text": "Where to hire a videographer, designer or SMM",
+              "href": "/blog/gde-najti-videografa-dizajnera-smm"
+            },
+            {
+              "text": "Videographers",
+              "href": "/videographers"
+            },
+            {
+              "text": "SMM specialists",
+              "href": "/smm"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "How much does a videographer in Almaty cost per hour?",
+          "a": "Public price lists show ₸5,000 to ₸100,000 per hour; experienced videographers usually charge ₸15,000–50,000. Editing is usually paid separately."
+        },
+        {
+          "q": "How much does it cost to shoot reels?",
+          "a": "A mobile videographer's package with filming and simple editing costs about ₸15,000–35,000. A videographer working at production level with a script will charge more."
+        },
+        {
+          "q": "How much is an SMM specialist per month?",
+          "a": "One-off services start at ₸8,000, agency social media management from ₸139,000 per month, ad budget extra. Freelancers are usually cheaper than agencies."
+        },
+        {
+          "q": "Why do prices differ so much?",
+          "a": "One price may cover only filming, another a script, filming, editing and revisions. Experience and equipment matter too. Compare offers on the same terms."
+        },
+        {
+          "q": "How much does it cost to post a task in ChikChirik?",
+          "a": "It is free for clients. You agree on the price of the work directly with the creator."
+        }
+      ]
+    },
+    {
+      "slug": "gde-najti-videografa-dizajnera-smm",
+      "img": "assets/p-designer.webp",
+      "date": "2026-10-21",
+      "dateText": "October 21, 2026",
+      "readTime": 7,
+      "cats": [
+        "videographers",
+        "designers",
+        "smm",
+        "photographers"
+      ],
+      "title": "Where to hire a videographer, designer or SMM in Kazakhstan: 6 platforms",
+      "metaTitle": "Where to hire a videographer or designer in Kazakhstan",
+      "metaDesc": "We compared Kaspi Obyavleniya, OLX, Naimi, Profi.kz, hh.kz and ChikChirik: how you find a creator, portfolios, reviews and payment through the service.",
+      "lead": "In Kazakhstan people look for videographers, designers and SMM specialists on classifieds, service marketplaces and freelance exchanges. We compared six platforms: how you find a creator, whether there are portfolios and reviews, who pays and for what. To be upfront: ChikChirik is our product, so we also point out where other platforms are stronger.",
+      "sections": [
+        {
+          "h": "The short answer",
+          "ps": [
+            "For a one-off shoot needed tomorrow, Kaspi Obyavleniya and OLX are fastest: hundreds of listings, but you search and call creators yourself. If vetting and payment through the service matter — Naimi. For design and SMM with a focus on reviews — Profi.kz. If you want to describe your task once and compare portfolios of creatives who respond — ChikChirik. For full-time hiring — hh.kz."
+          ]
+        },
+        {
+          "h": "Platform comparison",
+          "table": {
+            "head": [
+              "",
+              "ChikChirik",
+              "Kaspi Obyavleniya",
+              "OLX.kz",
+              "Naimi.kz",
+              "Profi.kz",
+              "hh.kz"
+            ],
+            "cols": "150px repeat(6,minmax(0,1fr))",
+            "minWidth": 960,
+            "rows": [
+              [
+                "What it is",
+                "App for creative tasks",
+                "Classifieds",
+                "Classifieds",
+                "Service marketplace",
+                "Service marketplace",
+                "Jobs and CVs"
+              ],
+              [
+                "How you find a creator",
+                "Post a task — creators respond",
+                "Search and call yourself",
+                "Search and call yourself",
+                "Leave a request — specialists quote a price",
+                "Leave a request — specialists respond",
+                "Post a vacancy or search CVs"
+              ],
+              [
+                "Creative specialists only",
+                "Yes",
+                "No, all services",
+                "No, all services",
+                "No, all services",
+                "No, all services",
+                "No, all professions"
+              ],
+              [
+                "Portfolio",
+                "On the profile",
+                "Photos in the listing",
+                "Photos in the listing",
+                "Not stated",
+                "On the profile",
+                "CV"
+              ],
+              [
+                "Reviews",
+                "Yes",
+                "No",
+                "No",
+                "Yes",
+                "Yes, 4.81 rating in Almaty",
+                "No"
+              ],
+              [
+                "Creator vetting",
+                "Moderation",
+                "Not stated",
+                "Not stated",
+                "Test, interview, documents",
+                "Passport check",
+                "Not stated"
+              ],
+              [
+                "Paying for the work",
+                "Directly to the creator",
+                "Directly, Kaspi Pay possible",
+                "Directly",
+                "In the app",
+                "Not stated",
+                "Employment contract"
+              ],
+              [
+                "For the client",
+                "Free",
+                "Free",
+                "Free",
+                "Not stated",
+                "Free",
+                "Not stated"
+              ],
+              [
+                "Mobile videographers, motion, AI creators",
+                "Separate categories",
+                "Keyword search",
+                "Keyword search",
+                "Not stated",
+                "Motion design available",
+                "Keyword search"
+              ],
+              [
+                "App",
+                "iOS, Android, Telegram bot",
+                "In the Kaspi.kz app",
+                "iOS, Android",
+                "iOS, Android",
+                "iOS, Android",
+                "iOS, Android"
+              ]
+            ]
+          },
+          "notes": [
+            "Data as of October 21, 2026, from the platforms' public pages in Almaty. “Not stated” means the information is not publicly available. Terms change — check on the platform's website."
+          ]
+        },
+        {
+          "h": "How we compared",
+          "ps": [
+            "We looked at the platforms' public pages without signing up and compared them on five questions: how you find a creator, whether you can see their work, whether there are reviews, who pays the platform and for what, and whether there are niche creative categories — mobile videographers, motion, AI creators."
+          ]
+        },
+        {
+          "h": "Kaspi Obyavleniya",
+          "ps": [
+            "The biggest choice: the search for “videographer” alone returns 335 listings across Kazakhstan, and the photo and video section for the Almaty region has more than a thousand. Posting listings is free, and there is no paid promotion in the Services section.",
+            "Downsides: you search and call creators yourself, there are no reviews, and starting prices vary widely — from ₸5,000 to ₸450,000. Good for a one-off shoot when you need it fast and cheap."
+          ]
+        },
+        {
+          "h": "OLX.kz",
+          "ps": [
+            "Similar to Kaspi: listings by city and district, with a Kazakh version. Handy if you need someone nearby. The downsides are the same — no responses to your task and no reviews, so you judge quality by the listing photos and chat."
+          ]
+        },
+        {
+          "h": "Naimi.kz",
+          "ps": [
+            "A service marketplace: you leave a request, specialists quote a price themselves, and payment goes through the app. Specialists pass four checks: registration, a test, an interview and document verification.",
+            "The downside for creative tasks: they are only part of a large catalog — videographers, for example, sit under “IT and freelance”. Good if vetting and payment through the service matter to you."
+          ]
+        },
+        {
+          "h": "Profi.kz",
+          "ps": [
+            "The Kazakhstan version of Profi.ru. Its freelance section in Almaty lists 2,636 specialists with an average rating of 4.81 from 254 reviews, passport checks, and it is free for clients. Its strengths are reviews and clear starting prices: SMM from ₸26,000, motion design from ₸2,490.",
+            "The downside: the focus is on IT, copywriting and marketing; video and photo are in other sections. Good for design, SMM and copy when reviews matter."
+          ]
+        },
+        {
+          "h": "Freelance exchanges",
+          "ps": [
+            "Kwork, Freelancehunt, allfreelance.kz and similar exchanges are handy for remote tasks: design, editing, motion. Downsides: most are not Kazakh, there are few creators for shoots in Almaty and Astana, and safe-deal payments usually carry a commission. Good if location doesn't matter."
+          ]
+        },
+        {
+          "h": "hh.kz",
+          "ps": [
+            "Not for one-off projects but for full-time hiring or long contracts: you post a vacancy or search CVs. If you need a videographer or SMM manager on staff, this is the place."
+          ]
+        },
+        {
+          "h": "ChikChirik",
+          "ps": [
+            "An app for creative tasks only: videographers, mobile videographers, video editors, photographers, designers, motion designers, SMM, AI creators and drone operators. You post a task, creators with portfolios respond, and you discuss details in chat. App data as of October 2026: 2,149 specialists, 636 published projects, 17 responses per active project on average. Free for clients.",
+            "It has weak spots too: payment goes directly to the creator, there is no safe deal; the service is young, so there are fewer reviews than on Profi.kz for now. Good for shoots and business content in Almaty and Astana when you want to compare several creators by their work."
+          ]
+        },
+        {
+          "h": "Which platform to choose",
+          "table": {
+            "head": [
+              "Task",
+              "Where to look",
+              "Why"
+            ],
+            "cols": "minmax(0,1.2fr) minmax(0,1fr) minmax(0,1.6fr)",
+            "minWidth": 0,
+            "rows": [
+              [
+                "Wedding or event tomorrow, minimal budget",
+                "Kaspi Obyavleniya, OLX",
+                "The most creators, quick to agree"
+              ],
+              [
+                "Need vetting and payment through the service",
+                "Naimi.kz",
+                "Document checks and in-app payment"
+              ],
+              [
+                "Design or SMM, reviews matter",
+                "Profi.kz",
+                "Lots of reviews and creator ratings"
+              ],
+              [
+                "Reels, product shoot, editing — want to compare portfolios",
+                "ChikChirik",
+                "Creatives only, responses with work samples to your task"
+              ],
+              [
+                "Remote editing or motion, location doesn't matter",
+                "Freelance exchanges",
+                "Large pool of remote creators"
+              ],
+              [
+                "A full-time hire",
+                "hh.kz",
+                "Vacancies and CVs"
+              ]
+            ]
+          }
+        },
+        {
+          "h": "How to choose a creator on any platform",
+          "items": [
+            "Look at 3–5 pieces of work similar to your task.",
+            "Write a brief and state a budget — offers are easier to compare.",
+            "Put the price, deadline, number of revisions and deliverables in writing.",
+            "Don't pay 100% upfront before work starts."
+          ],
+          "numbered": true,
+          "links": [
+            {
+              "text": "Brief template for a videographer",
+              "href": "/blog/tz-dlya-videografa"
+            },
+            {
+              "text": "Creative service prices in 2026",
+              "href": "/blog/skolko-stoit-videograf-fotograf-smm"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Where can I find a videographer in Almaty?",
+          "a": "For a one-off shoot — on Kaspi Obyavleniya and OLX, with hundreds of listings. If you want to compare portfolios and get responses to your task — on ChikChirik, Profi.kz or Naimi.kz."
+        },
+        {
+          "q": "Is there a freelance exchange for designers in Kazakhstan?",
+          "a": "Yes: Profi.kz, allfreelance.kz and international exchanges such as Kwork and Freelancehunt. For creative tasks in Almaty and Astana there is the ChikChirik app, which has creative specialists only."
+        },
+        {
+          "q": "How is ChikChirik different from Kaspi Obyavleniya?",
+          "a": "On Kaspi Obyavleniya you search and call creators yourself. On ChikChirik you post a task and creators with portfolios respond; the platform has creative specialists only. In both cases you pay the creator directly."
+        },
+        {
+          "q": "Is it safe to pay a creator directly?",
+          "a": "Yes, if you put agreements in writing, check similar work and don't pay in full before work starts. Payment through the service is offered by Naimi.kz, for example."
+        },
+        {
+          "q": "How much does it cost to find a creator?",
+          "a": "On Kaspi Obyavleniya, OLX, Profi.kz and ChikChirik the client pays the platform nothing. The price of the work itself depends on the task — see our article on creative service prices."
+        }
+      ]
+    },
+    {
       "slug": "tz-dlya-videografa",
       "img": "assets/p-videographer.webp",
       "date": "2026-10-16",
@@ -96,6 +563,10 @@
           "ps": [
             "Download the app, describe your task using the template and state your budget. Videographers will send responses with portfolios — compare their work and agree on the details in chat.",
             "Posting a task and receiving responses is free."
+          ],
+          "links": [
+            { "text": "Videographer prices in 2026", "href": "/blog/skolko-stoit-videograf-fotograf-smm" },
+            { "text": "Where to hire a videographer: 6 platforms", "href": "/blog/gde-najti-videografa-dizajnera-smm" }
           ]
         }
       ],
