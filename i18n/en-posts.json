@@ -20,6 +20,156 @@
   },
   "posts": [
     {
+      "slug": "kak-vybrat-fotografa",
+      "img": "assets/p-photographer.webp",
+      "date": "2026-10-31",
+      "dateText": "October 31, 2026",
+      "readTime": 5,
+      "cats": [
+        "photographers",
+        "mobilographers"
+      ],
+      "title": "How to choose a photographer: portfolio, questions and agreements",
+      "metaTitle": "How to choose a photographer: a client checklist | ChikChirik",
+      "metaDesc": "How to choose a photographer for a photo shoot, business or event: what to look for in a portfolio, which questions to ask and what to agree on before the shoot.",
+      "lead": "There are plenty of photographers, but not all of them will shoot your task well. Here is a step-by-step guide: which genre you need, how to read a portfolio, what to ask before the shoot and what to put in writing — so you get the photos you need on time and without disputes.",
+      "sections": [
+        {
+          "h": "In short",
+          "ps": [
+            "Choose a photographer for the genre of your task, look at full series rather than just the best shots, agree on the number of photos, retouching, deadlines and usage rights in advance — and put it all in writing."
+          ]
+        },
+        {
+          "h": "Step 1. Decide on the genre",
+          "ps": [
+            "Photographers specialise: a good wedding photographer won't necessarily shoot product photos for a marketplace. First work out which genre you need — that decides whose portfolio to look at."
+          ],
+          "table": {
+            "head": [
+              "Task",
+              "Genre",
+              "What to look for in the portfolio"
+            ],
+            "cols": "minmax(0,1.1fr) minmax(0,0.9fr) minmax(0,1.6fr)",
+            "minWidth": 0,
+            "rows": [
+              [
+                "Photos for Kaspi, a website or a marketplace",
+                "Product photography",
+                "Clean background, accurate colours, consistent light across the product series"
+              ],
+              [
+                "Company website, CV, social media",
+                "Business portrait",
+                "Natural faces, careful retouching, different types of people"
+              ],
+              [
+                "Conference, corporate party, presentation",
+                "Reportage",
+                "Candid moments, low-light shooting, many shots from one event"
+              ],
+              [
+                "Personal or family photo shoot",
+                "Portrait, lifestyle",
+                "Working with people and posing, editing style"
+              ],
+              [
+                "Menu, restaurant, hotel",
+                "Food and interiors",
+                "Appetising presentation, straight lines, indoor lighting"
+              ],
+              [
+                "Clothing and accessories",
+                "Fashion, lookbook",
+                "Working with models, one style across the series"
+              ]
+            ]
+          }
+        },
+        {
+          "h": "Step 2. Read the portfolio properly",
+          "items": [
+            "Look for 3–5 works in your genre — beautiful weddings don't guarantee good product shots.",
+            "Ask for a full series from one shoot: it shows the quality of every shot, not just the best ones.",
+            "Check consistency: light, colour and editing should be even across the whole series.",
+            "Read the reviews in the profile and note what clients praise and complain about."
+          ]
+        },
+        {
+          "h": "Step 3. Ask questions before the shoot",
+          "ps": [
+            "The answers will show right away whether your expectations match:"
+          ],
+          "items": [
+            "How many photos will I get and how many will be retouched?",
+            "When will the photos be ready?",
+            "Do you have your own lighting and studio, or do I pay for the rental?",
+            "How long is the shoot and what happens if it runs over?",
+            "How many editing revisions are included in the price?",
+            "Where and how can I use the photos — is advertising allowed?"
+          ],
+          "numbered": true
+        },
+        {
+          "h": "Step 4. Put the agreements in writing",
+          "ps": [
+            "Even if you agreed on everything by phone, repeat the terms in a message. It protects both sides and prevents disputes after the shoot."
+          ],
+          "items": [
+            "Date, time, location and length of the shoot.",
+            "Number of photos, format and depth of retouching.",
+            "Delivery deadline and number of revisions.",
+            "The price, what it includes and how payment works.",
+            "Don't pay the full amount before the shoot: it's sensible to pay part in advance and the rest after you receive the photos."
+          ]
+        },
+        {
+          "h": "Warning signs",
+          "items": [
+            "The portfolio has no work in your genre.",
+            "The photographer can't name the deadline or the number of photos.",
+            "They demand full prepayment and avoid written agreements.",
+            "The price is noticeably lower than others' with no explanation."
+          ]
+        },
+        {
+          "h": "How to find a photographer on ChikChirik",
+          "ps": [
+            "Describe your task in the app: genre, city, date, how many photos you need and your budget. Photographers will send responses with their portfolios — then compare the work and ask the questions from this article in the chat."
+          ],
+          "links": [
+            {
+              "text": "Photographers on ChikChirik",
+              "href": "/photographers"
+            },
+            {
+              "text": "Creative service prices in 2026",
+              "href": "/blog/skolko-stoit-videograf-fotograf-smm"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "How do I choose a photographer for a photo shoot?",
+          "a": "Look at portfolios with portrait shoots specifically, ask for a full series from one shoot and agree on the look, location, number of photos and deadlines in advance."
+        },
+        {
+          "q": "What should I ask a photographer before the shoot?",
+          "a": "How many photos there will be and how many retouched, when they will be delivered, who pays for the studio, how many revisions are included and whether the photos can be used in advertising."
+        },
+        {
+          "q": "Do I need a contract with a photographer?",
+          "a": "For a large or commercial shoot, a contract is better. For a small one, at least put the terms in writing in your messages."
+        },
+        {
+          "q": "How much does a photographer cost?",
+          "a": "It depends on the genre, the length of the shoot, retouching and studio rental. See our article on creative service prices for reference figures."
+        }
+      ]
+    },
+    {
       "slug": "skolko-stoit-videograf-fotograf-smm",
       "img": "assets/p-photographer.webp",
       "date": "2026-10-21",
@@ -492,7 +642,11 @@
       "date": "2026-10-16",
       "dateText": "16 October 2026",
       "readTime": 5,
-      "cats": ["videographers", "mobilographers", "video-editors"],
+      "cats": [
+        "videographers",
+        "mobilographers",
+        "video-editors"
+      ],
       "title": "How to write a brief for a videographer: template and example",
       "metaTitle": "Videographer brief: template and example | ChikChirik",
       "metaDesc": "How to write a brief for a videographer: goal, format, timing and budget. A ready-to-use template, a filled-in example and common mistakes.",
@@ -532,7 +686,9 @@
             "Budget: from … to … ₸",
             "Deadline: …"
           ],
-          "ps": ["Copy the template, fill it in and paste it into your task description on ChikChirik — videographers will see all the details at once."]
+          "ps": [
+            "Copy the template, fill it in and paste it into your task description on ChikChirik — videographers will see all the details at once."
+          ]
         },
         {
           "h": "Filled-in example",
@@ -565,16 +721,34 @@
             "Posting a task and receiving responses is free."
           ],
           "links": [
-            { "text": "Videographer prices in 2026", "href": "/blog/skolko-stoit-videograf-fotograf-smm" },
-            { "text": "Where to hire a videographer: 6 platforms", "href": "/blog/gde-najti-videografa-dizajnera-smm" }
+            {
+              "text": "Videographer prices in 2026",
+              "href": "/blog/skolko-stoit-videograf-fotograf-smm"
+            },
+            {
+              "text": "Where to hire a videographer: 6 platforms",
+              "href": "/blog/gde-najti-videografa-dizajnera-smm"
+            }
           ]
         }
       ],
       "faq": [
-        { "q": "How long does it take to write a brief?", "a": "10–15 minutes if you answer the questions in the template. That’s enough to get accurate responses." },
-        { "q": "What if I don’t know which format I need?", "a": "Say where the video will be published and the videographer will suggest the format. Reels and TikTok usually need a vertical 9:16 video." },
-        { "q": "Do I need a brief for a simple shoot?", "a": "Yes, even a short one: goal, format, date and budget. A few lines prevent misunderstandings." },
-        { "q": "Can I change the brief after work starts?", "a": "You can, but discuss it with the videographer first: changes may affect the timeline and the price." }
+        {
+          "q": "How long does it take to write a brief?",
+          "a": "10–15 minutes if you answer the questions in the template. That’s enough to get accurate responses."
+        },
+        {
+          "q": "What if I don’t know which format I need?",
+          "a": "Say where the video will be published and the videographer will suggest the format. Reels and TikTok usually need a vertical 9:16 video."
+        },
+        {
+          "q": "Do I need a brief for a simple shoot?",
+          "a": "Yes, even a short one: goal, format, date and budget. A few lines prevent misunderstandings."
+        },
+        {
+          "q": "Can I change the brief after work starts?",
+          "a": "You can, but discuss it with the videographer first: changes may affect the timeline and the price."
+        }
       ]
     }
   ]
