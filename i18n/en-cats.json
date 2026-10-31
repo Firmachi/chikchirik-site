@@ -17,10 +17,10 @@
       "img": "assets/p-videographer.webp",
       "imgAlt": "A videographer filming a client project",
       "name": "Videographers",
-      "metaTitle": "Videographers in Almaty & Astana | ChikChirik",
-      "metaDesc": "Find a videographer in Almaty or Astana: reels, ads, music videos, events. Post your task on ChikChirik — videographers with portfolios will respond.",
+      "metaTitle": "Videographers in Kazakhstan | ChikChirik",
+      "metaDesc": "Find a videographer in Kazakhstan: reels, ads, music videos, events. Post your task on ChikChirik — videographers with portfolios will respond.",
       "h1": "Videographers",
-      "lead": "Find a videographer for your task — from social media reels to a commercial. Describe your task on ChikChirik and videographers with portfolios will send you responses. Choose by their work and agree on the details in chat.",
+      "lead": "Find a videographer for your task — from social media reels to a commercial. Describe your task on ChikChirik and videographers with portfolios will send you responses. Choose by their work and agree on the details in chat. Videographers work in Almaty, Astana, Shymkent and other cities of Kazakhstan.",
       "servicesTitle": "What you can order from a videographer",
       "services": [
         "Reels and short videos for social media",
@@ -77,7 +77,7 @@
       "metaTitle": "Mobile content creators — reels, stories | ChikChirik",
       "metaDesc": "Find a mobile content creator: reels, stories and business content shot on a phone. Post your task on ChikChirik — creators with portfolios will respond.",
       "h1": "Mobile content creators",
-      "lead": "A mobile content creator (mobilographer) shoots and edits content on a smartphone — fast and made for social media. Describe your task on ChikChirik and creators will send responses with examples of their reels.",
+      "lead": "A mobile content creator (mobilographer) shoots and edits content on a smartphone — fast and made for social media. Describe your task on ChikChirik and creators will send responses with examples of their reels. Creators work in Almaty, Astana and other cities of Kazakhstan.",
       "servicesTitle": "What you can order from a mobile content creator",
       "services": [
         "Reels and short videos for Instagram and TikTok",
@@ -188,10 +188,10 @@
       "img": "assets/p-drone.webp",
       "imgAlt": "A drone operator flying a drone on a shoot",
       "name": "Drone operators",
-      "metaTitle": "Drone operator in Almaty — aerial filming | ChikChirik",
+      "metaTitle": "Drone operators in Kazakhstan — aerial filming | ChikChirik",
       "metaDesc": "Find a drone operator: aerial footage of real estate, events, ads and travel. Post your task on ChikChirik — operators with portfolios will respond.",
       "h1": "Drone operators",
-      "lead": "Aerial filming for ads, real estate, events and travel. Describe your task on ChikChirik — drone operators will send responses with examples of their work. Choose by portfolio and agree on the details in chat.",
+      "lead": "Aerial filming for ads, real estate, events and travel. Describe your task on ChikChirik — drone operators will send responses with examples of their work. Choose by portfolio and agree on the details in chat. Drone operators work in Almaty, Astana and other cities of Kazakhstan.",
       "servicesTitle": "What you can order from a drone operator",
       "services": [
         "Aerial footage of real estate and residential complexes",
@@ -245,34 +245,39 @@
       "img": "assets/p-photographer.webp",
       "imgAlt": "A photographer on a shoot for a client",
       "name": "Photographers",
-      "metaTitle": "Photographers in Almaty & Astana | ChikChirik",
-      "metaDesc": "Find a photographer: product shots, portraits, events, social media content. Post your task on ChikChirik — photographers with portfolios will respond.",
-      "h1": "Photographers",
-      "lead": "Find a photographer for your task — from product shots for marketplaces to portraits and events. Describe your task on ChikChirik and photographers with portfolios will send you responses. Choose by their work and agree on the details in chat.",
+      "metaTitle": "Photographers in Kazakhstan | ChikChirik",
+      "metaDesc": "Need a photographer? Photo shoots, product photography, events, business portraits. Post your task on ChikChirik — photographers across Kazakhstan respond.",
+      "h1": "Photographers in Kazakhstan",
+      "lead": "Need a photographer for a photo shoot, an event or product photos? Describe your task on ChikChirik — professional and freelance photographers across Kazakhstan will send responses with their portfolios. Choose by their work and agree on the details in chat.",
       "servicesTitle": "What you can order from a photographer",
       "services": [
-        "Product photography for websites and marketplaces",
-        "Portraits and business portraits",
-        "Events and conferences",
+        "Photo shoots: portrait, family, love story — in a studio or on location",
+        "Business portraits for websites, CVs and social media",
+        "Product photography for websites, Kaspi and marketplaces",
+        "Events, conferences and corporate parties",
         "Social media content for brands",
-        "Food, interiors and venues",
-        "Studio and on-location photo shoots"
+        "Food, interiors, restaurants and hotels",
+        "Fashion shoots and lookbooks",
+        "Weddings and celebrations"
       ],
       "priceTitle": "How much does a photographer cost",
-      "priceText": "The photographer sets the price, and you state your budget in the task — so you can see right away who is ready to work within it. The price depends on:",
+      "priceText": "The photographer sets the price, and you state your budget in the task — so you can see right away who is ready to work within it. For more accurate responses, mention the type of shoot, how many final photos you need and the date. The price depends on:",
       "priceFactors": [
-        "shoot duration and number of photos",
-        "retouching: how many photos and how detailed",
-        "studio rental and props",
+        "the type of shoot: product, portrait or reportage",
+        "the length of the shoot and the number of shots",
+        "retouching: how many photos and how deep the editing is",
+        "studio rental, lighting and props",
         "travel to the location",
-        "delivery time for the final photos"
+        "the delivery deadline"
       ],
       "tipsTitle": "How to choose a photographer",
       "tips": [
-        "Look at the portfolio in the genre you need: product, portrait and event photography are different skills.",
-        "Check how many photos you’ll get and how many will be retouched.",
-        "Discuss where and how you can use the photos — for example, in ads.",
-        "Put agreements in writing in the chat and don’t pay the full amount before the shoot."
+        "Look at portfolios in the genre you need: product, portrait and reportage photography are different skills.",
+        "Ask to see a full series from one shoot, not just the best shots.",
+        "Check how many photos you will get, how many will be retouched and when.",
+        "Discuss whether the photographer has their own lighting and studio or they need to be rented.",
+        "Agree where and how the photos can be used — for example, in advertising.",
+        "Put the agreements in the chat and don't pay the full amount upfront before the shoot."
       ],
       "faq": [
         {
@@ -290,6 +295,18 @@
         {
           "q": "Can I use the photos in ads?",
           "a": "You and the photographer agree on usage rights yourselves — settle this in advance and put it in writing in the chat."
+        },
+        {
+          "q": "How do I find a freelance photographer in my city?",
+          "a": "Describe your task on ChikChirik and specify the city. Photographers who work there or are ready to travel will respond — each has a portfolio and reviews in their profile."
+        },
+        {
+          "q": "How should I prepare for a photo shoot?",
+          "a": "Decide on the purpose and the look, collect 3–5 reference images and discuss the location, clothes and time with the photographer. The more detailed the task, the more accurate the responses."
+        },
+        {
+          "q": "When will the photos be ready?",
+          "a": "It depends on the number of shots and how deep the retouching is — the photographer will name the deadline in their response. If you need the photos by a certain date, put it in the task right away."
         }
       ],
       "related": [
@@ -359,10 +376,10 @@
       "img": "assets/p-designer.webp",
       "imgAlt": "A graphic designer working on a layout",
       "name": "Designers",
-      "metaTitle": "Graphic designer in Almaty — logo, branding | ChikChirik",
+      "metaTitle": "Graphic designers in Kazakhstan — logo, branding | ChikChirik",
       "metaDesc": "Find a graphic designer: logo, branding, social media design, presentations, packaging. Post your task on ChikChirik — designers will respond.",
       "h1": "Graphic designers",
-      "lead": "Logos, branding, social media and packaging design. Describe your task on ChikChirik — designers and illustrators will send responses with portfolios. Designers work remotely across Kazakhstan.",
+      "lead": "Logos, branding, social media and packaging design. Describe your task on ChikChirik — designers and illustrators will send responses with portfolios. Designers from Almaty, Astana and other cities work remotely across Kazakhstan.",
       "servicesTitle": "What you can order from a designer",
       "services": [
         "Logo and brand identity",
@@ -473,10 +490,10 @@
       "img": "assets/p-blogger.webp",
       "imgAlt": "An SMM specialist creating social media content",
       "name": "SMM specialists",
-      "metaTitle": "SMM specialist in Almaty and Kazakhstan | ChikChirik",
+      "metaTitle": "SMM specialists in Kazakhstan | ChikChirik",
       "metaDesc": "Find an SMM specialist: Instagram and TikTok management, content plans, targeted ads. Post your task on ChikChirik — specialists with case studies will respond.",
       "h1": "SMM specialists",
-      "lead": "Social media management, content, targeted ads and promotion. Describe your task on ChikChirik — SMM specialists and content creators will send responses with case studies and portfolios.",
+      "lead": "Social media management, content, targeted ads and promotion. Describe your task on ChikChirik — SMM specialists and content creators will send responses with case studies and portfolios. Specialists work remotely across Kazakhstan — from Almaty, Astana and other cities.",
       "servicesTitle": "What you can order from an SMM specialist",
       "services": [
         "Instagram, TikTok and Telegram management",
