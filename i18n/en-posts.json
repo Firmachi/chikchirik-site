@@ -20,6 +20,141 @@
   },
   "posts": [
     {
+      "slug": "smm-specialist-ili-targetolog",
+      "img": "assets/p-blogger.webp",
+      "date": "2026-10-31",
+      "dateText": "October 31, 2026",
+      "readTime": 5,
+      "cats": [
+        "smm"
+      ],
+      "title": "SMM specialist or targeting specialist: who to hire for your business",
+      "metaTitle": "SMM specialist or targeting specialist: who to hire | ChikChirik",
+      "metaDesc": "How an SMM specialist differs from a targeting specialist, who to hire for your task and whether one person can do both. A comparison of tasks, results and pay.",
+      "lead": "An SMM specialist and a targeting specialist often work in the same account but are responsible for different things: the first for content and the audience, the second for paid ads. Here is how they differ, who to hire for your task and when you need both.",
+      "sections": [
+        {
+          "h": "In short",
+          "ps": [
+            "If you need the account run regularly and content made, hire an SMM specialist. If you need leads and sales from paid ads, hire a targeting specialist. If the account is empty, start with SMM: there's nowhere to send ad traffic until the profile has content."
+          ]
+        },
+        {
+          "h": "Comparison",
+          "table": {
+            "head": [
+              "",
+              "SMM specialist",
+              "Targeting specialist"
+            ],
+            "cols": "minmax(0,0.9fr) minmax(0,1.2fr) minmax(0,1.2fr)",
+            "minWidth": 0,
+            "rows": [
+              [
+                "Main task",
+                "Run the account and build relationships with the audience",
+                "Bring leads and sales through paid ads"
+              ],
+              [
+                "What they do",
+                "Content plan, posts, reels, stories, replies to followers",
+                "Set up ad campaigns, audiences and creatives, run tests"
+              ],
+              [
+                "Result",
+                "An active account, reach, engagement, awareness",
+                "Leads, clicks, sales, cost per lead"
+              ],
+              [
+                "When you see the effect",
+                "Gradually, over several months of regular work",
+                "Faster — from the first days of the campaign"
+              ],
+              [
+                "How they are usually paid",
+                "Monthly management or one-off services",
+                "Campaign setup and management; the ad budget is separate"
+              ]
+            ]
+          }
+        },
+        {
+          "h": "When you need an SMM specialist",
+          "items": [
+            "The account is empty or updated irregularly.",
+            "You need a consistent style and a content plan a month ahead.",
+            "Replying to followers and building a community matters.",
+            "The brand is just launching and needs awareness."
+          ]
+        },
+        {
+          "h": "When you need a targeting specialist",
+          "items": [
+            "The account already has content, reviews and a clear offer.",
+            "You need leads or sales soon.",
+            "You have an ad budget and are ready to test.",
+            "You need to promote a sale, a launch or a specific product."
+          ]
+        },
+        {
+          "h": "Can one person do both?",
+          "ps": [
+            "Many SMM specialists can set up ads, and targeting specialists can make simple content. For a small business this is often sensible: one contractor, one point of responsibility.",
+            "If ads are your main source of sales and the budget is large, a separate specialist with deep knowledge of ad accounts is better."
+          ]
+        },
+        {
+          "h": "What to ask before hiring",
+          "ps": [
+            "These questions help compare candidates in their responses:"
+          ],
+          "items": [
+            "SMM: show the accounts you run and the results over several months.",
+            "SMM: how many posts a month are included and who shoots the content?",
+            "SMM: how do you report and what do you count as success?",
+            "Targeting: show case studies with cost per lead and ad budget.",
+            "Targeting: how will you test audiences and creatives?",
+            "Targeting: how will you access the ad account — through roles, without my password?"
+          ],
+          "numbered": true
+        },
+        {
+          "h": "How to find a specialist on ChikChirik",
+          "ps": [
+            "Describe your task in the app: your niche, social networks, goal — awareness or leads — and budget. SMM and targeting specialists will send responses with case studies; then compare them using the questions from this article."
+          ],
+          "links": [
+            {
+              "text": "SMM specialists on ChikChirik",
+              "href": "/smm"
+            },
+            {
+              "text": "Creative service prices in 2026",
+              "href": "/blog/skolko-stoit-videograf-fotograf-smm"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "How is SMM different from targeted ads?",
+          "a": "SMM is social media management and content; targeted ads are paid advertising aimed at a specific audience. SMM builds awareness and trust, targeted ads bring leads and sales."
+        },
+        {
+          "q": "Who should I hire first: an SMM specialist or a targeting specialist?",
+          "a": "If the account is empty, an SMM specialist: you need content first that ads can lead to. If the account is set up and you need sales, a targeting specialist."
+        },
+        {
+          "q": "Is the ad budget included in the targeting specialist's fee?",
+          "a": "Usually not: payment for the work and the ad budget are separate. Check this in advance and put it in writing."
+        },
+        {
+          "q": "Can one specialist do both SMM and targeted ads?",
+          "a": "Yes, many specialists do both. It's convenient for a small business; with a large ad budget a separate targeting specialist is better."
+        }
+      ]
+    },
+    {
       "slug": "kak-vybrat-fotografa",
       "img": "assets/p-photographer.webp",
       "date": "2026-10-31",

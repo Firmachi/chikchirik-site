@@ -378,32 +378,37 @@
       "name": "Designers",
       "metaTitle": "Graphic designers in Kazakhstan — logo, branding | ChikChirik",
       "metaDesc": "Find a graphic designer: logo, branding, social media design, presentations, packaging. Post your task on ChikChirik — designers will respond.",
-      "h1": "Graphic designers",
-      "lead": "Logos, branding, social media and packaging design. Describe your task on ChikChirik — designers and illustrators will send responses with portfolios. Designers from Almaty, Astana and other cities work remotely across Kazakhstan.",
+      "h1": "Graphic designers in Kazakhstan",
+      "lead": "Need a logo, a brand identity, social media or packaging design? Describe your task on ChikChirik — graphic designers and illustrators will send responses with their portfolios. Designers from Almaty, Astana and other cities work remotely across Kazakhstan.",
       "servicesTitle": "What you can order from a designer",
       "services": [
         "Logo and brand identity",
-        "Posts, stories and covers for social media",
-        "Presentations and sales decks",
+        "Brand book and guidelines",
+        "Posts, stories and cover design for social media",
+        "Product cards for Kaspi and marketplaces",
+        "Presentations and commercial proposals",
         "Packaging and labels",
         "Illustrations",
-        "Banners and ad layouts"
+        "Banners, outdoor ads and print"
       ],
       "priceTitle": "How much does a designer cost",
-      "priceText": "The designer sets the price, and you state your budget in the task. The price depends on:",
+      "priceText": "The designer sets the price, and you state your budget in the task. For more accurate responses, attach examples and describe what you need to receive in the end. The price depends on:",
       "priceFactors": [
         "scope: a single layout or a full brand identity",
         "number of concepts and revisions",
         "whether source files and usage rights are included",
         "complexity: illustration, animation, print",
-        "deadlines"
+        "deadlines",
+        "how many formats to adapt: social media, website, print"
       ],
       "tipsTitle": "How to choose a designer",
       "tips": [
-        "Look at the portfolio in the area you need: logos, social media and packaging are different tasks.",
-        "Send examples you like and describe the brand’s audience.",
-        "Agree on the number of concepts and revisions in advance.",
-        "Clarify in what form you’ll receive the files and whether source files are included."
+        "Look at portfolios in the right area: logos, social media and packaging are different tasks.",
+        "Ask to see the process — sketches and options, not just final work.",
+        "Send examples you like and describe the brand's audience.",
+        "Agree on the number of options and revisions in advance.",
+        "For a logo, check whether there will be versions for dark backgrounds, an icon and social media.",
+        "Check which files you will receive and whether the source files are included."
       ],
       "faq": [
         {
@@ -421,6 +426,18 @@
         {
           "q": "Can I work with a designer from another city?",
           "a": "Yes, designers usually work remotely: discussion and revisions happen in the chat."
+        },
+        {
+          "q": "How much does a logo cost?",
+          "a": "It depends on the complexity and whether you need just a mark or a full brand identity. State your budget in the task — designers will offer their terms in their responses."
+        },
+        {
+          "q": "How many revisions are included?",
+          "a": "Each designer sets the number of revisions. Discuss it in advance and put it in the chat together with the number of options."
+        },
+        {
+          "q": "Who owns the rights to the logo?",
+          "a": "Usage rights and the handover of source files are discussed with the designer. For a logo, it's better to agree on a full transfer of rights in advance."
         }
       ],
       "related": [
@@ -492,31 +509,36 @@
       "name": "SMM specialists",
       "metaTitle": "SMM specialists in Kazakhstan | ChikChirik",
       "metaDesc": "Find an SMM specialist: Instagram and TikTok management, content plans, targeted ads. Post your task on ChikChirik — specialists with case studies will respond.",
-      "h1": "SMM specialists",
-      "lead": "Social media management, content, targeted ads and promotion. Describe your task on ChikChirik — SMM specialists and content creators will send responses with case studies and portfolios. Specialists work remotely across Kazakhstan — from Almaty, Astana and other cities.",
+      "h1": "SMM specialists in Kazakhstan",
+      "lead": "Need an SMM specialist to run Instagram, TikTok or Telegram, build a content plan or set up ads? Describe your task on ChikChirik — SMM specialists, targeting specialists and content creators will send responses with case studies. Specialists work remotely across Kazakhstan — from Almaty, Astana and other cities.",
       "servicesTitle": "What you can order from an SMM specialist",
       "services": [
-        "Instagram, TikTok and Telegram management",
-        "Content plan and strategy",
-        "Shooting and creating content",
-        "Targeted advertising",
-        "Working with bloggers",
-        "Analytics and reports"
+        "Full management of Instagram, TikTok and Telegram",
+        "Strategy and content plan",
+        "Content production: reels, stories, photos",
+        "Targeted ads on Instagram, Facebook and TikTok",
+        "Profile audit and recommendations",
+        "Post copywriting",
+        "Work with bloggers and influencers",
+        "Analytics and monthly reports"
       ],
       "priceTitle": "How much do SMM services cost",
-      "priceText": "The specialist sets the price, and you state your budget in the task. The price depends on:",
+      "priceText": "The specialist sets the price, and you state your budget in the task. For more accurate responses, say which social networks to run, how many posts a month you need and whether ads are included. The price depends on:",
       "priceFactors": [
         "how many social networks and posts per month",
         "whether content needs to be shot or already exists",
         "whether targeted ads are included — the ad budget is paid separately",
         "a one-off task or ongoing management",
-        "the specialist’s experience in your niche"
+        "the specialist’s experience in your niche",
+        "whether copywriting, design and editing are needed"
       ],
       "tipsTitle": "How to choose an SMM specialist",
       "tips": [
         "Ask for case studies with numbers: reach, followers, leads.",
-        "Look for experience in your niche.",
-        "Agree on goals and the reporting format.",
+        "Look at experience in your niche.",
+        "Agree on goals and the report format.",
+        "Ask which metrics the specialist considers success and how often they will report.",
+        "Don't share account passwords — give access through roles in Meta Business Suite.",
         "Start with a one-off task or a trial month."
       ],
       "faq": [
@@ -535,6 +557,18 @@
         {
           "q": "Do SMM specialists work remotely?",
           "a": "Most do, across Kazakhstan. If you need content shot, look for a specialist in your city."
+        },
+        {
+          "q": "How do I find an SMM specialist for my business?",
+          "a": "Describe your task on ChikChirik: your niche, social networks, goals and budget. Specialists will send responses with case studies — choose those with experience in your field."
+        },
+        {
+          "q": "How much does an SMM specialist cost?",
+          "a": "It depends on the scope: a one-off service, running one network or a package with ads. See our article on creative service prices for reference; specialists will name the exact price in their responses."
+        },
+        {
+          "q": "What should I give an SMM specialist to start?",
+          "a": "Access to accounts through roles, a description of the business and audience, the photos and videos you already have, and examples of accounts you like."
         }
       ],
       "related": [
