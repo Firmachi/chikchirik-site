@@ -229,7 +229,8 @@ function pageHead(html, lang, route, data) {
   html = html.replace('<!--hreflang-->', alternates)
     .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${url}">`)
     .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${url}">`);
-  if (route.type === 'home') return html;
+  // Главная берёт разметку из исходника как есть — обновляем только дату изменения WebPage
+  if (route.type === 'home') return html.replace(/("@type": "WebPage"[^\]]*?"dateModified": ")\d{4}-\d{2}-\d{2}(")/, `$1${TODAY}$2`);
 
   const { title, desc, name, faq } = data;
   // Своё превью для страниц категорий (assets/og/<язык>-<id>.jpg)
@@ -248,7 +249,8 @@ function pageHead(html, lang, route, data) {
     const ld = JSON.parse(json);
     const home = SITE + urlOf(lang, '');
     ld['@graph'] = ld['@graph'].flatMap((n) => {
-      if (n['@type'] === 'WebPage') return [{ ...n, '@id': url + '#webpage', url, name: title, description: desc, breadcrumb: { '@id': url + '#breadcrumb' } }];
+      // dateModified = дата сборки, как <lastmod> в sitemap: дата в исходнике устаревала и тянулась на все страницы
+      if (n['@type'] === 'WebPage') return [{ ...n, '@id': url + '#webpage', url, name: title, description: desc, breadcrumb: { '@id': url + '#breadcrumb' }, dateModified: TODAY }];
       if (n['@type'] === 'FAQPage') return faq && faq.length ? [{ '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }] : [];
       return [n];
     });
