@@ -43,7 +43,7 @@ LAST	Dkk	"креативті мамандарды табуға арналған 
 LAST	P31	Q620615	S854	"https://chikchirik.kz/"
 LAST	P31	Q5412217	S854	"https://chikchirik.kz/"
 LAST	P495	Q232	S854	"https://chikchirik.kz/"
-LAST	P306	Q48493	S854	"https://apps.apple.com/kz/app/chik-chirik/id6802269556"
+LAST	P306	Q48493	S854	"https://apps.apple.com/kz/app/chikchirik/id6802269556"
 LAST	P306	Q94	S854	"https://play.google.com/store/apps/details?id=com.chikchirik.chikchirikApp"
 LAST	P407	Q7737	S854	"https://chikchirik.kz/"
 LAST	P856	"https://chikchirik.kz/"
