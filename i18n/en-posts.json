@@ -20,6 +20,166 @@
   },
   "posts": [
     {
+      "slug": "mobilograf-ili-videograf",
+      "img": "assets/p-mobilographer.webp",
+      "date": "2026-11-02",
+      "readTime": 5,
+      "cats": [
+        "mobilographers",
+        "videographers"
+      ],
+      "dateText": "November 2, 2026",
+      "title": "Mobile videographer or videographer: who to hire for reels",
+      "metaTitle": "Mobile videographer or videographer: who to hire | ChikChirik",
+      "metaDesc": "How a mobile videographer differs from a videographer, who to book for reels, ads or events, and what to ask before the shoot. Tasks, gear and results compared.",
+      "lead": "A mobile videographer shoots on a smartphone; a videographer works with a camera, lighting and sound. Both make video for social media, but for different jobs. Here's how they differ, who to pick for reels, ads or events, and what to agree on before the shoot.",
+      "sections": [
+        {
+          "h": "In short",
+          "ps": [
+            "Need regular content for Instagram and TikTok — reels, stories, unboxings — go with a mobile videographer. Need an ad, a music video, an interview or event coverage with clean sound — hire a videographer. If you're not sure, start with one question: where will the video live, and how many clips do you need a month?"
+          ]
+        },
+        {
+          "h": "Comparison",
+          "table": {
+            "head": [
+              "",
+              "Mobile videographer",
+              "Videographer"
+            ],
+            "cols": "minmax(0,0.9fr) minmax(0,1.2fr) minmax(0,1.2fr)",
+            "minWidth": 0,
+            "rows": [
+              [
+                "Gear",
+                "Smartphone, gimbal, compact light and a lav mic",
+                "Camera, interchangeable lenses, lighting, separate audio recording"
+              ],
+              [
+                "Format",
+                "Vertical reels, stories, short clips",
+                "Ads, music videos, interviews, company films, events"
+              ],
+              [
+                "Speed",
+                "Shoots and edits fast, often on the same day",
+                "More time for prep, shooting and editing"
+              ],
+              [
+                "Output per shoot",
+                "Usually several short clips",
+                "Usually one video or project"
+              ],
+              [
+                "Best for",
+                "Regular social media content",
+                "Video where image, sound and staging matter"
+              ]
+            ]
+          }
+        },
+        {
+          "h": "When you need a mobile videographer",
+          "items": [
+            "You run Instagram or TikTok and need content every week.",
+            "You're filming a café, salon, shop or showroom as it is, without heavy staging.",
+            "You need unboxings, product reviews, behind-the-scenes and trends.",
+            "You want clips fast — on the day of the shoot or the next day.",
+            "You want to shoot regularly: several sessions a month."
+          ]
+        },
+        {
+          "h": "When you need a videographer",
+          "items": [
+            "An ad for paid social, TV or your website.",
+            "An interview, podcast or expert video where clean sound matters.",
+            "A wedding, conference, concert or another event.",
+            "A music video, brand film or company film.",
+            "A horizontal version for YouTube or a screen at an event."
+          ]
+        },
+        {
+          "h": "Can you combine them?",
+          "ps": [
+            "Yes, and it's a common setup. A videographer shoots the main video once a quarter, and a mobile videographer keeps the account going in between. Another option is to ask the videographer to cut vertical versions for reels — many do, but it's extra work, so agree on it upfront.",
+            "The line between the two is blurry: some videographers shoot reels, and some mobile videographers work with a camera. Look at the portfolio in the format you need, not at the job title."
+          ]
+        },
+        {
+          "h": "How to prepare for the shoot",
+          "items": [
+            "Set the goal: reach, leads or awareness — it shapes the format of the clips.",
+            "Collect 3–5 example videos you like and show them to the creator.",
+            "Prepare the location: light, a clean background, the product or dishes in frame.",
+            "Let staff and guests know about the shoot and decide who will be on camera.",
+            "Agree on how you'll receive the files and whether you need the raw footage."
+          ]
+        },
+        {
+          "h": "What to ask before the shoot",
+          "ps": [
+            "These questions work for both:"
+          ],
+          "items": [
+            "Show me 3–5 projects in my niche and in the format I need.",
+            "How many clips will one shoot produce, and how long are they?",
+            "Who comes up with the scripts and ideas?",
+            "Are editing, music, subtitles and color grading included?",
+            "How many revisions are included, and when will it be ready?",
+            "Do we need lighting, a mic or an assistant on set?"
+          ],
+          "numbered": true
+        },
+        {
+          "h": "What affects the price",
+          "ps": [
+            "The creator sets the price, and you state your budget in the task. The cost depends on the number of clips, the script, editing, gear, travel and shooting time. We've collected market benchmarks in a separate article on creative service prices."
+          ],
+          "links": [
+            {
+              "text": "Creative service prices in 2026",
+              "href": "/blog/skolko-stoit-videograf-fotograf-smm"
+            }
+          ]
+        },
+        {
+          "h": "How to find a creator on ChikChirik",
+          "ps": [
+            "Describe the task in the app: what to film, for which platform, how many clips and by when. Mobile videographers and videographers will reply with examples of their work — then compare them using the questions above. Writing a brief for the first time? Use our template."
+          ],
+          "links": [
+            {
+              "text": "Mobile videographers on ChikChirik",
+              "href": "/mobilographers"
+            },
+            {
+              "text": "How to write a brief for a videographer",
+              "href": "/blog/tz-dlya-videografa"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Mobile videographer or videographer — who should shoot my reels?",
+          "a": "For regular reels and stories, a mobile videographer is usually enough: they shoot fast and straight in vertical format. Hire a videographer when it's an ad and lighting, sound and staging matter."
+        },
+        {
+          "q": "How is a mobile videographer different from a videographer?",
+          "a": "A mobile videographer shoots on a smartphone and makes short content for social media. A videographer works with a camera, lighting and sound and makes ads, music videos, interviews and event coverage."
+        },
+        {
+          "q": "Do I need a script to shoot reels?",
+          "a": "It helps. Even a short plan — what to show, what to say and the call to action — saves time on set. Many mobile videographers help with scripts, so ask in the chat."
+        },
+        {
+          "q": "Can a videographer shoot reels too?",
+          "a": "Yes, many videographers cut vertical versions from the main shoot. Agree on it upfront: it's extra editing and may affect the price and timeline."
+        }
+      ]
+    },
+    {
       "slug": "smm-specialist-ili-targetolog",
       "img": "assets/p-blogger.webp",
       "date": "2026-10-31",
