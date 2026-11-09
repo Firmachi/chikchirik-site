@@ -20,6 +20,167 @@
   },
   "posts": [
     {
+      "slug": "kak-zakazat-moushn-rolik",
+      "img": "assets/p-motion.webp",
+      "date": "2026-11-09",
+      "readTime": 6,
+      "cats": [
+        "motion-designers",
+        "designers"
+      ],
+      "dateText": "November 9, 2026",
+      "title": "How to order a motion graphics video: from storyboard to final animation",
+      "metaTitle": "How to order a motion video and storyboard | ChikChirik",
+      "metaDesc": "Stages of a motion video: brief, script, storyboard, style frames, animatic, animation. What to approve at each step and how to order a storyboard alone.",
+      "lead": "A motion video is made step by step: script and storyboard first, then style, animatic and only at the end — animation. Here's what happens at each stage, what you approve and why a change at the storyboard stage costs less than a change to a finished video.",
+      "sections": [
+        {
+          "h": "In short",
+          "ps": [
+            "To get a video without endless revisions, approve the work stage by stage: script → storyboard → style frames → animatic → animation → sound. The earlier a mistake is caught, the cheaper it is to fix: changing a frame in a storyboard takes minutes, redoing finished animation takes days."
+          ]
+        },
+        {
+          "h": "Stages of work",
+          "table": {
+            "head": [
+              "Stage",
+              "What the designer does",
+              "What you approve"
+            ],
+            "cols": "minmax(0,0.8fr) minmax(0,1.2fr) minmax(0,1.2fr)",
+            "minWidth": 0,
+            "rows": [
+              [
+                "Brief",
+                "Studies the task and asks questions",
+                "Goal, length, format, deadline and budget"
+              ],
+              [
+                "Script",
+                "Writes the text and voice-over, splits the video into scenes",
+                "Message and text — later changes mean re-estimating"
+              ],
+              [
+                "Storyboard",
+                "Draws key frames for each scene with captions",
+                "Composition, scene order and what happens in frame"
+              ],
+              [
+                "Style frames",
+                "Makes 2–3 frames in the final style",
+                "Colours, fonts, characters and overall look"
+              ],
+              [
+                "Animatic",
+                "Assembles the storyboard into a rough video with timing and voice",
+                "Pace and scene length"
+              ],
+              [
+                "Animation",
+                "Animates scenes in final quality",
+                "Motion details — revisions within what's approved"
+              ],
+              [
+                "Sound and delivery",
+                "Adds music and effects, exports formats",
+                "Final files and formats"
+              ]
+            ]
+          }
+        },
+        {
+          "h": "What a storyboard is and why order one",
+          "ps": [
+            "A storyboard is the video drawn frame by frame, like a comic: under each frame is what happens, the text and the approximate duration. It shows the whole video before expensive animation begins.",
+            "You can order a storyboard on its own — for example, to agree on the idea inside your company, get quotes from several studios or hand it to another animator. It's usually needed for explainer videos, ads and character animation; for a short logo animation a single style frame is often enough."
+          ]
+        },
+        {
+          "h": "What to prepare before you start",
+          "items": [
+            "The goal of the video and where it will be shown: reels, website, presentation, TV.",
+            "Length and format: vertical 9:16, square 1:1 or horizontal 16:9.",
+            "The text or key points.",
+            "Logo in vector format, brand colours and fonts.",
+            "3–5 reference videos you like — and what exactly you like about them.",
+            "Whether you need a voice-over and in which languages.",
+            "Deadline and budget."
+          ]
+        },
+        {
+          "h": "2D, 3D or AI: which format to choose",
+          "ps": [
+            "2D animation is the most common choice for explainers, infographics and logo animation. 3D is needed when you want to show a product from every angle or complex equipment — it takes longer and costs more to produce. AI tools help make backgrounds, concepts or short scenes quickly, but it's harder to control every frame, so for a precise brand video they're usually combined with classic animation."
+          ],
+          "links": [
+            {
+              "text": "AI creators on ChikChirik",
+              "href": "/ai-creators"
+            }
+          ]
+        },
+        {
+          "h": "What to ask a motion designer",
+          "items": [
+            "Show me your showreel and 2–3 projects in a similar style.",
+            "Do you write the script and storyboard yourself, or work with mine?",
+            "How many rounds of revisions are included at each stage?",
+            "Will there be an animatic before the final animation?",
+            "Who handles voice-over and music, and are the music rights covered?",
+            "Which formats will I receive, and do I get the source files?"
+          ],
+          "numbered": true
+        },
+        {
+          "h": "What affects the price",
+          "ps": [
+            "The designer sets the price, and you state your budget in the task. The biggest factors are length, style (2D or 3D, characters or graphics), the number of scenes, whether you need a script, storyboard and voice-over, and the deadline. For market benchmarks, see our article on creative service prices."
+          ],
+          "links": [
+            {
+              "text": "Creative service prices in 2026",
+              "href": "/blog/skolko-stoit-videograf-fotograf-smm"
+            }
+          ]
+        },
+        {
+          "h": "How to find a motion designer on ChikChirik",
+          "ps": [
+            "Describe the task in the app: what kind of video, its length and format, whether you need a storyboard, and the deadline. Motion designers will reply with showreels — compare them using the questions above. If you only need a storyboard, say so in the task."
+          ],
+          "links": [
+            {
+              "text": "Motion designers on ChikChirik",
+              "href": "/motion-designers"
+            },
+            {
+              "text": "How to write a brief for a videographer",
+              "href": "/blog/tz-dlya-videografa"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "What are the stages of making a motion video?",
+          "a": "Usually six: brief and script, storyboard, style frames, animatic, animation, sound and delivery. For short videos some stages are combined."
+        },
+        {
+          "q": "Can I order just an animation storyboard?",
+          "a": "Yes. Storyboards are ordered separately to agree on the idea, estimate the budget or hand over to an animator. Say in the task that you only need a storyboard and roughly how many scenes there will be."
+        },
+        {
+          "q": "How is a storyboard different from an animatic?",
+          "a": "A storyboard is static frames with captions. An animatic is the same frames assembled into a video with timing and voice — it shows the pace of the video."
+        },
+        {
+          "q": "How many revisions are usually included?",
+          "a": "It's agreed with the designer. A common practice is a few rounds of revisions at each stage, with changes after a stage is approved charged separately. Agree on the terms in the chat before you start."
+        }
+      ]
+    },
+    {
       "slug": "mobilograf-ili-videograf",
       "img": "assets/p-mobilographer.webp",
       "date": "2026-11-02",

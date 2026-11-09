@@ -354,6 +354,10 @@
           "a": "The purpose of the video, its length, references, your logo and brand colours, the deadline and your budget."
         },
         {
+          "q": "Can I order just an animation storyboard?",
+          "a": "Yes. Storyboards are often ordered separately to agree on the idea, estimate the budget or hand over to an animator. The stages are covered in our blog article on ordering a motion video."
+        },
+        {
           "q": "What’s the difference between a motion designer and a video editor?",
           "a": "A video editor assembles a video from filmed footage, while a motion designer creates animation and graphics from scratch."
         },
@@ -450,43 +454,60 @@
       "img": "assets/p-ai-creator.webp",
       "imgAlt": "An AI creator making content with neural networks",
       "name": "AI creators",
-      "metaTitle": "AI creator — content made with AI | ChikChirik",
-      "metaDesc": "Find an AI creator: videos, product photos, avatars and social media visuals made with AI. Post your task on ChikChirik — creators will respond.",
-      "h1": "AI creators",
-      "lead": "Videos, photos and visuals made with neural networks — for ads, social media and marketplaces. Describe your task on ChikChirik — AI creators will send responses with examples of their work.",
+      "metaTitle": "AI Creator in Kazakhstan — AI Video & Photos | ChikChirik",
+      "metaDesc": "Order AI video, product photos without a shoot, avatars and social media visuals. Describe your task on ChikChirik — AI creators reply with examples of their work.",
+      "h1": "AI creator in Kazakhstan",
+      "lead": "An AI creator makes video, photos and visuals with neural networks: an ad without a film crew, a product photo in any interior, a talking avatar or a series of images for social media. Describe your task on ChikChirik and AI creators will reply with examples of their work. Specialists work remotely across Kazakhstan.",
       "servicesTitle": "What you can order from an AI creator",
       "services": [
-        "AI videos and commercials",
-        "Product photos and product scenes",
-        "AI avatars and characters",
-        "Visuals and illustrations for social media",
-        "Photo and video enhancement",
-        "Voice-over and music made with AI"
+        "AI video and ads without a shoot",
+        "Product photos in any interior or scene — for marketplaces and websites",
+        "AI avatars and talking characters for reels and training videos",
+        "Visuals, illustrations and covers for social media",
+        "Concepts and moodboards before a big shoot",
+        "Bringing photos to life and animating images",
+        "Upscaling, background replacement and retouching",
+        "AI voice-over, video translation into Kazakh and English, and music"
       ],
       "priceTitle": "How much does an AI creator cost",
-      "priceText": "The creator sets the price, and you state your budget in the task. The price depends on:",
+      "priceText": "The creator sets the price, and you state your budget in the task. For more accurate replies, say how many images or seconds of video you need, where the result will be used and whether you have references. The price depends on:",
       "priceFactors": [
         "number of images or video length",
-        "complexity and number of iterations",
-        "whether manual retouching is needed",
-        "usage rights for the result",
-        "deadlines"
+        "scene complexity and how many variations you need",
+        "whether manual work is needed: retouching, editing, compositing",
+        "paid tools and computing power the creator uses",
+        "rights to use the result in advertising",
+        "deadline"
       ],
       "tipsTitle": "How to choose an AI creator",
       "tips": [
         "Look at examples in your exact format: video, product photos or characters.",
-        "Describe the style and send references.",
-        "Check whether the result can be used in ads.",
-        "Agree on the number of options and revisions."
+        "Ask to see a before-and-after: the original product photo and the result.",
+        "Describe the style and send references, your logo and brand colours.",
+        "Ask which tools are used and whether the result can be used in ads.",
+        "If a real person appears, you need their consent to use their likeness and voice.",
+        "Agree on the number of variations and revisions, and start with a small test task."
       ],
       "faq": [
+        {
+          "q": "What can I order from an AI creator?",
+          "a": "AI video for ads and social media, product photos, avatars and characters, illustrations, photo and video enhancement, voice-over and translation."
+        },
         {
           "q": "When should I choose an AI creator?",
           "a": "When you need visuals quickly without a shoot: concepts, product backgrounds, unusual scenes. For real people and real locations, a photographer or videographer is usually a better fit."
         },
         {
+          "q": "Can I get marketplace product photos without a shoot?",
+          "a": "Yes, it's one of the most common orders: the creator places the product into the interior or scene you need, based on one or several source photos. Check that the shape, colour and labels are accurate, and confirm the marketplace's photo requirements in advance."
+        },
+        {
           "q": "Can AI content be used in ads?",
           "a": "It depends on the tools the creator uses and your agreement. Discuss the rights to the result in advance."
+        },
+        {
+          "q": "Do I need consent if someone's face or voice is in the video?",
+          "a": "Yes. Use a person's likeness and voice only with their consent, ideally in writing. This applies to employees and hired models alike."
         },
         {
           "q": "How much does it cost to post a task?",
