@@ -7,7 +7,6 @@
     "<meta property=\"og:url\" content=\"https://chikchirik.kz/\">": "<meta property=\"og:url\" content=\"https://chikchirik.kz/en/\">",
     "\"@id\": \"https://chikchirik.kz/#webpage\", \"url\": \"https://chikchirik.kz/\"": "\"@id\": \"https://chikchirik.kz/en/#webpage\", \"url\": \"https://chikchirik.kz/en/\"",
     "\"inLanguage\": \"ru\"": "\"inLanguage\": \"en\"",
-    "ChikChirik — маркетплейс креативных специалистов Казахстана": "ChikChirik — marketplace for creatives in Kazakhstan",
     "ChikChirik — креативные специалисты Казахстана": "ChikChirik — creative professionals in Kazakhstan",
     "Режиссёры монтажа, дизайнеры, моушн, фотографы, SMM и ai-креаторы — в одном приложении. Опиши задачу, получи отклики, договорись в чате.": "Video editors, designers, motion artists, photographers, SMM and AI creators — all in one app. Describe your task, get responses, agree on the details in chat.",
     "ChikChirik — мобильное приложение для поиска креативных специалистов в Казахстане: режиссёры монтажа, видеографы, фотографы, графические и моушн-дизайнеры, SMM-специалисты, ai-креаторы и сценаристы.": "ChikChirik is a mobile app for finding creative professionals in Kazakhstan: video editors, videographers, photographers, graphic and motion designers, SMM specialists, AI creators and scriptwriters.",
@@ -121,7 +120,6 @@
     ">Соцсети</div>": ">Social</div>",
     ">Документы</a>": ">Documents</a>",
     "Приложение создано в ": "Built by ",
-    "ChikChirik — бесплатное приложение для поиска креативных специалистов в Казахстане: видеографы, фотографы, дизайнеры, SMM. Опиши задачу и получи отклики.": "ChikChirik is a free app for finding creative professionals in Kazakhstan: videographers, photographers, designers, SMM. Post a task, get responses.",
     ">Документы</div>": ">Documents</div>",
     "title: 'Режиссёры монтажа', sub: 'Рилсы, YouTube, реклама'": "title: 'Video editors', sub: 'Reels, YouTube, ads'",
     "title: 'Мобилографы', sub: 'Reels и контент на телефон'": "title: 'Mobile content creators', sub: 'Reels and phone content'",
@@ -136,6 +134,10 @@
     "колонка основателя на Astana Hub": "a column by the founder on Astana Hub",
     "https://astanahub.com/ru/blog/chikchirik-sozdaem-infrastrukturu-dlia-kreativnoi-industrii-kazakhstana": "https://astanahub.com/en/blog/chikchirik-sozdaem-infrastrukturu-dlia-kreativnoi-industrii-kazakhstana",
     "ChikChirik: создаём инфраструктуру для креативной индустрии Казахстана": "ChikChirik: creating infrastructure for the creative industry of Kazakhstan",
-    "title: 'Удаление аккаунта'": "title: 'Account Deletion'"
+    "title: 'Удаление аккаунта'": "title: 'Account Deletion'",
+    "ChikChirik — фриланс-маркетплейс креативщиков Казахстана": "ChikChirik — freelance marketplace for creatives in Kazakhstan",
+    "Фриланс в Казахстане для креативных задач: видеографы, фотографы, мобилографы, дизайнеры, SMM. Опиши задачу в ChikChirik бесплатно и получи отклики.": "Freelance in Kazakhstan for creative tasks: videographers, photographers, mobile videographers, designers, SMM. Post a task on ChikChirik for free and get replies.",
+    "ChikChirik — это биржа фриланса?": "Is ChikChirik a freelance marketplace?",
+    "Да, это фриланс-маркетплейс для креативных задач в Казахстане: заказчик публикует задачу, а фрилансеры — видеографы, фотографы, мобилографы, дизайнеры, SMM-специалисты — откликаются с портфолио. Цену и оплату вы согласуете напрямую в чате.": "Yes, it is a freelance marketplace for creative tasks in Kazakhstan: the client posts a task, and freelancers — videographers, photographers, mobile videographers, designers, SMM specialists — reply with portfolios. You agree on price and payment directly in the chat."
   }
 }

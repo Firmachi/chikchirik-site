@@ -359,6 +359,10 @@
         {
           "q": "How much does a photographer cost?",
           "a": "The photographer sets the price, and you state your budget in the task. It depends on shoot length, number of edited photos, studio rental and travel. Market benchmarks are in our blog article on creative service prices."
+        },
+        {
+          "q": "Where can I book a photo shoot — family, studio or outdoors?",
+          "a": "In your ChikChirik task, describe the shoot format, city, date and how many people will be in the frame. Photographers will reply with examples of similar shoots — check whether studio rental is included in the price."
         }
       ],
       "related": [
@@ -503,6 +507,10 @@
         {
           "q": "What does a graphic designer do?",
           "a": "Creates visuals for business: logos and brand identity, social media design, marketplace product cards, presentations, packaging and ads. Many designers specialise in one or two areas — look at portfolios in the format you need."
+        },
+        {
+          "q": "Who makes product cards and infographics for marketplaces?",
+          "a": "Graphic designers: they combine product photos, benefits and specs into a card that meets Kaspi, Wildberries or Ozon requirements. In the task, name the marketplace and number of cards and send product photos."
         }
       ],
       "related": [
@@ -578,6 +586,10 @@
         {
           "q": "Can the result be refined?",
           "a": "Yes, creators usually do several iterations — agree on the number of revisions in advance."
+        },
+        {
+          "q": "How is an AI photo shoot by a creator different from a free generator?",
+          "a": "A creator picks looks and style for your task, makes several variations, retouches faces and details by hand and delivers finished files in the format you need. A generator gives a random result you have to fix yourself."
         }
       ],
       "related": [
