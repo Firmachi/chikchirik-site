@@ -17,9 +17,9 @@
       "img": "assets/p-videographer.webp",
       "imgAlt": "A videographer filming a client project",
       "name": "Videographers",
-      "metaTitle": "Videographers in Kazakhstan | ChikChirik",
+      "metaTitle": "Videographer in Kazakhstan — video production | ChikChirik",
       "metaDesc": "Find a videographer in Kazakhstan: reels, ads, music videos, events. Post your task on ChikChirik — videographers with portfolios will respond.",
-      "h1": "Videographers",
+      "h1": "Videographer in Kazakhstan",
       "lead": "Find a videographer for your task — from social media reels to a commercial. Describe your task on ChikChirik and videographers with portfolios will send you responses. Choose by their work and agree on the details in chat. Videographers work in Almaty, Astana, Shymkent and other cities of Kazakhstan.",
       "servicesTitle": "What you can order from a videographer",
       "services": [
@@ -28,7 +28,8 @@
         "Events, concerts and conferences",
         "Music videos",
         "Interviews, podcasts and expert content",
-        "Product and service videos for websites and marketplaces"
+        "Product and service videos for websites and marketplaces",
+        "Weddings, toi and uzatu celebrations"
       ],
       "priceTitle": "How much does a videographer cost",
       "priceText": "The creator sets the price, and you state your budget in the task — so you can see right away who is ready to work within it. The price depends on:",
@@ -62,6 +63,14 @@
         {
           "q": "Do I need a separate video editor?",
           "a": "Many videographers edit their own footage — ask in the chat. If you only need existing footage edited, look for a video editor."
+        },
+        {
+          "q": "How much does a videographer cost?",
+          "a": "The videographer sets the price, and you state your budget in the task. The cost depends on shoot length, editing, equipment and deadline. Market benchmarks are in our blog article on creative service prices."
+        },
+        {
+          "q": "Can I find a videographer for a wedding or toi?",
+          "a": "Yes. In the task, give the date, city, duration and what you need as a result — a film, a clip or reels. Videographers will reply with examples of their wedding work."
         }
       ],
       "related": [
@@ -74,33 +83,39 @@
       "img": "assets/p-mobilographer.webp",
       "imgAlt": "A mobile content creator filming on a phone",
       "name": "Mobile content creators",
-      "metaTitle": "Mobile content creators — reels, stories | ChikChirik",
-      "metaDesc": "Find a mobile content creator: reels, stories and business content shot on a phone. Post your task on ChikChirik — creators with portfolios will respond.",
-      "h1": "Mobile content creators",
-      "lead": "A mobile content creator (mobilographer) shoots and edits content on a smartphone — fast and made for social media. Describe your task on ChikChirik and creators will send responses with examples of their reels. Creators work in Almaty, Astana and other cities of Kazakhstan.",
+      "metaTitle": "Mobile content creators in Kazakhstan — reels | ChikChirik",
+      "metaDesc": "Find a mobile content creator: reels, stories and business content shot on a phone. Post your task on ChikChirik — creators across Kazakhstan will respond.",
+      "h1": "Mobile content creators in Kazakhstan",
+      "lead": "Need reels, stories or regular social media content? A mobile content creator (mobilographer) shoots and edits video on a smartphone — fast and in vertical format from the start. Describe your task on ChikChirik and creators will send responses with examples of their videos. Creators work across Kazakhstan — in Almaty, Astana, Shymkent and other cities.",
       "servicesTitle": "What you can order from a mobile content creator",
       "services": [
         "Reels and short videos for Instagram and TikTok",
         "Stories and content for daily posting",
         "Shoots for cafes, restaurants, shops and salons",
-        "Unboxings and product reviews",
+        "Unboxings, product reviews and marketplace videos",
+        "Expert videos: talking head, interviews, tips",
         "Event coverage in social media format",
-        "Phone editing with music and captions"
+        "Video ideas, scripts and a shooting plan",
+        "Phone editing with music, titles and subtitles",
+        "Weddings, toi and uzatu in reels format"
       ],
       "priceTitle": "How much does a mobile content creator cost",
-      "priceText": "The creator sets the price, and you state your budget in the task. The price depends on:",
+      "priceText": "The creator sets the price, and you state your budget in the task. For more accurate responses, say how many videos you need, for which platform and who writes the scripts. Market benchmarks are in our article on creative service prices. The price depends on:",
       "priceFactors": [
         "how many videos are needed per visit",
         "whether a script and content ideas are needed",
         "whether editing, music and captions are included",
         "travel to the location and shooting time",
+        "whether models, props or a rented space are needed",
         "a one-off shoot or regular content"
       ],
       "tipsTitle": "How to choose a mobile content creator",
       "tips": [
         "Look at reels in your niche — cafes, beauty and retail are filmed differently.",
         "Check who comes up with the scripts and how many videos you’ll get per visit.",
+        "Ask what you’ll receive: finished videos, raw footage, covers.",
         "Agree on editing deadlines and the number of revisions.",
+        "For regular content, start with one visit — it shows the style and speed.",
         "Put agreements in writing in the chat and don’t pay the full amount before work starts."
       ],
       "faq": [
@@ -119,6 +134,26 @@
         {
           "q": "Can I order regular content?",
           "a": "Yes, many creators film content on an ongoing basis — for example, several visits a month."
+        },
+        {
+          "q": "How many videos are filmed per visit?",
+          "a": "It depends on the format and scripts: simple videos are filmed in batches, complex ones one at a time. Say in the task how many videos you need, and the creator will tell you how long it will take."
+        },
+        {
+          "q": "How do I find a mobile content creator in Astana, Almaty or another city?",
+          "a": "Describe your task on ChikChirik and include the city and shooting address. Creators who are ready to come to the location will respond."
+        },
+        {
+          "q": "What should I prepare for the shoot?",
+          "a": "Ideas or examples of videos you like, the product or dishes, a tidy location and a person who will be on camera. If you don’t have scripts, ask the creator to suggest them in advance."
+        },
+        {
+          "q": "What does a mobile videographer do?",
+          "a": "Shoots and edits smartphone video in social media formats: reels, stories, unboxings, expert videos. Often helps with ideas and scripts and delivers clips on the day of the shoot or the next day."
+        },
+        {
+          "q": "How much does a mobile videographer cost?",
+          "a": "The mobile videographer sets the price, and you state your budget in the task. It depends on how many clips per shoot, scripting, editing and whether it's a one-off shoot or regular content. Market benchmarks are in our blog article on creative service prices."
         }
       ],
       "related": [
@@ -131,9 +166,9 @@
       "img": "assets/p-video-editor.webp",
       "imgAlt": "A video editor working on a video",
       "name": "Video editors",
-      "metaTitle": "Video editor — order video editing | ChikChirik",
+      "metaTitle": "Video editor — order reels and YouTube editing | ChikChirik",
       "metaDesc": "Find a video editor: reels, YouTube, ads, music videos. Post your task on ChikChirik — editors with portfolios will respond. They work remotely.",
-      "h1": "Video editors",
+      "h1": "Video editor",
       "lead": "Editing for reels, YouTube videos, ads and music videos. Describe your task on ChikChirik — video editors will send responses with portfolios. Editing is usually done remotely, so your city doesn’t matter.",
       "servicesTitle": "What you can order from a video editor",
       "services": [
@@ -176,6 +211,14 @@
         {
           "q": "Can a video editor also film?",
           "a": "Some editors film too — ask in the chat. If you need a shoot, check out videographers."
+        },
+        {
+          "q": "What does a video editor do?",
+          "a": "Assembles a video from footage and adds music, titles, subtitles and colour correction. Many editors also adapt one video for different platforms: reels, YouTube and ads."
+        },
+        {
+          "q": "How much does video editing cost?",
+          "a": "The editor sets the price, and you state your budget in the task. It depends on video length, amount of footage, graphics, colour correction and deadline. Market benchmarks are in our blog article on creative service prices."
         }
       ],
       "related": [
@@ -188,9 +231,9 @@
       "img": "assets/p-drone.webp",
       "imgAlt": "A drone operator flying a drone on a shoot",
       "name": "Drone operators",
-      "metaTitle": "Drone operators in Kazakhstan — aerial filming | ChikChirik",
+      "metaTitle": "Drone filming in Kazakhstan — drone operator | ChikChirik",
       "metaDesc": "Find a drone operator: aerial footage of real estate, events, ads and travel. Post your task on ChikChirik — operators with portfolios will respond.",
-      "h1": "Drone operators",
+      "h1": "Drone filming in Kazakhstan",
       "lead": "Aerial filming for ads, real estate, events and travel. Describe your task on ChikChirik — drone operators will send responses with examples of their work. Choose by portfolio and agree on the details in chat. Drone operators work in Almaty, Astana and other cities of Kazakhstan.",
       "servicesTitle": "What you can order from a drone operator",
       "services": [
@@ -233,6 +276,10 @@
         {
           "q": "Can the operator edit the video?",
           "a": "Many drone operators edit their own footage — ask in the chat. If you only need editing, look for a video editor."
+        },
+        {
+          "q": "How much does drone filming cost?",
+          "a": "The operator sets the price, and you state your budget in the task. It depends on flight time, location and travel, whether you need photos, video and editing, and flight permissions at the location."
         }
       ],
       "related": [
@@ -245,7 +292,7 @@
       "img": "assets/p-photographer.webp",
       "imgAlt": "A photographer on a shoot for a client",
       "name": "Photographers",
-      "metaTitle": "Photographers in Kazakhstan | ChikChirik",
+      "metaTitle": "Photographer in Kazakhstan — photo shoots | ChikChirik",
       "metaDesc": "Need a photographer? Photo shoots, product photography, events, business portraits. Post your task on ChikChirik — photographers across Kazakhstan respond.",
       "h1": "Photographers in Kazakhstan",
       "lead": "Need a photographer for a photo shoot, an event or product photos? Describe your task on ChikChirik — professional and freelance photographers across Kazakhstan will send responses with their portfolios. Choose by their work and agree on the details in chat.",
@@ -258,7 +305,8 @@
         "Social media content for brands",
         "Food, interiors, restaurants and hotels",
         "Fashion shoots and lookbooks",
-        "Weddings and celebrations"
+        "Weddings and celebrations",
+        "Children's, newborn and maternity photo shoots"
       ],
       "priceTitle": "How much does a photographer cost",
       "priceText": "The photographer sets the price, and you state your budget in the task — so you can see right away who is ready to work within it. For more accurate responses, mention the type of shoot, how many final photos you need and the date. The price depends on:",
@@ -307,6 +355,10 @@
         {
           "q": "When will the photos be ready?",
           "a": "It depends on the number of shots and how deep the retouching is — the photographer will name the deadline in their response. If you need the photos by a certain date, put it in the task right away."
+        },
+        {
+          "q": "How much does a photographer cost?",
+          "a": "The photographer sets the price, and you state your budget in the task. It depends on shoot length, number of edited photos, studio rental and travel. Market benchmarks are in our blog article on creative service prices."
         }
       ],
       "related": [
@@ -319,7 +371,7 @@
       "img": "assets/p-motion.webp",
       "imgAlt": "A motion designer working on an animation",
       "name": "Motion designers",
-      "metaTitle": "Motion designer — order animation | ChikChirik",
+      "metaTitle": "Motion design — order animation and videos | ChikChirik",
       "metaDesc": "Find a motion designer: logo animation, graphics for ads and social media, explainer videos. Post your task on ChikChirik — designers will respond.",
       "h1": "Motion designers",
       "lead": "Logo animation, graphics for ads and social media, explainer videos and titles. Describe your task on ChikChirik — motion designers will send responses with their showreels. They work remotely across Kazakhstan.",
@@ -330,7 +382,8 @@
         "Graphics and animation for ads",
         "Animated posts and reels",
         "Titles, lower thirds and video graphics",
-        "3D animation and visualisation"
+        "3D animation and visualisation",
+        "Animated presentations"
       ],
       "priceTitle": "How much does motion design cost",
       "priceText": "The designer sets the price, and you state your budget in the task. The price depends on:",
@@ -368,6 +421,10 @@
         {
           "q": "Will I get the source files?",
           "a": "That’s agreed with the designer. Settle in advance which files and formats you’ll receive."
+        },
+        {
+          "q": "How much does motion design cost?",
+          "a": "The designer sets the price, and you state your budget in the task. The biggest factors are length, 2D or 3D, the number of scenes, and whether you need a script, storyboard and voice-over. The stages are covered in our blog article on ordering a motion video."
         }
       ],
       "related": [
@@ -442,6 +499,10 @@
         {
           "q": "Who owns the rights to the logo?",
           "a": "Usage rights and the handover of source files are discussed with the designer. For a logo, it's better to agree on a full transfer of rights in advance."
+        },
+        {
+          "q": "What does a graphic designer do?",
+          "a": "Creates visuals for business: logos and brand identity, social media design, marketplace product cards, presentations, packaging and ads. Many designers specialise in one or two areas — look at portfolios in the format you need."
         }
       ],
       "related": [
@@ -467,7 +528,8 @@
         "Concepts and moodboards before a big shoot",
         "Bringing photos to life and animating images",
         "Upscaling, background replacement and retouching",
-        "AI voice-over, video translation into Kazakh and English, and music"
+        "AI voice-over, video translation into Kazakh and English, and music",
+        "AI photo shoots from your own photos — for social media and gifts"
       ],
       "priceTitle": "How much does an AI creator cost",
       "priceText": "The creator sets the price, and you state your budget in the task. For more accurate replies, say how many images or seconds of video you need, where the result will be used and whether you have references. The price depends on:",
@@ -590,6 +652,10 @@
         {
           "q": "What should I give an SMM specialist to start?",
           "a": "Access to accounts through roles, a description of the business and audience, the photos and videos you already have, and examples of accounts you like."
+        },
+        {
+          "q": "What does an SMM specialist do?",
+          "a": "Runs a business's social media: strategy and content plan, creating or commissioning content, writing posts, replying to the audience and tracking results. An SMM specialist often runs ads too — or works alongside a targeting specialist."
         }
       ],
       "related": [
