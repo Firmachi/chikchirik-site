@@ -674,6 +674,71 @@
         "mobilographers",
         "designers"
       ]
+    },
+    {
+      "id": "ugc-creators",
+      "img": "assets/p-phone.webp",
+      "imgAlt": "A UGC creator films a product review on a phone",
+      "name": "UGC creators",
+      "metaTitle": "UGC creator in Kazakhstan — order UGC videos | ChikChirik",
+      "metaDesc": "Order UGC videos for ads, social media and marketplaces: reviews, unboxings and first-person demos. Describe your task on ChikChirik — UGC creators will reply.",
+      "h1": "UGC creator in Kazakhstan",
+      "lead": "A UGC creator films videos that look like an ordinary customer's review: unboxings, reviews, 'how I use it'. Brands use them in ads, social media and on marketplaces. Describe your task on ChikChirik and UGC creators will reply with sample videos. Creators work across Kazakhstan, many of them remotely.",
+      "servicesTitle": "What you can order from a UGC creator",
+      "services": [
+        "Video reviews of a product or service",
+        "Unboxings and first impressions",
+        "First-person reviews and comparisons",
+        "How-tos: how to use, assemble or apply",
+        "Before-and-after videos",
+        "App reviews from the phone screen",
+        "Hook variations for ad testing",
+        "Photos with the product for social media and cards"
+      ],
+      "priceTitle": "How much do UGC videos cost",
+      "priceText": "The creator sets the price, and you state your budget in the task. For more accurate replies, say how many videos you need and where they'll be used. The price depends on:",
+      "priceFactors": [
+        "number and length of videos",
+        "whether scripting and editing are needed",
+        "how many hook variations",
+        "the right to use the videos in ads and for how long",
+        "deadline"
+      ],
+      "tipsTitle": "How to choose a UGC creator",
+      "tips": [
+        "Look at sample videos in your niche: cosmetics, tech and food are filmed differently.",
+        "See how naturally the creator speaks on camera — that's what matters most in UGC.",
+        "Send a brief: product, audience, key messages and what must not be said.",
+        "Agree in writing where and for how long the brand can use the videos.",
+        "Discuss who ships the product and whether it must be returned.",
+        "Start with one or two videos to test the delivery."
+      ],
+      "faq": [
+        {
+          "q": "Who is a UGC creator?",
+          "a": "Someone who films first-person videos for a brand, like an ordinary customer's review. The brand publishes the videos in ads, social media or on a marketplace."
+        },
+        {
+          "q": "How is a UGC creator different from a blogger?",
+          "a": "A blogger is paid for a post on their account and audience reach. A UGC creator is paid for the videos and the right to use them — no audience needed."
+        },
+        {
+          "q": "Can UGC videos be used in ads?",
+          "a": "Yes, if it's in the agreement: where, for how long and in what form the brand uses the videos."
+        },
+        {
+          "q": "How much does it cost to post a task?",
+          "a": "Posting a task and receiving responses is free. You agree on the price of the work directly with the creator."
+        },
+        {
+          "q": "Do I need to send the product to the creator?",
+          "a": "Usually yes — the creator films the real product. Agree who pays for shipping and whether the product must be returned after the shoot."
+        }
+      ],
+      "related": [
+        "mobilographers",
+        "smm"
+      ]
     }
   ]
 }

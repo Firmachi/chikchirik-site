@@ -85,7 +85,6 @@
     "Это бесплатно?": "Is it free?",
     "Для заказчиков — да: скачать приложение, создать профиль и опубликовать задачу бесплатно. Исполнителям тоже бесплатны профиль, портфолио и отклики; платно только «Открытие номера» — доступ к телефону заказчика.": "For clients, yes: downloading the app, creating a profile and posting a task are free. Creators also get a free profile, portfolio and responses; the only paid option is “Open number”, which shows the client’s phone number.",
     "Кого можно найти?": "Who can I find?",
-    "Режиссёров монтажа, графических и моушн-дизайнеров, фотографов, видеографов, smm-специалистов, ai-креаторов и сценаристов.": "Video editors, graphic and motion designers, photographers, videographers, SMM specialists, AI creators and scriptwriters.",
     "В каких городах работает?": "Which cities does it cover?",
     "Основная база специалистов — Алматы и Астана, но многие работают удалённо по всему Казахстану.": "Most specialists are based in Almaty and Astana, but many work remotely across Kazakhstan.",
     "Как стать исполнителем?": "How do I become a creator?",
@@ -138,6 +137,8 @@
     "ChikChirik — фриланс-маркетплейс креативщиков Казахстана": "ChikChirik — freelance marketplace for creatives in Kazakhstan",
     "Фриланс в Казахстане для креативных задач: видеографы, фотографы, мобилографы, дизайнеры, SMM. Опиши задачу в ChikChirik бесплатно и получи отклики.": "Freelance in Kazakhstan for creative tasks: videographers, photographers, mobile videographers, designers, SMM. Post a task on ChikChirik for free and get replies.",
     "ChikChirik — это биржа фриланса?": "Is ChikChirik a freelance marketplace?",
-    "Да, это фриланс-маркетплейс для креативных задач в Казахстане: заказчик публикует задачу, а фрилансеры — видеографы, фотографы, мобилографы, дизайнеры, SMM-специалисты — откликаются с портфолио. Цену и оплату вы согласуете напрямую в чате.": "Yes, it is a freelance marketplace for creative tasks in Kazakhstan: the client posts a task, and freelancers — videographers, photographers, mobile videographers, designers, SMM specialists — reply with portfolios. You agree on price and payment directly in the chat."
+    "Да, это фриланс-маркетплейс для креативных задач в Казахстане: заказчик публикует задачу, а фрилансеры — видеографы, фотографы, мобилографы, дизайнеры, SMM-специалисты — откликаются с портфолио. Цену и оплату вы согласуете напрямую в чате.": "Yes, it is a freelance marketplace for creative tasks in Kazakhstan: the client posts a task, and freelancers — videographers, photographers, mobile videographers, designers, SMM specialists — reply with portfolios. You agree on price and payment directly in the chat.",
+    "Режиссёров монтажа, графических и моушн-дизайнеров, фотографов, видеографов, мобилографов, smm-специалистов, UGC-креаторов, ai-креаторов и сценаристов.": "Video editors, graphic and motion designers, photographers, videographers, mobile videographers, SMM specialists, UGC creators, AI creators and scriptwriters.",
+    "title: 'UGC-креаторы', sub: 'Видео-отзывы и распаковки для брендов'": "title: 'UGC creators', sub: 'Video reviews and unboxings for brands'"
   }
 }
