@@ -27,6 +27,9 @@ const SITE = 'https://chikchirik.kz';
 const TODAY = new Date().toISOString().slice(0, 10);
 // Яндекс Метрика (счётчик на всех страницах; при пре-рендере запросы к ней блокируются)
 const METRIKA_ID = 113654864;
+// Google Ads: тег и конверсия «Клик в App Store / Google Play (сайт)» (категория «Исходящий клик»)
+const GADS_ID = 'AW-18442700792';
+const GADS_STORE_CLICK = 'AW-18442700792/npeOCNn-vbYdEPiPldpE';
 const ROOT_FILES = ['robots.txt', 'llms.txt', 'favicon.ico', 'favicon.png', 'apple-touch-icon.png', 'og.jpg'];
 
 const LANGS = [
@@ -211,8 +214,10 @@ function hoistHead(html) {
     '<script async src="/vendor/scrolltrigger-3.12.5.min.js"></script>',
     '<script async src="/vendor/lenis-1.1.13.min.js"></script>',
     '<script>document.documentElement.className+=" js"</script>',
-    // Метрика грузится после загрузки страницы (не мешает первой отрисовке); визит всё равно засчитывается
-    `<script>window.ym=window.ym||function(){(ym.a=ym.a||[]).push(arguments)};ym.l=1*new Date();ym(${METRIKA_ID},'init',{ssr:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var m=/apps\\.apple\\.com|play\\.google\\.com/.exec(a.href);if(m)ym(${METRIKA_ID},'reachGoal','store_click',{store:m[0].indexOf('apple')>-1?'app_store':'google_play',page:location.pathname})},true);addEventListener('load',function(){setTimeout(function(){var s=document.createElement('script');s.async=1;s.src='https://mc.yandex.ru/metrika/tag.js?id=${METRIKA_ID}';document.head.appendChild(s)},1500)});</script>`,
+    // Метрика и тег Google Ads грузятся после загрузки страницы (не мешают первой отрисовке);
+    // события до загрузки копятся в очередях ym.a / dataLayer и отправляются позже.
+    // Клик по ссылке на App Store / Google Play = цель Метрики store_click + конверсия Google Ads.
+    `<script>window.ym=window.ym||function(){(ym.a=ym.a||[]).push(arguments)};ym.l=1*new Date();ym(${METRIKA_ID},'init',{ssr:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','${GADS_ID}');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var m=/apps\\.apple\\.com|play\\.google\\.com/.exec(a.href);if(!m)return;var st=m[0].indexOf('apple')>-1?'app_store':'google_play';ym(${METRIKA_ID},'reachGoal','store_click',{store:st,page:location.pathname});gtag('event','conversion',{send_to:'${GADS_STORE_CLICK}'})},true);addEventListener('load',function(){setTimeout(function(){var s=document.createElement('script');s.async=1;s.src='https://mc.yandex.ru/metrika/tag.js?id=${METRIKA_ID}';document.head.appendChild(s);var g=document.createElement('script');g.async=1;g.src='https://www.googletagmanager.com/gtag/js?id=${GADS_ID}';document.head.appendChild(g)},1500)});</script>`,
     '<style>x-dc{display:none}.js #ssr{display:none}#ssr{font-family:system-ui,sans-serif;max-width:960px;margin:0 auto;padding:24px 16px;line-height:1.5}#ssr img{max-width:240px;height:auto}</style>',
   ].join('\n');
   html = html.replace(/<body>/, `<body>\n<noscript><div><img src="https://mc.yandex.ru/watch/${METRIKA_ID}" style="position:absolute;left:-9999px" alt=""></div></noscript>`);
@@ -374,9 +379,9 @@ async function prerender(browser, port, url) {
   const page = await browser.newPage();
   try {
     await page.setViewport({ width: 1280, height: 900 });
-    // Не засчитывать визиты сборки в Метрику
+    // Не засчитывать визиты сборки в Метрику и Google Ads
     await page.setRequestInterception(true);
-    page.on('request', (req) => (/mc\.yandex\.(ru|com|kz)/.test(req.url()) ? req.abort() : req.continue()));
+    page.on('request', (req) => (/mc\.yandex\.(ru|com|kz)|googletagmanager\.com|google-analytics\.com|googleadservices\.com|doubleclick\.net/.test(req.url()) ? req.abort() : req.continue()));
     await page.goto(`http://127.0.0.1:${port}${url}`, { waitUntil: 'networkidle0', timeout: 60000 });
     await page.waitForSelector('#dc-root h1', { timeout: 30000 });
     // «Чистая» семантическая копия: без стилей, скриптов, декоративных элементов и id (чтобы якоря вели на живую страницу)
