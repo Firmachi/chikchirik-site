@@ -74,6 +74,9 @@ for (const f of ROOT_FILES) {
   const p = path.join(ROOT, 'deploy-root', f);
   if (fs.existsSync(p)) fs.copyFileSync(p, path.join(DIST, f));
 }
+// /go — посадочная для рекламы: «Открыть в Telegram» / «Скачать приложение» (noindex, не в sitemap)
+fs.mkdirSync(path.join(DIST, 'go'), { recursive: true });
+fs.copyFileSync(path.join(ROOT, 'deploy-root', 'go.html'), path.join(DIST, 'go', 'index.html'));
 
 // --- Исходник и данные ---
 const src = fs.readFileSync(SRC, 'utf8');
