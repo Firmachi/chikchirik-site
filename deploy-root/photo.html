@@ -35,7 +35,7 @@
   h1{margin:12px 0 0;font-family:var(--font-display,Georgia,serif);font-size:clamp(32px,8.6vw,56px);line-height:1.02;letter-spacing:-.025em;font-weight:800}
   .lead{margin:12px 0 0;font-size:18px;line-height:1.45;color:#3E3F44}
   .cta{margin-top:20px;display:flex;flex-direction:column;gap:10px;max-width:440px}
-  .btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 20px;border-radius:18px;font-size:18px;font-weight:700;text-decoration:none;border:0;cursor:pointer;width:100%;font-family:inherit;transition:transform .15s ease,background .15s ease}
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 14px;border-radius:18px;font-size:clamp(16px,4.6vw,18px);white-space:nowrap;font-weight:700;text-decoration:none;border:0;cursor:pointer;width:100%;font-family:inherit;transition:transform .15s ease,background .15s ease}
   .btn:active{transform:scale(.98)}
   .btn-main{background:var(--blue-500,#0057FF);color:#fff;box-shadow:0 12px 26px -12px rgba(0,87,255,.65)}
   .btn-main:hover{background:var(--blue-600,#003CD3)}
@@ -108,7 +108,7 @@
   /* липкая кнопка на телефоне */
   .sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid #EDEDEF;transform:translateY(110%);transition:transform .25s ease}
   .sticky.on{transform:none}
-  .sticky .btn{min-height:54px;font-size:17px}
+  .sticky .btn{min-height:54px;font-size:clamp(15px,4.4vw,17px)}
 
   @media (min-width:900px){
     .top{height:76px}
