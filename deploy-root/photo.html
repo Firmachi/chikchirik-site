@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Найдите фотографа за пару минут — ChikChirik</title>
+<meta name="description" content="Опишите съёмку — фотографы сами пришлют отклики с портфолио и ценой. Для заказчиков бесплатно.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" as="image" href="/assets/p-photographer-640.webp">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#fff;color:#0B0B0C;font-family:var(--font-text,system-ui,sans-serif);-webkit-text-size-adjust:100%}
+  a{color:inherit}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* шапка */
+  .top{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .top img{height:22px;width:auto}
+  .top .free{font-size:13px;font-weight:600;color:var(--blue-600,#003CD3)}
+
+  /* первый экран */
+  .hero{display:grid;gap:22px;padding:6px 0 30px}
+  .photo{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;background:#F3F3F4}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+  .photo .tag{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.94);border-radius:14px;padding:10px 12px;font-size:13px;line-height:1.35;box-shadow:0 8px 24px -12px rgba(0,0,0,.35);max-width:78%}
+  .photo .tag b{display:block;font-size:14px}
+  .photo .tag span{color:#5B5C61}
+  .badge{display:inline-flex;align-items:center;gap:6px;background:#EEF4FF;color:var(--blue-600,#003CD3);font-size:13px;font-weight:600;padding:6px 11px;border-radius:999px}
+  .badge i{width:6px;height:6px;border-radius:50%;background:var(--blue-500,#0057FF)}
+  h1{margin:12px 0 0;font-family:var(--font-display,Georgia,serif);font-size:clamp(32px,8.6vw,56px);line-height:1.02;letter-spacing:-.025em;font-weight:800}
+  .lead{margin:12px 0 0;font-size:18px;line-height:1.45;color:#3E3F44}
+  .cta{margin-top:20px;display:flex;flex-direction:column;gap:10px;max-width:440px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 20px;border-radius:18px;font-size:18px;font-weight:700;text-decoration:none;border:0;cursor:pointer;width:100%;font-family:inherit;transition:transform .15s ease,background .15s ease}
+  .btn:active{transform:scale(.98)}
+  .btn-main{background:var(--blue-500,#0057FF);color:#fff;box-shadow:0 12px 26px -12px rgba(0,87,255,.65)}
+  .btn-main:hover{background:var(--blue-600,#003CD3)}
+  .or{margin:6px 0 0;font-size:13px;color:#8A8B90;text-align:center}
+  .stores{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .store{display:flex;align-items:center;justify-content:center;gap:9px;height:54px;border-radius:14px;background:#0B0B0C;color:#fff;text-decoration:none;transition:transform .15s ease,background .15s ease}
+  .store:hover{background:#26262A}
+  .store:active{transform:scale(.98)}
+  .store svg{width:24px;height:24px;flex:none}
+  .store span{display:flex;flex-direction:column;font-size:16px;font-weight:700;line-height:1.1;letter-spacing:-.01em}
+  .store small{font-size:10.5px;font-weight:500;opacity:.8;letter-spacing:0}
+  .ic{width:22px;height:22px;flex:none}
+  .note{font-size:13px;color:#6B6C72;text-align:center;margin:0}
+  .checks{display:flex;flex-wrap:wrap;gap:8px 16px;margin:18px 0 0;padding:0;list-style:none;font-size:14px;color:#3E3F44}
+  .checks li{display:flex;align-items:center;gap:6px}
+  .checks li::before{content:"";width:16px;height:16px;border-radius:50%;background:#E6F6EC url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%231E9E52' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat;flex:none}
+
+  section{padding:34px 0}
+  h2{margin:0 0 16px;font-family:var(--font-display,Georgia,serif);font-size:clamp(24px,6vw,34px);line-height:1.1;letter-spacing:-.02em;font-weight:800}
+  .sub{margin:-8px 0 16px;color:#5B5C61;font-size:15px}
+
+  /* что снять */
+  .chips{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .chip{display:flex;align-items:center;gap:10px;padding:14px;border-radius:16px;background:#F6F6F7;text-decoration:none;font-size:15px;font-weight:600;line-height:1.25;transition:background .15s ease}
+  .chip:hover{background:#EEEEF0}
+  .chip em{font-style:normal;font-size:22px;line-height:1}
+
+  /* как это работает */
+  .steps{display:grid;gap:12px;counter-reset:s;margin:0;padding:0;list-style:none}
+  .steps li{position:relative;padding:16px 16px 16px 62px;border:1px solid #EDEDEF;border-radius:18px}
+  .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--blue-500,#0057FF);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .steps b{display:block;font-size:17px;margin-bottom:3px}
+  .steps span{color:#5B5C61;font-size:15px;line-height:1.45}
+
+  /* пример заявки */
+  .example{background:#FFF7E6;border-radius:20px;padding:18px}
+  .example .lbl{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9A6A12}
+  .example p{margin:8px 0 0;font-size:17px;line-height:1.45}
+  .example ul{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+  .example li{background:#fff;border-radius:999px;padding:5px 10px;font-size:13px;color:#5B5C61}
+
+  /* почему */
+  .why{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .why div{padding:16px;border-radius:18px;background:#F6F6F7}
+  .why b{display:block;font-size:16px;margin-bottom:4px}
+  .why span{font-size:14px;color:#5B5C61;line-height:1.4}
+
+  /* вопросы */
+  details{border-bottom:1px solid #EDEDEF;padding:14px 0}
+  summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:#8A8B90;font-size:20px;line-height:1}
+  details[open] summary::after{content:"−"}
+  details p{margin:8px 0 0;color:#3E3F44;line-height:1.5}
+
+  .final{background:#0B0B0C;color:#fff;border-radius:28px;padding:28px 22px;margin:10px 0 30px;text-align:center}
+  .final h2{color:#fff;margin-bottom:8px}
+  .final p{margin:0 0 18px;color:#C9CAD0}
+  .final .btn{max-width:420px;margin:0 auto}
+  footer{padding:0 0 calc(110px + env(safe-area-inset-bottom));font-size:13px;color:#8A8B90}
+  footer a{color:#8A8B90}
+
+  /* помощь, если Telegram не открылся */
+  .help{display:none;background:#FFF7E6;border-radius:16px;padding:14px 16px;font-size:14px;line-height:1.45;max-width:440px}
+  .help.show{display:block}
+  .help p{margin:0 0 10px}
+  .help .row{display:flex;gap:8px;flex-wrap:wrap}
+  .help button,.help a{height:38px;padding:0 14px;border-radius:12px;border:1px solid #EBDDB8;background:#fff;font:inherit;font-size:14px;font-weight:600;color:#000;text-decoration:none;display:inline-flex;align-items:center;cursor:pointer}
+
+  /* липкая кнопка на телефоне */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid #EDEDEF;transform:translateY(110%);transition:transform .25s ease}
+  .sticky.on{transform:none}
+  .sticky .btn{min-height:54px;font-size:17px}
+
+  @media (min-width:900px){
+    .top{height:76px}
+    .hero{grid-template-columns:1.05fr .95fr;align-items:center;gap:48px;padding:10px 0 40px}
+    .photo{order:2;aspect-ratio:4/5;border-radius:28px}
+    .chips{grid-template-columns:repeat(3,1fr)}
+    .steps{grid-template-columns:repeat(3,1fr)}
+    .why{grid-template-columns:repeat(4,1fr)}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+    .final{padding:44px}
+    .sticky{display:none}
+    footer{padding-bottom:30px}
+  }
+</style>
+</head>
+<body>
+<noscript><div><img src="https://mc.yandex.ru/watch/113654864" style="position:absolute;left:-9999px" alt=""></div></noscript>
+
+<div class="wrap">
+  <header class="top">
+    <a href="/"><img src="/assets/logo-wordmark.png" alt="ChikChirik"></a>
+    <span class="free">Бесплатно для заказчиков</span>
+  </header>
+
+  <div class="hero">
+    <div class="photo">
+      <img src="/assets/p-photographer-640.webp" srcset="/assets/p-photographer-480.webp 480w, /assets/p-photographer-640.webp 640w, /assets/p-photographer.webp 800w" sizes="(min-width:900px) 520px, 100vw" alt="Фотограф смотрит снимки на камере" width="640" height="800" fetchpriority="high">
+      <div class="tag"><b>Отклики приходят в чат</b><span>с портфолио и ценой фотографа</span></div>
+    </div>
+    <div>
+      <span class="badge"><i></i>Фотографы по всему Казахстану</span>
+      <h1>Найдите фотографа за пару минут</h1>
+      <p class="lead">Опишите, что нужно снять. Фотографы сами пришлют отклики с портфолио и ценой — вам останется выбрать.</p>
+      <div class="cta">
+        <a class="btn btn-main js-tg" data-src="hero" href="https://t.me/Chikchirik_bird_bot">
+          <svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.9c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.9 13.4l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.4 2.9c.9-.3 1.7.2 1.5 1.4z"/></svg>
+          Найти специалиста бесплатно
+        </a>
+        <p class="note">Откроется в Telegram — регистрироваться на сайте не нужно</p>
+        <div class="help" id="help">
+          <p><b>Telegram не открылся?</b> Нажмите ⋯ вверху справа → «Открыть в браузере» и попробуйте снова. Или скопируйте ссылку.</p>
+          <div class="row">
+            <button type="button" id="copy">Скопировать ссылку</button>
+            <a id="web" href="https://t.me/Chikchirik_bird_bot">Открыть t.me</a>
+          </div>
+        </div>
+        <p class="or">или скачайте приложение</p>
+        <div class="stores">
+          <a class="store js-store" data-store="app_store" href="https://apps.apple.com/kz/app/chikchirik/id6802269556">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.7c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.66-.39 6.6 1.1 8.76.73 1.05 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.33-3.5zM14.2 6.25c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.65-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg>
+            <span><small>Загрузить в</small>App Store</span>
+          </a>
+          <a class="store js-store" data-store="google_play" href="https://play.google.com/store/apps/details?id=com.chikchirik.chikchirikApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 2.6 13.6 12l-9.4 9.4c-.3-.2-.5-.6-.5-1.1V3.7c0-.5.2-.9.5-1.1z" fill="#2196F3"/><path d="M16.9 8.7 13.6 12 4.2 2.6c.3-.2.8-.2 1.2 0l11.5 6.1z" fill="#4CAF50"/><path d="M16.9 15.3 5.4 21.4c-.4.2-.9.2-1.2 0l9.4-9.4 3.3 3.3z" fill="#F44336"/><path d="M20.2 12c0 .5-.3.9-.7 1.2l-2.6 2.1-3.3-3.3 3.3-3.3 2.6 2.1c.4.3.7.7.7 1.2z" fill="#FFC107"/></svg>
+            <span><small>Доступно в</small>Google Play</span>
+          </a>
+        </div>
+      </div>
+      <ul class="checks">
+        <li>Бесплатно</li>
+        <li>Портфолио до выбора</li>
+        <li>Цену называет фотограф</li>
+      </ul>
+    </div>
+  </div>
+
+  <section>
+    <h2>Что нужно снять?</h2>
+    <p class="sub">Нажмите — и сразу опишите задачу</p>
+    <div class="chips">
+      <a class="chip js-tg" data-src="photoshoot" href="https://t.me/Chikchirik_bird_bot"><em>📸</em>Фотосессия</a>
+      <a class="chip js-tg" data-src="product" href="https://t.me/Chikchirik_bird_bot"><em>📦</em>Товары для Kaspi и сайта</a>
+      <a class="chip js-tg" data-src="event" href="https://t.me/Chikchirik_bird_bot"><em>🎤</em>Мероприятие</a>
+      <a class="chip js-tg" data-src="portrait" href="https://t.me/Chikchirik_bird_bot"><em>💼</em>Бизнес-портрет</a>
+      <a class="chip js-tg" data-src="wedding" href="https://t.me/Chikchirik_bird_bot"><em>💍</em>Свадьба или той</a>
+      <a class="chip js-tg" data-src="social" href="https://t.me/Chikchirik_bird_bot"><em>📱</em>Контент для соцсетей</a>
+    </div>
+  </section>
+
+  <div class="two">
+    <section>
+      <h2>Как это работает</h2>
+      <ol class="steps">
+        <li><b>Опишите задачу</b><span>Что снять, город, дата и бюджет. Хватит пары предложений.</span></li>
+        <li><b>Получите отклики</b><span>Фотографы пишут сами — с примерами работ и своей ценой.</span></li>
+        <li><b>Выберите фотографа</b><span>Сравните портфолио и договоритесь в чате.</span></li>
+      </ol>
+    </section>
+    <section>
+      <h2>Как написать заявку</h2>
+      <div class="example">
+        <span class="lbl">Пример</span>
+        <p>«Нужна предметная съёмка 20 товаров для Kaspi. Алматы, на этой неделе. Белый фон, бюджет до 30&nbsp;000&nbsp;₸.»</p>
+        <ul><li>что снять</li><li>город</li><li>когда</li><li>бюджет</li></ul>
+      </div>
+    </section>
+  </div>
+
+  <section>
+    <h2>Почему ChikChirik</h2>
+    <div class="why">
+      <div><b>Бесплатно</b><span>Заявка и отклики для заказчика ничего не стоят</span></div>
+      <div><b>Без обзвона</b><span>Не нужно искать и писать каждому — фотографы приходят сами</span></div>
+      <div><b>Видно работы</b><span>Портфолио каждого фотографа — до того, как вы выберете</span></div>
+      <div><b>Честная цена</b><span>Сравниваете предложения и выбираете под свой бюджет</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Вопросы</h2>
+    <details><summary>Сколько это стоит?</summary><p>Оставить заявку и получить отклики — бесплатно. Стоимость съёмки вы согласуете с фотографом напрямую.</p></details>
+    <details><summary>Нужно скачивать приложение?</summary><p>Нет. Заявку можно оставить прямо в Telegram. Приложение для iPhone и Android — если так удобнее.</p></details>
+    <details><summary>Найдутся фотографы в моём городе?</summary><p>Укажите город в заявке — откликнутся фотографы, которые работают в нём или готовы приехать.</p></details>
+    <details><summary>Как оплачивать съёмку?</summary><p>Условия и оплату вы обсуждаете с фотографом в чате. Совет: не вносите полную предоплату до съёмки.</p></details>
+  </section>
+
+  <div class="final">
+    <h2>Опишите съёмку — остальное сделают фотографы</h2>
+    <p>Заявка займёт пару минут</p>
+    <a class="btn btn-main js-tg" data-src="final" href="https://t.me/Chikchirik_bird_bot">Найти специалиста бесплатно</a>
+  </div>
+
+  <footer>© ChikChirik · <a href="/photographers">Подробнее о съёмке</a> · <a href="/privacy">Конфиденциальность</a></footer>
+</div>
+
+<div class="sticky" id="sticky">
+  <a class="btn btn-main js-tg" data-src="sticky" href="https://t.me/Chikchirik_bird_bot">Найти специалиста бесплатно</a>
+</div>
+
+<script>
+(function () {
+  var MID = 113654864, BOT = 'Chikchirik_bird_bot', GADS = 'AW-18442700792', GADS_STORE = 'AW-18442700792/npeOCNn-vbYdEPiPldpE';
+  var APPSTORE = 'https://apps.apple.com/app/apple-store/id6802269556';
+  var PLAY = 'https://play.google.com/store/apps/details?id=com.chikchirik.chikchirikApp';
+
+  // метка: ?ref=ref_google_photo (по умолчанию) — по ней видно визиты и регистрации в админке бота
+  var q = new URLSearchParams(location.search);
+  var raw = (q.get('ref') || 'google_photo').replace(/^ref_/, '');
+  if (!/^[A-Za-z0-9_]{1,50}$/.test(raw)) raw = 'google_photo';
+  var ref = 'ref_' + raw;
+
+  var ua = navigator.userAgent || '';
+  var android = /Android/.test(ua);
+  var ios = !android && (/iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
+  var inApp = /Instagram|FBAN|FBAV|FB_IAB|Threads|TikTok|musical_ly/.test(ua);
+
+  var tme = 'https://t.me/' + BOT + '?startapp=' + ref;
+  var tgScheme = 'tg://resolve?domain=' + BOT + '&startapp=' + ref;
+  var intent = 'intent://resolve?domain=' + BOT + '&startapp=' + ref +
+    '#Intent;scheme=tg;package=org.telegram.messenger;S.browser_fallback_url=' + encodeURIComponent(tme) + ';end';
+  var iosUrl = APPSTORE + '?pt=129211385&ct=' + encodeURIComponent(raw) + '&mt=8';
+  var playUrl = PLAY + '&referrer=' + encodeURIComponent('utm_source=google&utm_medium=cpc&utm_campaign=' + raw);
+
+  // Метрика + Google Ads
+  window.ym = window.ym || function () { (ym.a = ym.a || []).push(arguments); }; ym.l = 1 * new Date();
+  ym(MID, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true, params: { go_ref: ref, page: 'photo' } });
+  window.dataLayer = window.dataLayer || []; window.gtag = window.gtag || function () { dataLayer.push(arguments); };
+  gtag('js', new Date()); gtag('config', GADS);
+  addEventListener('load', function () {
+    setTimeout(function () {
+      var s = document.createElement('script'); s.async = 1; s.src = 'https://mc.yandex.ru/metrika/tag.js?id=' + MID; document.head.appendChild(s);
+      var g = document.createElement('script'); g.async = 1; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + GADS; document.head.appendChild(g);
+    }, 800);
+  });
+  function goal(name, p) { try { ym(MID, 'reachGoal', name, p); } catch (e) {} }
+
+  var help = document.getElementById('help');
+  document.getElementById('web').href = tme;
+  [].forEach.call(document.querySelectorAll('.js-tg'), function (a) {
+    a.href = tme;
+    a.addEventListener('click', function (e) {
+      goal('go_tg_click', { ref: ref, page: '/photo', block: a.getAttribute('data-src'), in_app: inApp, os: ios ? 'ios' : android ? 'android' : 'desktop' });
+      if (!(ios || android)) return; // на компьютере — обычная ссылка t.me
+      e.preventDefault();
+      var left = false;
+      var onHide = function () { if (document.hidden) left = true; };
+      document.addEventListener('visibilitychange', onHide);
+      location.href = android ? intent : tgScheme;
+      setTimeout(function () {
+        document.removeEventListener('visibilitychange', onHide);
+        if (!left) {
+          help.classList.add('show');
+          help.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          goal('go_tg_fail', { ref: ref, page: '/photo' });
+        }
+      }, 1800);
+    });
+  });
+
+  [].forEach.call(document.querySelectorAll('.js-store'), function (a) {
+    var st = a.getAttribute('data-store');
+    a.href = st === 'app_store' ? iosUrl : playUrl;
+    a.addEventListener('click', function () {
+      goal('store_click', { store: st, page: '/photo', ref: ref });
+      try { gtag('event', 'conversion', { send_to: GADS_STORE }); } catch (e) {}
+    });
+  });
+
+  document.getElementById('copy').addEventListener('click', function () {
+    var b = this;
+    var done = function () { b.textContent = 'Ссылка скопирована'; goal('go_copy', { ref: ref, page: '/photo' }); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(tme).then(done, function () { prompt('Скопируйте ссылку:', tme); });
+    else prompt('Скопируйте ссылку:', tme);
+  });
+
+  // липкая кнопка появляется, когда главная кнопка ушла с экрана
+  var sticky = document.getElementById('sticky'), heroBtn = document.querySelector('.hero .js-tg');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) { sticky.classList.toggle('on', !en[0].isIntersecting && en[0].boundingClientRect.top < 0); }).observe(heroBtn);
+  }
+})();
+</script>
+</body>
+</html>

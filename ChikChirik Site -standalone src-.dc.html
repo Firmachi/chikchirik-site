@@ -53,6 +53,8 @@
     a{color:var(--blue-600);text-decoration:none}
     a:hover{color:var(--blue-700)}
     [data-carousel]::-webkit-scrollbar{display:none}
+    .cat-sticky{display:none}
+    @media (max-width:899px){.cat-sticky{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid var(--ink-100);transform:translateY(110%);transition:transform .25s ease}.cat-sticky.on{transform:none}main[data-screen-label="Category"]{padding-bottom:84px!important}}
   </style>
 </helmet>
 
@@ -337,15 +339,23 @@
         <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:15px;color:var(--ink-600);"><a href="{{ homeUrl }}" style="color:var(--ink-600);" style-hover="color:var(--ink-1000);">{{ catUi.home }}</a><span>/</span><span style="color:var(--ink-800);">{{ cat.name }}</span></div>
         <h1 style="margin:0;font-size:clamp(40px,6vw,80px);line-height:1;letter-spacing:-0.045em;font-weight:800;text-wrap:balance;">{{ cat.h1 }}</h1>
         <p style="margin:0;max-width:560px;font-size:clamp(17px,1.6vw,20px);line-height:1.5;color:var(--ink-600);text-wrap:pretty;">{{ cat.lead }}</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <a href="{{ appStoreUrl }}" target="_blank" style="display:flex;align-items:center;gap:12px;height:60px;padding:0 24px 0 20px;border-radius:999px;background:var(--ink-1000);color:var(--white);" style-hover="background:var(--ink-800);color:var(--white);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"></path></svg>
-          <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1;"><span style="font-size:11px;opacity:.75;">Загрузить в</span><span style="font-size:18px;font-weight:600;">App Store</span></span>
-        </a>
-        <a href="{{ googlePlayUrl }}" target="_blank" style="display:flex;align-items:center;gap:12px;height:60px;padding:0 24px 0 20px;border-radius:999px;background:var(--ink-1000);color:var(--white);" style-hover="background:var(--ink-800);color:var(--white);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"></path></svg>
-          <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1;"><span style="font-size:11px;opacity:.75;">Доступно в</span><span style="font-size:18px;font-weight:600;">Google Play</span></span>
-        </a>
+        <div style="display:flex;flex-direction:column;gap:10px;max-width:460px;">
+          <a href="{{ catBotUrl }}" target="_blank" rel="noopener" data-tg="hero" style="display:flex;align-items:center;justify-content:center;gap:10px;min-height:62px;padding:0 24px;border-radius:999px;background:var(--blue-500);color:var(--white);font-weight:700;font-size:18px;box-shadow:0 12px 26px -12px rgba(0,87,255,.65);" style-hover="background:var(--blue-600);color:var(--white);"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.9c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.9 13.4l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.4 2.9c.9-.3 1.7.2 1.5 1.4z"></path></svg>{{ catUi.ctaMain }}</a>
+          <p style="margin:0;font-size:13px;color:var(--ink-600);text-align:center;">{{ catUi.ctaNote }}</p>
+          <p style="margin:6px 0 0;font-size:13px;color:var(--ink-400);text-align:center;">{{ catUi.orApp }}</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <a href="{{ appStoreUrl }}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;height:54px;border-radius:16px;background:var(--ink-1000);color:var(--white);" style-hover="background:var(--ink-800);color:var(--white);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"></path></svg>
+              <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1;"><span style="font-size:11px;opacity:.75;">Загрузить в</span><span style="font-size:16px;font-weight:600;">App Store</span></span>
+            </a>
+            <a href="{{ googlePlayUrl }}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;height:54px;border-radius:16px;background:var(--ink-1000);color:var(--white);" style-hover="background:var(--ink-800);color:var(--white);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"></path></svg>
+              <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1;"><span style="font-size:11px;opacity:.75;">Доступно в</span><span style="font-size:16px;font-weight:600;">Google Play</span></span>
+            </a>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:6px;font-size:14px;color:var(--ink-800);">
+            <sc-for list="{{ catUi.checks }}" as="c" hint-placeholder-count="3"><span style="display:flex;align-items:center;gap:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E9E52" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>{{ c }}</span></sc-for>
+          </div>
         </div>
       </div>
       <div style="border-radius:28px;overflow:hidden;aspect-ratio:4/5;max-height:600px;background:var(--ink-50);">
@@ -356,11 +366,13 @@
     <section data-screen-label="Category services" style="max-width:1200px;margin:0 auto;padding-top:clamp(56px,8vw,104px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:start;">
       <h2 style="margin:0;font-size:clamp(32px,4.4vw,56px);line-height:1.02;letter-spacing:-0.035em;font-weight:800;text-wrap:balance;">{{ cat.servicesTitle }}</h2>
       <div data-rv="1" style="display:flex;flex-direction:column;">
-        <sc-for list="{{ cat.services }}" as="t" hint-placeholder-count="6">
-          <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--ink-100);font-size:18px;line-height:1.4;">
+        <p style="margin:0 0 10px;font-size:15px;color:var(--ink-600);">{{ catUi.servicesHint }}</p>
+        <sc-for list="{{ catServices }}" as="t" hint-placeholder-count="6">
+          <a href="{{ t.href }}" target="_blank" rel="noopener" data-tg="service" style="display:flex;gap:14px;align-items:flex-start;padding:14px 4px;border-top:1px solid var(--ink-100);font-size:18px;line-height:1.4;color:var(--ink-1000);text-decoration:none;" style-hover="color:var(--blue-600);background:var(--blue-50);">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-500)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:2px;"><path d="M20 6 9 17l-5-5"></path></svg>
-            <span>{{ t }}</span>
-          </div>
+            <span style="flex:1;">{{ t.text }}</span>
+            <span style="flex:0 0 auto;color:var(--blue-500);font-weight:700;">→</span>
+          </a>
         </sc-for>
       </div>
     </section>
@@ -433,15 +445,16 @@
         <h2 style="margin:0;font-size:clamp(32px,4.4vw,56px);line-height:1.02;letter-spacing:-0.035em;font-weight:800;text-wrap:balance;max-width:760px;">{{ catUi.ctaTitle }}</h2>
         <p style="margin:0;max-width:600px;font-size:18px;line-height:1.45;color:var(--blue-100);">{{ catUi.ctaText }}</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
-            <a href="{{ appStoreUrl }}" target="_blank" style="display:flex;align-items:center;gap:12px;height:60px;padding:0 24px 0 20px;border-radius:999px;background:var(--white);color:var(--ink-1000);" style-hover="background:var(--blue-50);color:var(--ink-1000);">
+            <a href="{{ catBotUrl }}" target="_blank" rel="noopener" data-tg="final" style="height:60px;padding:0 26px;display:flex;align-items:center;gap:10px;border-radius:999px;background:var(--white);color:var(--blue-600);font-weight:700;font-size:17px;" style-hover="background:var(--blue-50);color:var(--blue-700);"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.9c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.9 13.4l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.4 2.9c.9-.3 1.7.2 1.5 1.4z"></path></svg>{{ catUi.ctaMain }}</a>
+            <a href="{{ appStoreUrl }}" target="_blank" style="display:flex;align-items:center;gap:12px;height:60px;padding:0 24px 0 20px;border-radius:999px;background:rgba(255,255,255,.14);color:var(--white);border:1px solid rgba(255,255,255,.35);" style-hover="background:rgba(255,255,255,.22);color:var(--white);">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"></path></svg>
               <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1;"><span style="font-size:11px;opacity:.7;">Загрузить в</span><span style="font-size:18px;font-weight:600;">App Store</span></span>
             </a>
-            <a href="{{ googlePlayUrl }}" target="_blank" style="display:flex;align-items:center;gap:12px;height:60px;padding:0 24px 0 20px;border-radius:999px;background:var(--white);color:var(--ink-1000);" style-hover="background:var(--blue-50);color:var(--ink-1000);">
+            <a href="{{ googlePlayUrl }}" target="_blank" style="display:flex;align-items:center;gap:12px;height:60px;padding:0 24px 0 20px;border-radius:999px;background:rgba(255,255,255,.14);color:var(--white);border:1px solid rgba(255,255,255,.35);" style-hover="background:rgba(255,255,255,.22);color:var(--white);">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"></path></svg>
               <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1;"><span style="font-size:11px;opacity:.7;">Доступно в</span><span style="font-size:18px;font-weight:600;">Google Play</span></span>
             </a>
-            <a href="https://t.me/Chikchirik_bird_bot" target="_blank" rel="noopener" style="height:60px;padding:0 24px;display:flex;align-items:center;gap:8px;border-radius:999px;border:1px solid rgba(255,255,255,.4);color:var(--white);font-weight:600;font-size:16px;" style-hover="background:rgba(255,255,255,.1);color:var(--white);">{{ catUi.ctaBot }}</a>
+            
         </div>
       </div>
     </section>
@@ -457,6 +470,7 @@
         </sc-for>
       </div>
     </section>
+    <div class="cat-sticky"><a href="{{ catBotUrl }}" target="_blank" rel="noopener" data-tg="sticky" style="display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:999px;background:var(--blue-500);color:var(--white);font-weight:700;font-size:17px;" style-hover="background:var(--blue-600);color:var(--white);"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.9c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.9 13.4l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.4 2.9c.9-.3 1.7.2 1.5 1.4z"></path></svg>{{ catUi.ctaMain }}</a></div>
   </main>
   </sc-if>
 
@@ -667,7 +681,12 @@ const CATS = /*CATS*/{
     "stepsTitle": "Как найти специалиста в ChikChirik",
     "faqTitle": "Частые вопросы",
     "ctaTitle": "Опубликуй задачу бесплатно",
-    "ctaText": "Скачай приложение, опиши задачу — специалисты с портфолио пришлют отклики. Или начни в телеграм-боте, ничего не скачивая.",
+    "ctaText": "Опиши задачу в Telegram — специалисты с портфолио сами пришлют отклики. Удобнее в приложении? Скачай его.",
+    "ctaMain": "Найти специалиста бесплатно",
+    "ctaNote": "Откроется в Telegram — ничего скачивать не нужно",
+    "orApp": "или скачай приложение",
+    "servicesHint": "Нажми на нужное — и сразу опиши задачу",
+    "checks": ["Бесплатно", "Портфолио до выбора", "Цену называет исполнитель"],
     "ctaBot": "Открыть телеграм-бот",
     "details": "Подробнее"
   },
@@ -3233,6 +3252,8 @@ class Component extends DCLogic {
       homeUrl,
       catUi: CATS.ui,
       cat: { ...cat, img480: cat.img.replace('.webp', '-480.webp'), img640: cat.img.replace('.webp', '-640.webp') },
+      catBotUrl: 'https://t.me/Chikchirik_bird_bot?startapp=ref_site_' + cat.id.replace(/-/g, '_'),
+      catServices: (cat.services || []).map(text => ({ text, href: 'https://t.me/Chikchirik_bird_bot?startapp=ref_site_' + cat.id.replace(/-/g, '_') })),
       catTips: cat.tips.map((text, i) => ({ n: '0' + (i + 1), text })),
       catFaq: cat.faq.map((f, i) => ({ ...f, display: faqOpen === i ? 'block' : 'none', sign: faqOpen === i ? '−' : '+', toggle: () => this.setState({ faqOpen: faqOpen === i ? -1 : i }) })),
       catLinks: CATS.cats.map(c => ({ name: c.name, href: base + '/' + c.id })),

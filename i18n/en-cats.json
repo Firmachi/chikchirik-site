@@ -7,9 +7,18 @@
     "stepsTitle": "How to find a specialist on ChikChirik",
     "faqTitle": "Frequently asked questions",
     "ctaTitle": "Post your task for free",
-    "ctaText": "Download the app and describe your task — specialists with portfolios will respond. Or start in our Telegram bot, nothing to download.",
+    "ctaText": "Describe your task in Telegram — specialists with portfolios will respond. Prefer the app? Download it.",
     "ctaBot": "Open the Telegram bot",
-    "details": "Learn more"
+    "details": "Learn more",
+    "ctaMain": "Find a specialist for free",
+    "ctaNote": "Opens in Telegram — nothing to download",
+    "orApp": "or download the app",
+    "servicesHint": "Tap what you need and describe your task right away",
+    "checks": [
+      "Free",
+      "See portfolios first",
+      "Specialists name their price"
+    ]
   },
   "cats": [
     {

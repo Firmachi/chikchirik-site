@@ -65,6 +65,11 @@
   ],
   "redirects": [
     {
+      "source": "/photo/",
+      "destination": "/photo",
+      "permanent": true
+    },
+    {
       "source": "/site/privacy.html",
       "destination": "/privacy",
       "permanent": true
@@ -136,6 +141,10 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/photo",
+      "destination": "/photo/index.html"
+    },
     {
       "source": "/go",
       "destination": "/go/index.html"
