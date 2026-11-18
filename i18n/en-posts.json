@@ -20,6 +20,168 @@
   },
   "posts": [
     {
+      "slug": "tz-dlya-dizajnera",
+      "img": "assets/p-designer.webp",
+      "date": "2026-11-19",
+      "readTime": 5,
+      "cats": [
+        "designers",
+        "smm"
+      ],
+      "dateText": "19 November 2026",
+      "title": "How to write a brief for a designer: template and example",
+      "metaTitle": "Designer brief: template and example | ChikChirik",
+      "metaDesc": "How to write a brief for a designer for a logo, social media or packaging: task, audience, style, formats, revisions and source files. Template and example.",
+      "lead": "A designer can't read your mind: without a brief they guess the style, and you spend revision rounds on things you could have written down upfront. Here's what to include in a brief for a logo, social media, product cards or packaging, plus a template you can copy into a task on ChikChirik.",
+      "sections": [
+        {
+          "h": "Why you need a brief",
+          "ps": [
+            "With a brief, a designer understands the scope right away and quotes a realistic price and deadline. You get offers you can compare on the same terms, and revisions go into details instead of starting over.",
+            "A brief doesn't have to be long. Answers to the nine questions below and a couple of examples you like are enough."
+          ]
+        },
+        {
+          "h": "What to include in a brief",
+          "numbered": true,
+          "items": [
+            "What needs to be done. A logo, social media templates, a presentation, a label — and how many items or pages.",
+            "About the business. What you do, what you sell and how you differ from competitors — 2–3 sentences.",
+            "Audience. Who your customers are: age, interests, where they see your brand.",
+            "Style and mood. How the brand should feel: strict, friendly, premium, bold. Colours you like and colours that definitely don't fit.",
+            "References. 3–5 examples you like and 1–2 you don't — with a note on why.",
+            "What you already have. Logo, brand colours, fonts, photos, copy — attach them so the designer doesn't start from scratch.",
+            "Where it will be used. Social media, website, print, signage, packaging — this defines formats and sizes.",
+            "What you get at the end. File formats, source files, number of options and revision rounds.",
+            "Budget and deadline. A budget range and the date you need the final result."
+          ]
+        },
+        {
+          "h": "What to add for different tasks",
+          "ps": [
+            "The basics are the same, but each task has its own details:"
+          ],
+          "table": {
+            "head": [
+              "Task",
+              "What to add to the brief",
+              "What to ask for at the end"
+            ],
+            "cols": "minmax(0,0.8fr) minmax(0,1.3fr) minmax(0,1.1fr)",
+            "minWidth": 0,
+            "rows": [
+              [
+                "Logo and brand identity",
+                "The name and how it's spelled, whether there's a slogan, where the logo will appear: signage, packaging, avatar",
+                "Versions for light and dark backgrounds, an icon, vector files"
+              ],
+              [
+                "Social media design",
+                "Which networks, content rubrics, how many posts and stories, who writes the copy",
+                "Templates you can edit yourself and ready-made layouts"
+              ],
+              [
+                "Marketplace product cards",
+                "The marketplace and its image requirements, the product list, key selling points",
+                "Layouts in the marketplace's sizes and source files for new products"
+              ],
+              [
+                "Presentation or sales proposal",
+                "Text or key points per slide, number of slides, where you'll present it",
+                "An editable file and a PDF"
+              ],
+              [
+                "Packaging and labels",
+                "Dimensions, material, required information on the label, who prints it",
+                "A print-ready file that meets the printer's requirements"
+              ]
+            ]
+          }
+        },
+        {
+          "h": "Designer brief template",
+          "template": [
+            "What needs to be done: …",
+            "About the business: …",
+            "Audience: …",
+            "Style and colours: …",
+            "Like (links): …",
+            "Don't like (links): …",
+            "What we already have: …",
+            "Where it will be used: …",
+            "What we get at the end: …",
+            "Budget: from … to … ₸",
+            "Deadline: …"
+          ],
+          "ps": [
+            "Copy the template, fill it in and paste it into the task description on ChikChirik — designers will see all the terms at once."
+          ]
+        },
+        {
+          "h": "Example of a completed brief",
+          "example": [
+            "What needs to be done: a logo and Instagram templates — 3 posts and 2 stories.",
+            "About the business: a home bakery, we bake bread and desserts to order and deliver across the city.",
+            "Audience: families and offices ordering baked goods for holidays and every day.",
+            "Style and colours: warm, cosy, no unnecessary details; beige and brown, no neon colours.",
+            "Like (links): 3 logos of bakeries and coffee shops.",
+            "Don't like (links): 1 example — too complex and too small.",
+            "What we already have: the name and product photos, no brand colours yet.",
+            "Where it will be used: Instagram avatar, box stickers, price tags.",
+            "What we get at the end: 2–3 logo options to choose from, 2 revision rounds, vector files and PNG, editable templates.",
+            "Budget: your own range in tenge.",
+            "Deadline: 2 weeks."
+          ]
+        },
+        {
+          "h": "Common mistakes",
+          "items": [
+            "“Just make it look nice” — without a style and examples the designer guesses, and the first options go in the bin.",
+            "No information about the business — the logo could fit any company.",
+            "No word on where the design will be used — the logo is hard to read on a small avatar or on a sign.",
+            "Revisions weren't discussed — the edits never end and both sides are unhappy.",
+            "Source files were forgotten — later you can't change the text on a banner without the designer.",
+            "No budget — offers come in with prices far from what you expected."
+          ]
+        },
+        {
+          "h": "How to find a designer with your brief on ChikChirik",
+          "ps": [
+            "Download the app, describe the task using the template and set a budget. Designers will send offers with their portfolios — compare work in the right direction and discuss the details in chat.",
+            "Posting a task and getting offers is free."
+          ],
+          "links": [
+            {
+              "text": "Graphic designers on ChikChirik",
+              "href": "/designers"
+            },
+            {
+              "text": "How to write a brief for a videographer",
+              "href": "/blog/tz-dlya-videografa"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "How many options and revisions should a brief include?",
+          "a": "There's no single rule. Agree with the designer before work starts and put in writing how many options they'll show and how many revision rounds are included in the price."
+        },
+        {
+          "q": "Should I ask for source files?",
+          "a": "Yes, if you plan to edit the layouts yourself or work with other designers. State in the brief which file formats you need and whether usage rights are transferred."
+        },
+        {
+          "q": "What if I don't know what style I need?",
+          "a": "Collect examples you like, even from other industries, and write what catches your eye. The designer will help put the style into words based on them."
+        },
+        {
+          "q": "Can I order a logo and social media design in one brief?",
+          "a": "Yes, but describe the two tasks as separate points: what's needed, how much and what you get at the end. That makes it easier for the designer to estimate the scope and price."
+        }
+      ]
+    },
+    {
       "slug": "ii-fotosessiya",
       "img": "assets/p-ai-creator.webp",
       "date": "2026-11-09",
